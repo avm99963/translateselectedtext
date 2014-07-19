@@ -1,0 +1,58 @@
+{
+	"appName": {
+		"message": "Traduïr Text Seleccionat",
+		"description": "The app name"
+	},
+	"appBetaName": {
+		"message": "Traduïr Text Seleccionat (Beta)",
+		"description": "The beta app name"
+	},
+	"appDescription" : {
+		"message": "Tradueix el text que seleccionis amb el Traductor de Google",
+		"description": "The app description"
+	},
+	"contextmenu_title" : {
+		"message": "Tradueix la selecció al...",
+		"description": "Title of the context menu that appears when a right click is done. Inside this prent menu there are the menus"
+	},
+	"contextmenu_edit" : {
+		"message": "Edita idiomes...",
+		"description": "Title of the option inside the 'Translate section into...' context menu."
+	},
+	"options_welcome" : {
+		"message": "Benvingut!",
+		"description": "Title of the options page"
+	},
+	"options_introduction" : {
+		"message": "Si us plau, selecciona els idiomes que vols que surtin al menú \"traduïr\".",
+		"description": "Introduction paragraph to the options pages"
+	},
+	"options_languageselectheader" : {
+		"message": "Idiomes:",
+		"description": "Header of the language select option."
+	},
+	"options_otheroptionsheader" : {
+		"message": "Altres opcions:",
+		"description": "Header of the options page."
+	},
+	"options_tabsoption_1" : {
+		"message": "Obre Google Traductor en una nova pestanya per a cada traducció.",
+		"description": "Option which defines how should the app behave in relation to tabs."
+	},
+	"options_tabsoption_2" : {
+		"message": "Obre Google Traductor en una única pestanya i reemplaça l'última traducció en comptes d'obrir varies pestanyes.",
+		"description": "Option which defines how should the app behave in relation to tabs."
+	},
+	"options_tabsoption_3" : {
+		"message": "Obre Google Traductor en un panel i reemplaça l'última traducció (fa falta activar la bandera <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a>). <sup style='color:red; font-weight: bold;'>EXPERIMENTAL</sup>",
+		"description": "Option which defines how should the app behave in relation to tabs."
+	},
+	"options_savebutton" : {
+		"message": "Desar",
+		"description": "Save button in the settings app"
+	},
+	"notification_install_title": { "message": "Gràcies per instal·lar 'Traduïr Text Seleccionat'" },
+	"notification_install_message": { "message": "Fes clic en aquesta notificació per a configurar l'extensión." },
+	"notification_upgradedtostorage_title": { "message": "'Traduïr Text Seleccionat' s'ha actualizat a v0.6!" },
+	"notification_upgradedtostorage_message": { "message": "Ara la configuració es sincronitzarà en tots els teus dispositius! La part dolenta és que has de configurar l'extensión una altra vegada :-( Fes clic en aquesta notificación per a configurar-la." }
+}

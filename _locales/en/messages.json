@@ -1,0 +1,58 @@
+{
+	"appName": {
+		"message": "Translate Selected Text",
+		"description": "The app name"
+	},
+	"appBetaName": {
+		"message": "Translate Selected Text (Beta)",
+		"description": "The beta app name"
+	},
+	"appDescription": {
+		"message": "Translate selected text with Google Translator",
+		"description": "The app description"
+	},
+	"contextmenu_title": {
+		"message": "Translate selection into...",
+		"description": "Title of the context menu that appears when a right click is done. Inside this parent menu there are the menus"
+	},
+	"contextmenu_edit": {
+		"message": "Edit languages...",
+		"description": "Title of the option inside the 'Translate section into...' context menu."
+	},
+	"options_welcome": {
+		"message": "Welcome!",
+		"description": "Title of the options page"
+	},
+	"options_introduction": {
+		"message": "Please, select the languages you want to show up in the \"translate\" menu.",
+		"description": "Introduction paragraph to the options pages"
+	},
+	"options_languageselectheader": {
+		"message": "Languages:",
+		"description": "Header of the language select option."
+	},
+	"options_otheroptionsheader": {
+		"message": "Other options:",
+		"description": "Header of the options page."
+	},
+	"options_tabsoption_1": {
+		"message": "Open Google Translator in a new tab for each translation.",
+		"description": "Option which defines how should the app behave in relation to tabs."
+	},
+	"options_tabsoption_2": {
+		"message": "Open Google Translator in a unique tab and override the last translation instead of opening several tabs.",
+		"description": "Option which defines how should the app behave in relation to tabs."
+	},
+	"options_tabsoption_3": {
+		"message": "Open Google Translator in a panel and override the last translation (need to activate <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a> flag). <sup style='color:red; font-weight: bold;'>EXPERIMENTAL</sup>",
+		"description": "Option which defines how should the app behave in relation to tabs."
+	},
+	"options_savebutton": {
+		"message": "Save",
+		"description": "Save button in the settings page"
+	},
+	"notification_install_title": { "message": "Thanks for installing 'Translate Selected Text'" },
+	"notification_install_message": { "message": "Click this notification to set it up." },
+	"notification_upgradedtostorage_title": { "message": "'Translate Selected Text' was updated to v0.6!" },
+	"notification_upgradedtostorage_message": { "message": "Now your options will be synced across all your devices! The bad side is that you have to set up the extension again :-( Click this notification to set it up." }
+}

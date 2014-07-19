@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDescription__",
+  "version": "0.6.1.1",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "notifications"
+  ],
+  "icons": {
+    "16": "translate-16.png",
+    "32": "translate-32.png",
+    "64": "translate-64.png",
+    "128": "translate-128.png",
+    "256": "translate-256.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "options_page": "options.html",
+  "default_locale": "en"
+}
