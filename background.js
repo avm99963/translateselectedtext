@@ -55,21 +55,41 @@ function createmenus() {
 	chrome.storage.sync.get("languages", function(items) {
 		chrome.contextMenus.removeAll();
 
-		var parent = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_title"), "contexts":["selection"]});
+		var count = 0, singleone = true;
 
 		for (var language in items.languages) {
-			var languagem = isoLangs[language];
-			var title = languagem.name + " ("+languagem.nativeName+")";
-			var id = chrome.contextMenus.create({"title": title, "parentId": parent, "contexts":["selection"], "onclick": click});
-			array_elements[id] = new Array();
-			array_elements[id]["langCode"] = language;
-			array_elements[id]["langName"] = languagem.name;
-			array_elements[id]["langNativeName"] = language.nativeName;
+			if (count == 0) {
+				count++;
+			} else {
+				singleone = false;
+				break;
+			}
 		}
 
-		var id = chrome.contextMenus.create({"type": "separator","parentId": parent, "contexts":["selection"], "onclick": click2});
-
-		var id = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_edit"), "parentId": parent, "contexts":["selection"], "onclick": click2});
+		if (singleone) {
+			for (var language in items.languages) {
+				var languagem = isoLangs[language];
+				var title = languagem.name + " ("+languagem.nativeName+")";
+				var parent = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_title2", languagem.name), "contexts": ["selection"], "onclick": click});
+				array_elements[parent] = new Array();
+				array_elements[parent]["langCode"] = language;
+				array_elements[parent]["langName"] = languagem.name;
+				array_elements[parent]["langNativeName"] = language.nativeName;
+			}
+		} else {
+			var parent = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_title"), "contexts": ["selection"]});
+			for (var language in items.languages) {
+				var languagem = isoLangs[language];
+				var title = languagem.name + " ("+languagem.nativeName+")";
+				var id = chrome.contextMenus.create({"title": title, "parentId": parent, "contexts":["selection"], "onclick": click});
+				array_elements[id] = new Array();
+				array_elements[id]["langCode"] = language;
+				array_elements[id]["langName"] = languagem.name;
+				array_elements[id]["langNativeName"] = language.nativeName;
+			}
+			var id = chrome.contextMenus.create({"type": "separator","parentId": parent, "contexts":["selection"], "onclick": click2});
+			var id = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_edit"), "parentId": parent, "contexts":["selection"], "onclick": click2});
+		}
 	});
 }
 

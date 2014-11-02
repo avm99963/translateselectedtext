@@ -4,6 +4,7 @@ body {
 	background-image: url('translate-1.png');
 	background-repeat: repeat;
 	background-position: left top;
+	font-size: 100%!important;
 }
 h1 {
 	text-align:center;

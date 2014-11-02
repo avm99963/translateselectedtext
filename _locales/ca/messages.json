@@ -15,6 +15,16 @@
 		"message": "Tradueix la selecció al...",
 		"description": "Title of the context menu that appears when a right click is done. Inside this prent menu there are the menus"
 	},
+	"contextmenu_title2" : {
+		"message": "Tradueix la selecció a '$language$'",
+		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
+		"placeholders": {
+          "language": {
+            "content": "$1",
+            "example": "Language to translate into."
+          }
+        }
+	},
 	"contextmenu_edit" : {
 		"message": "Edita idiomes...",
 		"description": "Title of the option inside the 'Translate section into...' context menu."
