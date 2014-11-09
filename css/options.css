@@ -1,0 +1,103 @@
+@import url("widgets.css");
+
+body {
+	padding: 10px;
+	font-family: "Roboto", "Arial", sans-serif!important;
+	background-color: #BBDEFB;
+	background-repeat: repeat;
+	background-position: left top;
+	font-size: 100%;
+	cursor: default;
+}
+h1 {
+	text-align: center;
+	font-size: 30px;
+}
+h2 {
+	font-size: 20px;
+}
+#languages_container {
+	width: 300px;
+	height: 365px;
+	border: 1px solid #ccc;
+	background-color: #E3F2FD;
+}
+#languages {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#languages li {
+	padding: 15px;
+	border-bottom: 1px dashed #ddd;
+	background-color: #EEF7FD;
+	cursor: move;
+	-webkit-user-select: none;
+}
+#languages li.sortable-ghost {
+	background-color: #E3F2FD;
+}
+#languages li .delete {
+	font-size: 14px;
+	float: right;
+	cursor: pointer;
+	color: red;
+}
+#languages_footer {
+	width: 300px;
+	height: 35px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-top: 0;
+}
+button, input, select, option {
+	font-size: 13px!important;
+}
+#languages_add {
+	margin-left: 4px;
+	margin-top: 4px;
+}
+#save {
+	display: block;
+	margin: 18px auto;
+}
+
+/* Dialog */
+dialog {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -216px;
+	margin-top: -91px;
+	height: 150px;
+	width: 400px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 6px;
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+dialog h3 {
+	margin-bottom: 10px;
+}
+
+dialog #language_label {
+	font-size: 12px;
+}
+
+dialog select {
+	width: 100%;
+}
+
+dialog .action_buttons {
+	margin-top: 10px;
+	float: right;
+}
+
+dialog::backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
