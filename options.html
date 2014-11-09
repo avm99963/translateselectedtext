@@ -1,16 +1,22 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>Options</title>
 		<meta charset="UTF-8">
-		<script src="options.js"></script>
-		<link rel="stylesheet" type="text/css" href="options.css">
-		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<title>Options</title>
+		<link rel="stylesheet" type="text/css" href="css/options.css">
+		<script src="js/options.js"></script>
+		<script src="js/sortable.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<h1 id="welcome"></h1>
 		<p id="introduction"></p>
-		<h2 id="languageselectheader"></h2>
-		<div id="languages"></div>
+		<div id="languages_container">
+			<ul id="languages"></ul>
+		</div>
+		<div id="languages_footer">
+			<button id="languages_add">Add</button>
+		</div>
 		<h2 id="otheroptionsheader"></h2>
 		<div id="otheroptions">
 			<input type="radio" name="uniquetab" id="varioustabs" value=""> <label id="varioustabs_label" for="varioustabs"></label><br>
@@ -18,5 +24,16 @@
 			<input type="radio" name="uniquetab" id="panel" value="panel"> <label id="panel_label" for="panel"></label>
 		</div>
 		<button id="save"></button>
+		<dialog id="languages_add_dialog">
+		  <h3>Add language</h3>
+		  <div class="content_area">
+		    <label id="language_label" for="select_language">Language:</label>
+		    <select id="select_language"></select>
+		  </div>
+		  <div class="action_buttons">
+		    <button id="languages_add_cancel">Cancel</button>
+		    <button id="languages_add_ok">OK</button>
+		  </div>
+		</dialog>
 	</body>
 </html>

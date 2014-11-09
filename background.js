@@ -52,12 +52,12 @@ function click2(info, tab) {
 }
 
 function createmenus() {
-	chrome.storage.sync.get("languages", function(items) {
+	chrome.storage.sync.get("translateinto", function(items) {
 		chrome.contextMenus.removeAll();
 
 		var count = 0, singleone = true;
 
-		for (var language in items.languages) {
+		for (var language in items.translateinto) {
 			if (count == 0) {
 				count++;
 			} else {
@@ -67,7 +67,8 @@ function createmenus() {
 		}
 
 		if (singleone) {
-			for (var language in items.languages) {
+			for (var language_id in items.translateinto) {
+				var language = items.translateinto[language_id];
 				var languagem = isoLangs[language];
 				var title = languagem.name + " ("+languagem.nativeName+")";
 				var parent = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_title2", languagem.name), "contexts": ["selection"], "onclick": click});
@@ -78,7 +79,8 @@ function createmenus() {
 			}
 		} else {
 			var parent = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_title"), "contexts": ["selection"]});
-			for (var language in items.languages) {
+			for (var language_id in items.translateinto) {
+				var language = items.translateinto[language_id];
 				var languagem = isoLangs[language];
 				var title = languagem.name + " ("+languagem.nativeName+")";
 				var id = chrome.contextMenus.create({"title": title, "parentId": parent, "contexts":["selection"], "onclick": click});
@@ -97,9 +99,9 @@ chrome.runtime.onInstalled.addListener(function(details) {
 	chrome.storage.sync.get(null, function(items) {
 		if (details.reason == "install") {
 			if (isEmpty(items)) {
-				var settings = {'languages': {}, 'uniquetab': ''}, default_language = chrome.i18n.getMessage("@@ui_locale").split("_")[0];
+				var settings = {'translateinto': {}, 'uniquetab': ''}, default_language = chrome.i18n.getMessage("@@ui_locale").split("_")[0];
 				if (isoLangs[default_language] != "undefined") {
-					settings.languages[default_language] = default_language;
+					settings.translateinto[default_language] = default_language;
 				}
 				chrome.storage.sync.set(settings, function() {
 					chrome.notifications.create("install", {
@@ -129,6 +131,16 @@ chrome.runtime.onInstalled.addListener(function(details) {
 					}, function(id) {});
 				});
 			}
+			if (version[0] == "0" && version[1] < "7") {
+				items.translateinto = {};
+				var i = 0;
+				for (var language in items.languages) {
+					items.translateinto[i] = items.languages[language];
+					i++;
+				}
+				delete(items.languages);
+				chrome.storage.sync.set(items);
+			}
 		}
 	});
 });
@@ -139,7 +151,7 @@ chrome.storage.onChanged.addListener(function(changes, areaName) {
 });
 
 chrome.storage.sync.get(null, function(items) {
-	if (items.languages) {
+	if (items.translateinto) {
 		createmenus();
 	} else {
 		chrome.contextMenus.removeAll();
