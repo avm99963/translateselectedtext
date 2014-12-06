@@ -18,7 +18,7 @@
 	"widgets": {
 		"name": "Chromium",
 		"url": "https://code.google.com/p/chromium/",
-		"author": "The Chromum Authors",
+		"author": "The Chromium Authors",
 		"license": "BSD-like License"
 	}
 }
