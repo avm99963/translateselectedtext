@@ -83,7 +83,7 @@ function init() {
         });
 
         // Handling The Dialog
-        $("#languages_add").addEventListener('click', function() { $("dialog#languages_add_dialog").showModal(); });
+        $("#languages_add").addEventListener('click', function() { $("dialog#languages_add_dialog").showModal(); $("#select_language").focus(); });
         $("#languages_add_cancel").addEventListener('click', function() { $("dialog#languages_add_dialog").close(); });
         $("#languages_add_ok").addEventListener('click', function() {
             var el = document.createElement('li');
@@ -129,12 +129,15 @@ function init() {
                 window.onhashchange = function() {
                     if (location.hash == "#credits") {
                         $("dialog#credits_dialog").showModal();
+                        $("#credits_ok").focus();
                     }
                 }
                 if (location.hash == "#credits") {
                     $("dialog#credits_dialog").showModal();
+                    $("#credits_ok").focus();
                 }
-                $("#credits_ok").addEventListener('click', function() { $("dialog#credits_dialog").close(); history.pushState("", document.title, window.location.pathname + window.location.search); });
+                $("#credits_ok").addEventListener('click', function() { $("dialog#credits_dialog").close(); });
+                $("dialog#credits_dialog").addEventListener('close', function() { history.pushState("", document.title, window.location.pathname + window.location.search); });
             }
         }
         xhr.open("GET", "json/credits.json", true);
