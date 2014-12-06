@@ -1,6 +1,3 @@
-/*
- * JSON credits. This file includes credits to the Open Source projects which made this extension exist
- */
 {
 	"icon": {
 		"name": "Metro Uinvert Dock Icon Set",
@@ -11,7 +8,7 @@
 		"name": "Russian Translation",
 		"url": "https://code.google.com/r/sashasimkin-translateselectedtext/source/detail?r=fc4e58ee0d69929d610a84a7600338e99b9d3d83",
 		"author": "Alexander Simkin"
-	}
+	},
 	"sortable": {
 		"name": "Sortable",
 		"url": "https://github.com/RubaXa/Sortable",

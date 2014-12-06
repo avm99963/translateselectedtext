@@ -63,7 +63,7 @@ button, input, select, option {
 }
 
 /* Dialog */
-dialog {
+dialog#languages_add_dialog {
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -100,4 +100,51 @@ dialog::backdrop {
 	right: 0;
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Credits */
+#credits_container {
+	position: absolute;
+	top: 0px;
+	right: 50px;
+	background: rgb(195, 235, 204);
+	border: solid 1px rgb(139, 139, 139);
+	border-top: 0;
+	border-radius: 0px 0px 5px 5px;
+}
+
+#credits_container a {
+	color: green!important;
+	margin: 0 5px;
+}
+
+dialog#credits_dialog {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -216px;
+	margin-top: -196px;
+	height: 360px;
+	width: 400px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 6px;
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+dialog#credits_dialog .content_area h4 {
+	margin-bottom: 0px;
+}
+
+dialog#credits_dialog .content_area a.homepage {
+	position: absolute;
+	right: 16px;
+	font-size: 14px;
+}
+
+dialog#credits_dialog .content_area p, dialog#credits_dialog .content_area span {
+	font-size: 14px;
+}
+
+dialog#credits_dialog .content_area p.author {
+	margin-top: 7px;
 }

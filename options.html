@@ -7,23 +7,34 @@
 		<script src="js/options.js"></script>
 		<script src="js/sortable.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+
 	</head>
 	<body>
+		<div id="credits_container">
+			<a href="#credits">Credits</a>
+		</div>
+
 		<h1 id="welcome"></h1>
+
 		<p id="introduction"></p>
+
 		<div id="languages_container">
 			<ul id="languages"></ul>
 		</div>
 		<div id="languages_footer">
 			<button id="languages_add">Add</button>
 		</div>
+
 		<h2 id="otheroptionsheader"></h2>
+
 		<div id="otheroptions">
 			<input type="radio" name="uniquetab" id="varioustabs" value=""> <label id="varioustabs_label" for="varioustabs"></label><br>
 			<input type="radio" name="uniquetab" id="uniquetab" value="yep"> <label id="uniquetab_label" for="uniquetab"></label><br>
 			<input type="radio" name="uniquetab" id="panel" value="panel"> <label id="panel_label" for="panel"></label>
 		</div>
+
 		<button id="save"></button>
+
 		<dialog id="languages_add_dialog">
 		  <h3>Add language</h3>
 		  <div class="content_area">
@@ -33,6 +44,14 @@
 		  <div class="action_buttons">
 		    <button id="languages_add_cancel">Cancel</button>
 		    <button id="languages_add_ok">OK</button>
+		  </div>
+		</dialog>
+		<dialog id="credits_dialog">
+		  <h3>Credits</h3>
+		  <div class="content_area">
+		  </div>
+		  <div class="action_buttons">
+		    <button id="credits_ok">OK</button>
 		  </div>
 		</dialog>
 	</body>

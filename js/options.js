@@ -83,8 +83,8 @@ function init() {
         });
 
         // Handling The Dialog
-        $("#languages_add").addEventListener('click', function() { $("dialog").showModal(); });
-        $("#languages_add_cancel").addEventListener('click', function() { $("dialog").close(); });
+        $("#languages_add").addEventListener('click', function() { $("dialog#languages_add_dialog").showModal(); });
+        $("#languages_add_cancel").addEventListener('click', function() { $("dialog#languages_add_dialog").close(); });
         $("#languages_add_ok").addEventListener('click', function() {
             var el = document.createElement('li');
             var language = $("#select_language").value;
@@ -103,6 +103,42 @@ function init() {
             });
             $("dialog").close();
         });
+
+        // About credits...
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var json = JSON.parse(xhr.responseText), printhtml = "";
+                for (var item in json) {
+                    printhtml += "<div>";
+                    if (json[item].url) {
+                        printhtml += "<a href='"+json[item].url+"' class='homepage' target='_blank'>homepage</a>";
+                    }
+                    printhtml += "<h4>"+json[item].name+"</h4>";
+                    if (json[item].author) {
+                        printhtml += "<p class='author'>by "+json[item].author;
+                    }
+                    if (json[item].license) {
+                        printhtml += " – "+json[item].license+"</p>";
+                    } else {
+                        printhtml += "</p>";
+                    }
+                    printhtml += "</div>";
+                }
+                $("dialog#credits_dialog .content_area").innerHTML = printhtml;
+                window.onhashchange = function() {
+                    if (location.hash == "#credits") {
+                        $("dialog#credits_dialog").showModal();
+                    }
+                }
+                if (location.hash == "#credits") {
+                    $("dialog#credits_dialog").showModal();
+                }
+                $("#credits_ok").addEventListener('click', function() { $("dialog#credits_dialog").close(); history.pushState("", document.title, window.location.pathname + window.location.search); });
+            }
+        }
+        xhr.open("GET", "json/credits.json", true);
+        xhr.send();
 
         // Print language list in the modal dialog
         print_list_modal();
