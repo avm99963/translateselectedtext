@@ -20,7 +20,15 @@ function i18n() {
     $("#varioustabs_label").innerHTML = chrome.i18n.getMessage("options_tabsoption_1");
     $("#uniquetab_label").innerHTML = chrome.i18n.getMessage("options_tabsoption_2");
     $("#panel_label").innerHTML = chrome.i18n.getMessage("options_tabsoption_3");
+    $("#languages_add").innerHTML = chrome.i18n.getMessage("options_addlanguage_addbutton");
     $("#save").innerHTML = chrome.i18n.getMessage("options_savebutton");
+    $("#credits").innerHTML = chrome.i18n.getMessage("options_credits");
+    $("#credits_dialog h3").innerHTML = chrome.i18n.getMessage("options_credits");
+    $("#languages_add_ok").innerHTML = chrome.i18n.getMessage("options_ok");
+    $("#languages_add_cancel").innerHTML = chrome.i18n.getMessage("options_cancel");
+    $("#credits_ok").innerHTML = chrome.i18n.getMessage("options_ok");
+    $("#languages_add_dialog h3").innerHTML = chrome.i18n.getMessage("options_addlanguage");
+    $("#language_label").innerHTML = chrome.i18n.getMessage("options_language_label");
 }
 
 function print_list_modal() {
@@ -112,11 +120,11 @@ function init() {
                 for (var item in json) {
                     printhtml += "<div>";
                     if (json[item].url) {
-                        printhtml += "<a href='"+json[item].url+"' class='homepage' target='_blank'>homepage</a>";
+                        printhtml += "<a href='"+json[item].url+"' class='homepage' target='_blank'>"+chrome.i18n.getMessage("options_credits_homepage")+"</a>";
                     }
                     printhtml += "<h4>"+json[item].name+"</h4>";
                     if (json[item].author) {
-                        printhtml += "<p class='author'>by "+json[item].author;
+                        printhtml += "<p class='author'>"+chrome.i18n.getMessage("options_credits_by")+" "+json[item].author;
                     }
                     if (json[item].license) {
                         printhtml += " – "+json[item].license+"</p>";

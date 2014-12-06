@@ -61,6 +61,38 @@
 		"message": "Desar",
 		"description": "Save button in the settings app"
 	},
+	"options_addlanguage": {
+		"message": "Afegir idioma",
+		"description": "Title for the 'Add language' dialog"
+	},
+	"options_addlanguage_addbutton": {
+		"message": "Afegeix",
+		"description": "Add button in the footer of the languages list"
+	},
+	"options_language_label": {
+		"message": "Idioma:",
+		"description": "Label for the language selector in the 'Add language' dialog"
+	},
+	"options_credits" : {
+		"message": "Crèdits",
+		"description": "Title for the credits link and dialog"
+	},
+	"options_credits_homepage": {
+		"message": "pàgina web",
+		"description": "Homepage link for an item in the credits. NOTE: put in in lowercase letters"
+	},
+	"options_credits_by": {
+		"message": "",
+		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
+	},
+	"options_ok": {
+		"message": "OK",
+		"description": "OK button in the dialogs"
+	},
+	"options_cancel": {
+		"message": "Cancel·lar",
+		"description": "Cancel button in the dialogs"
+	},
 	"notification_install_title": { "message": "Gràcies per instal·lar 'Traduïr Text Seleccionat'" },
 	"notification_install_message": { "message": "Fes clic en aquesta notificació per a configurar l'extensión." },
 	"notification_upgradedtostorage_title": { "message": "'Traduïr Text Seleccionat' s'ha actualizat a v0.6!" },
