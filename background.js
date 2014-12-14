@@ -106,7 +106,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 				chrome.storage.sync.set(settings, function() {
 					chrome.notifications.create("install", {
 						type: "basic",
-						iconUrl: "translate-128.png",
+						iconUrl: "icons/translate-128.png",
 						title: chrome.i18n.getMessage("notification_install_title"),
 						message: chrome.i18n.getMessage("notification_install_message"),
 						isClickable: true
@@ -124,7 +124,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 				chrome.storage.sync.set(settings, function() {
 					chrome.notifications.create("upgradedtostorage", {
 						type: "basic",
-						iconUrl: "translate-128.png",
+						iconUrl: "icons/translate-128.png",
 						title: chrome.i18n.getMessage("notification_upgradedtostorage_title"),
 						message: chrome.i18n.getMessage("notification_upgradedtostorage_message"),
 						isClickable: true
@@ -139,7 +139,15 @@ chrome.runtime.onInstalled.addListener(function(details) {
 					i++;
 				}
 				delete(items.languages);
-				chrome.storage.sync.set(items);
+				chrome.storage.sync.set(items, function() {
+					chrome.notifications.create("reorder", {
+						type: "basic",
+						iconUrl: "icons/translate-128.png",
+						title: chrome.i18n.getMessage("notification_reorder_title"),
+						message: chrome.i18n.getMessage("notification_reorder_message"),
+						isClickable: true
+					}, function(id) {});
+				});
 			}
 		}
 	});
@@ -167,6 +175,10 @@ chrome.notifications.onClicked.addListener(function(notification_id) {
 		break;
 
 		case "upgradedtostorage":
+		click2();
+		break;
+
+		case "reorder":
 		click2();
 		break;
 	}

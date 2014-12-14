@@ -96,5 +96,7 @@
 	"notification_install_title": { "message": "Thanks for installing 'Translate Selected Text'" },
 	"notification_install_message": { "message": "Click this notification to set it up." },
 	"notification_upgradedtostorage_title": { "message": "'Translate Selected Text' was updated to v0.6!" },
-	"notification_upgradedtostorage_message": { "message": "Now your options will be synced across all your devices! The bad side is that you have to set up the extension again :-( Click this notification to set it up." }
+	"notification_upgradedtostorage_message": { "message": "Now your options will be synced across all your devices! The bad side is that you have to set up the extension again :-( Click this notification to set it up." },
+	"notification_reorder_title": { "message": "'Translate Selected Text' was updated to v0.7!" },
+	"notification_reorder_message": { "message": "Now you can configure in which order you want the languages to appear in the context menu. " }
 }
