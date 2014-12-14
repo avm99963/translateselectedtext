@@ -21,6 +21,7 @@ h2 {
 	height: 365px;
 	border: 1px solid #ccc;
 	background-color: #E3F2FD;
+	overflow: auto;
 }
 #languages {
 	list-style: none;

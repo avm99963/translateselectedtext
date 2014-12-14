@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_appBetaName__",
   "description": "__MSG_appDescription__",
-  "version": "0.7.2",
+  "version": "0.7.2.1",
   "permissions": [
     "contextMenus",
     "storage",
