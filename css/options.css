@@ -1,4 +1,4 @@
-@import url("widgets.css");
+/*@import url("widgets.css");*/
 
 body {
 	padding: 10px;
@@ -6,8 +6,9 @@ body {
 	background-color: #BBDEFB;
 	background-repeat: repeat;
 	background-position: left top;
-	font-size: 100%;
+	font-size: 90%;
 	cursor: default;
+	min-width: 400px;
 }
 h1 {
 	text-align: center;
@@ -148,4 +149,9 @@ dialog#credits_dialog .content_area p, dialog#credits_dialog .content_area span 
 
 dialog#credits_dialog .content_area p.author {
 	margin-top: 7px;
+}
+
+#otheroptions p {
+	margin-top: 0;
+	margin-bottom: 0;
 }
