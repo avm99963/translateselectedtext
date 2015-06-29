@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_appBetaName__",
   "description": "__MSG_appDescription__",
-  "version": "0.7.2.2",
+  "version": "0.7.2.3",
   "permissions": [
     "contextMenus",
     "storage",
@@ -16,7 +16,8 @@
     "256": "icons/translate-256.png"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": false
   },
   "options_page": "options.html",
   "options_ui": {

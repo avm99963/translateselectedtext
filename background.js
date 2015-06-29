@@ -45,9 +45,14 @@ function click(info, tab) {
 }
 
 function click2(info, tab) {
-	chrome.tabs.create({'url': 'chrome-extension://'+chrome.i18n.getMessage("@@extension_id")+'/options.html', 'active': true}, function(tab) {
-		chrome.windows.update(tab.windowId, {'focused': true}, function() {});
-	});
+	if (chrome.runtime.openOptionsPage) {
+		// New way to open options pages, if supported (Chrome 42+).
+		chrome.runtime.openOptionsPage();
+	} else {
+		chrome.tabs.create({'url': 'chrome-extension://'+chrome.i18n.getMessage("@@extension_id")+'/options.html', 'active': true}, function(tab) {
+			chrome.windows.update(tab.windowId, {'focused': true}, function() {});
+		});
+	}
 
 }
 
@@ -71,26 +76,26 @@ function createmenus() {
 				var language = items.translateinto[language_id];
 				var languagem = isoLangs[language];
 				var title = languagem.name + " ("+languagem.nativeName+")";
-				var parent = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_title2", languagem.name), "contexts": ["selection"], "onclick": click});
+				var parent = chrome.contextMenus.create({"id": "tr_single_parent", "title": chrome.i18n.getMessage("contextmenu_title2", languagem.name), "contexts": ["selection"]}); // TODO: implement onclick click
 				array_elements[parent] = new Array();
 				array_elements[parent]["langCode"] = language;
 				array_elements[parent]["langName"] = languagem.name;
 				array_elements[parent]["langNativeName"] = language.nativeName;
 			}
 		} else {
-			var parent = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_title"), "contexts": ["selection"]});
+			var parent = chrome.contextMenus.create({"id": "parent", "title": chrome.i18n.getMessage("contextmenu_title"), "contexts": ["selection"]});
 			for (var language_id in items.translateinto) {
 				var language = items.translateinto[language_id];
 				var languagem = isoLangs[language];
 				var title = languagem.name + " ("+languagem.nativeName+")";
-				var id = chrome.contextMenus.create({"title": title, "parentId": parent, "contexts":["selection"], "onclick": click});
+				var id = chrome.contextMenus.create({"id": "tr_language_"+language, "title": title, "parentId": parent, "contexts":["selection"]}); // TODO: implement onclick click
 				array_elements[id] = new Array();
 				array_elements[id]["langCode"] = language;
 				array_elements[id]["langName"] = languagem.name;
 				array_elements[id]["langNativeName"] = language.nativeName;
 			}
-			var id = chrome.contextMenus.create({"type": "separator","parentId": parent, "contexts":["selection"], "onclick": click2});
-			var id = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_edit"), "parentId": parent, "contexts":["selection"], "onclick": click2});
+			var id = chrome.contextMenus.create({"id": "tr_separator", "type": "separator","parentId": parent, "contexts":["selection"]});
+			var id = chrome.contextMenus.create({"id": "tr_options", "title": chrome.i18n.getMessage("contextmenu_edit"), "parentId": parent, "contexts":["selection"]}); // TODO: implement onclick click2
 		}
 	});
 }
@@ -163,8 +168,8 @@ chrome.storage.sync.get(null, function(items) {
 		createmenus();
 	} else {
 		chrome.contextMenus.removeAll();
-		var parent = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_title"), "contexts":["selection"]});
-		var id = chrome.contextMenus.create({"title": chrome.i18n.getMessage("contextmenu_edit"), "parentId": parent, "contexts":["selection"], "onclick": click2});
+		var parent = chrome.contextMenus.create({"id": "tr_parent", "title": chrome.i18n.getMessage("contextmenu_title"), "contexts":["selection"]});
+		var id = chrome.contextMenus.create({"id": "tr_options", "title": chrome.i18n.getMessage("contextmenu_edit"), "parentId": parent, "contexts":["selection"]});
 	}
 });
 
@@ -185,4 +190,12 @@ chrome.notifications.onClicked.addListener(function(notification_id) {
 	chrome.notifications.clear(notification_id, function() {
 
 	});
+});
+
+chrome.contextMenus.onClicked.addListener(function(info, tab) {
+	if (info.menuItemId == "tr_options") {
+		click2(info, tab);
+	} else {
+		click(info, tab);
+	}
 });
