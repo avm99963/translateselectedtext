@@ -20,5 +20,11 @@
 		"url": "https://code.google.com/p/chromium/",
 		"author": "The Chromium Authors",
 		"license": "BSD-like License"
+	},
+	"languages": {
+		"name": "What-2-Nite",
+		"url": "https://github.com/enricolucia/what-2-nite/blob/master/isoLangs.json",
+		"author": "Google, Inc.",
+		"license": "MIT License"
 	}
 }
