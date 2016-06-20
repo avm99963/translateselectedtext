@@ -8,7 +8,7 @@
 		"description": "The beta app name"
 	},
 	"appDescription": {
-		"message": "Translate selected text with Google Translator",
+		"message": "Translate selected text with Google Translate",
 		"description": "The app description"
 	},
 	"contextmenu_title": {
@@ -46,15 +46,15 @@
 		"description": "Header of the options page."
 	},
 	"options_tabsoption_1": {
-		"message": "Open Google Translator in a new tab for each translation.",
+		"message": "Open Google Translate in a new tab for each translation.",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
 	"options_tabsoption_2": {
-		"message": "Open Google Translator in a unique tab and override the last translation instead of opening several tabs.",
+		"message": "Open Google Translate in a unique tab and override the last translation instead of opening several tabs.",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
 	"options_tabsoption_3": {
-		"message": "Open Google Translator in a panel and override the last translation (need to activate <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a> flag). <sup style='color:red; font-weight: bold;'>EXPERIMENTAL</sup>",
+		"message": "Open Google Translate in a panel and override the last translation (need to activate <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a> flag). <sup style='color:red; font-weight: bold;'>EXPERIMENTAL</sup>",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
 	"options_savebutton": {
