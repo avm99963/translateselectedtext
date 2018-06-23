@@ -55,9 +55,13 @@
         "name":"Chichewa",
         "nativeName":"chiCheŵa"
     },
-    "zh":{
-        "name":"Chinese",
-        "nativeName":"中文 (Zhōngwén)"
+    "zh-CN":{
+        "name":"Chinese (Simplified)",
+        "nativeName":"簡體中文 (Jiǎn Tǐ Zhōngwén)"
+    },
+    "zh-TW":{
+        "name":"Chinese (Traditional)",
+        "nativeName":"繁體中文 (Fán Tǐ Zhōngwén)"
     },
     "co":{
         "name":"Corsican",
