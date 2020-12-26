@@ -17,7 +17,10 @@
     "256": "icons/translate-256.png"
   },
   "background": {
-    "scripts": ["background.js"],
+    "scripts": [
+      "js/common.js",
+      "background.js"
+    ],
     "persistent": false
   },
   "options_page": "options.html",
@@ -25,5 +28,6 @@
     "page": "options.html",
     "chrome_style": true
   },
+  "browser_action": {},
   "default_locale": "en"
 }
