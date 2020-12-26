@@ -1,30 +1,30 @@
 [
-	{
-		"name": "Metro Uinvert Dock Icon Set",
-		"url": "http://dakirby309.deviantart.com/art/Metro-Uinvert-Dock-Icon-Set-725-Icons-294529071",
-		"author": "dAKirby309"
-	},
-	{
-		"name": "Russian Translation",
-		"url": "https://code.google.com/r/sashasimkin-translateselectedtext/source/detail?r=fc4e58ee0d69929d610a84a7600338e99b9d3d83",
-		"author": "Alexander Simkin"
-	},
-	{
-		"name": "Sortable",
-		"url": "https://github.com/RubaXa/Sortable",
-		"author": "Lebedev Konstantin",
-		"license": "MIT License"
-	},
-	{
-		"name": "Chromium",
-		"url": "https://code.google.com/p/chromium/",
-		"author": "The Chromium Authors",
-		"license": "BSD-like License"
-	},
-	{
-		"name": "What-2-Nite",
-		"url": "https://github.com/enricolucia/what-2-nite/blob/master/isoLangs.json",
-		"author": "Google, Inc.",
-		"license": "MIT License"
-	}
+  {
+    "name": "Metro Uinvert Dock Icon Set",
+    "url": "http://dakirby309.deviantart.com/art/Metro-Uinvert-Dock-Icon-Set-725-Icons-294529071",
+    "author": "dAKirby309"
+  },
+  {
+    "name": "Russian Translation",
+    "url": "https://code.google.com/r/sashasimkin-translateselectedtext/source/detail?r=fc4e58ee0d69929d610a84a7600338e99b9d3d83",
+    "author": "Alexander Simkin"
+  },
+  {
+    "name": "Sortable",
+    "url": "https://github.com/RubaXa/Sortable",
+    "author": "Lebedev Konstantin",
+    "license": "MIT License"
+  },
+  {
+    "name": "Chromium",
+    "url": "https://code.google.com/p/chromium/",
+    "author": "The Chromium Authors",
+    "license": "BSD-like License"
+  },
+  {
+    "name": "What-2-Nite",
+    "url": "https://github.com/enricolucia/what-2-nite/blob/master/isoLangs.json",
+    "author": "Google, Inc.",
+    "license": "MIT License"
+  }
 ]

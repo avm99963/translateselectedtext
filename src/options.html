@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Options</title>
-		<link rel="stylesheet" type="text/css" href="css/options.css">
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
-	</head>
-	<body>
-		<div id="credits_container">
-			<a href="#credits" id="credits" data-i18n="credits"></a>
-		</div>
 
-		<h1 id="welcome" data-i18n="welcome"></h1>
+<head>
+  <meta charset="UTF-8">
+  <title>Options</title>
+  <link rel="stylesheet" type="text/css" href="css/options.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+</head>
 
-		<p id="introduction" data-i18n="introduction"></p>
+<body>
+  <div id="credits_container">
+    <a href="#credits" id="credits" data-i18n="credits"></a>
+  </div>
 
-		<div id="languages_container">
-			<ul id="languages"></ul>
-		</div>
-		<div id="languages_footer">
-			<button id="languages_add" data-i18n="addlanguage_addbutton"></button>
-		</div>
+  <h1 id="welcome" data-i18n="welcome"></h1>
 
-		<h2 id="otheroptionsheader" data-i18n="otheroptionsheader"></h2>
+  <p id="introduction" data-i18n="introduction"></p>
 
-		<div id="otheroptions">
-			<p><input type="radio" name="uniquetab" id="varioustabs" value=""> <label id="varioustabs_label" for="varioustabs" data-i18n="tabsoption_1"></label></p>
-			<p><input type="radio" name="uniquetab" id="uniquetab" value="yep"> <label id="uniquetab_label" for="uniquetab" data-i18n="tabsoption_2"></label></p>
-			<p><input type="radio" name="uniquetab" id="panel" value="panel"> <label id="panel_label" for="panel" data-i18n="tabsoption_3"></label></p>
-		</div>
+  <div id="languages_container">
+    <ul id="languages"></ul>
+  </div>
+  <div id="languages_footer">
+    <button id="languages_add" data-i18n="addlanguage_addbutton"></button>
+  </div>
 
-		<button id="save" data-i18n="savebutton"></button>
+  <h2 id="otheroptionsheader" data-i18n="otheroptionsheader"></h2>
 
-		<dialog id="languages_add_dialog">
-		  <h3 data-i18n="addlanguage"></h3>
-		  <div class="content_area">
-		    <label id="language_label" for="select_language" data-i18n="language_label"></label>
-		    <select id="select_language"></select>
-		  </div>
-		  <div class="action_buttons">
-		    <button id="languages_add_cancel" data-i18n="cancel"></button>
-		    <button id="languages_add_ok" data-i18n="ok"></button>
-		  </div>
-		</dialog>
-		<dialog id="credits_dialog">
-		  <h3 data-i18n="credits"></h3>
-		  <div class="content_area">
-		  </div>
-		  <div class="action_buttons">
-		    <button id="credits_ok" data-i18n="ok"></button>
-		  </div>
-		</dialog>
+  <div id="otheroptions">
+    <p><input type="radio" name="uniquetab" id="varioustabs" value=""> <label id="varioustabs_label" for="varioustabs" data-i18n="tabsoption_1"></label></p>
+    <p><input type="radio" name="uniquetab" id="uniquetab" value="yep"> <label id="uniquetab_label" for="uniquetab" data-i18n="tabsoption_2"></label></p>
+    <p><input type="radio" name="uniquetab" id="panel" value="panel"> <label id="panel_label" for="panel" data-i18n="tabsoption_3"></label></p>
+  </div>
 
-    <script src="js/common.js"></script>
-    <script src="js/options.js"></script>
-		<script src="js/sortable.js"></script>
-	</body>
+  <button id="save" data-i18n="savebutton"></button>
+
+  <dialog id="languages_add_dialog">
+    <h3 data-i18n="addlanguage"></h3>
+    <div class="content_area">
+      <label id="language_label" for="select_language" data-i18n="language_label"></label>
+      <select id="select_language"></select>
+    </div>
+    <div class="action_buttons">
+      <button id="languages_add_cancel" data-i18n="cancel"></button>
+      <button id="languages_add_ok" data-i18n="ok"></button>
+    </div>
+  </dialog>
+  <dialog id="credits_dialog">
+    <h3 data-i18n="credits"></h3>
+    <div class="content_area">
+    </div>
+    <div class="action_buttons">
+      <button id="credits_ok" data-i18n="ok"></button>
+    </div>
+  </dialog>
+
+  <script src="js/common.js"></script>
+  <script src="js/options.js"></script>
+  <script src="js/sortable.js"></script>
+</body>
+
 </html>
