@@ -1,0 +1,15 @@
+root = true
+
+[*]
+end_of_line = lf
+insert_final_line = true
+charset = utf-8
+
+[*.{sh,bash}]
+indent_style = space
+indent_size = 2
+switch_case_indent = true
+
+[*.{html,css,js,json}]
+indent_style = space
+indent_size = 2
