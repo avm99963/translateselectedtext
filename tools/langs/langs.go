@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 )
 
 const isoLangsFileName = "isoLangs.json"
@@ -21,6 +22,12 @@ func getLanguage(isoLangs map[string]Language, lang string) (Language, error) {
 	for currLangCode, currLang := range isoLangs {
 		if currLangCode == lang {
 			currLang.CodeName = lang
+
+			// Only consider the first entry of the list (e.g. "a, b, c" --> "a")
+			if index := strings.Index(currLang.NativeName, ","); index > 0 {
+				currLang.NativeName = currLang.NativeName[:index]
+			}
+
 			return currLang, nil
 		}
 	}

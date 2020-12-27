@@ -20,15 +20,22 @@ function i18n() {
 function printListModal() {
   $('#select_language').textContent = '';
   var heysortable = sortable.toArray();
-  for (var language in isoLangs) {
-    if (!inArray(language, heysortable)) {
+  var languages = [];
+  for (var langCode of Object.keys(isoLangs)) {
+    var l = isoLangs[langCode];
+    l['code'] = langCode;
+    languages.push(l);
+  }
+
+  languages.sort((a, b) => a.name < b.name ? -1 : (a.name > b.name ? 1 : 0));
+  languages.forEach(language => {
+    if (!inArray(language['code'], heysortable)) {
       var el = document.createElement('option');
-      el.setAttribute('value', language);
-      el.innerText = isoLangs[language]['name'] + ' (' +
-          isoLangs[language]['nativeName'] + ')';
+      el.setAttribute('value', language['code']);
+      el.textContent = language['name'] + ' (' + language['nativeName'] + ')';
       $('#select_language').appendChild(el);
     }
-  }
+  });
 }
 
 function init() {
