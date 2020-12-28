@@ -18,5 +18,5 @@ permissions.
 * Alexander Simkin for the Russian translation.
 * BrowserStack for allowing me to use their awesome services in order to test the extension in multiple versions of Chrome and in different operating systems.
 
-## More documents
+## More documents
 * [For developers working on the extension](docs/development.md)
