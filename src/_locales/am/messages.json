@@ -1,0 +1,56 @@
+{
+	"appName": {
+		"message": "የተመረጠ ጽሁፍ ተርጉም",
+		"description": "The app name"
+	},
+	"appBetaName": {
+		"message": "የተመረጠ ጽሁፍ ተርጉም (ቤታ)",
+		"description": "The beta app name"
+	},
+	"appDescription": {
+		"message": "የተመረጠውን ጽሑፍ በ ጉግል ትራንስሌት ይተርጉሙ",
+		"description": "The app description"
+	},
+	"contextmenu_title": {
+		"message": "የተመረጠውን ወደ ... ተርጉም",
+		"description": "Title of the context menu that appears when a right click is done. Inside this parent menu there are the menus"
+	},
+	"contextmenu_title2": {
+		"message": "የተመረጠውን ወደ  '$language$' ተርጉም",
+		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
+		"placeholders": {
+			"language": {
+				"content": "$1",
+				"example": "Language to translate into."
+			}
+		}
+	},
+	"contextmenu_edit": {
+		"message": "ቋንቋዎችን አርትዕ...",
+		"description": "Title of the option inside the 'Translate section into...' context menu."
+	},
+	"options_welcome": {
+		"message": "እንኳን ደህና መጡ!",
+		"description": "Title of the options page"
+	},
+	"options_introduction": {
+		"message": "እባክዎ \"ትርጉም\" ዝርዝር ውስጥ ለማየት የሚፈልጉትን ቋንቋዎች ይምረጡ ።",
+		"description": "Introduction paragraph to the options pages"
+	},
+	"options_languageselectheader": {
+		"message": "ቋንቋዎች ፦",
+		"description": "Header of the language select option."
+	},
+	"options_otheroptionsheader": {
+		"message": "ሌሎች አማራጮች ፥",
+		"description": "Header of the options page."
+	},
+	"options_tabsoption_1": {
+		"message": "ለእያንዳንዱ ትርጉም የ ጉግል ትራንስሌትን በአዲስ ትር ይክፈቱ ።",
+		"description": "Option which defines how should the app behave in relation to tabs."
+	},
+	"options_tabsoption_2": {
+		"message": "ጉግል ትራንስሌትን በልዩ ትርታ ይክፈቱ እና በርካታ ትሮችን ከመክፈት ይልቅ የመጨረሻውን ትርጉም ይለውጡ።",
+		"description": "Option which defines how should the app behave in relation to tabs."
+	}
+}

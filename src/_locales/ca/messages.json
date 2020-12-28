@@ -1,68 +1,68 @@
 {
 	"appName": {
-		"message": "Traduïr Text Seleccionat",
+		"message": "Traduir Text Seleccionat",
 		"description": "The app name"
 	},
 	"appBetaName": {
-		"message": "Traduïr Text Seleccionat (Beta)",
+		"message": "Traduir Text Seleccionat (Beta)",
 		"description": "The beta app name"
 	},
-	"appDescription" : {
-		"message": "Tradueix el text que seleccionis amb el Traductor de Google",
+	"appDescription": {
+		"message": "Tradueix el text que seleccionis amb el traductor de Google",
 		"description": "The app description"
 	},
-	"contextmenu_title" : {
+	"contextmenu_title": {
 		"message": "Tradueix la selecció al...",
-		"description": "Title of the context menu that appears when a right click is done. Inside this prent menu there are the menus"
+		"description": "Title of the context menu that appears when a right click is done. Inside this parent menu there are the menus"
 	},
-	"contextmenu_title2" : {
+	"contextmenu_title2": {
 		"message": "Tradueix la selecció a '$language$'",
 		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
 		"placeholders": {
-          "language": {
-            "content": "$1",
-            "example": "Language to translate into."
-          }
-        }
+			"language": {
+				"content": "$1",
+				"example": "Language to translate into."
+			}
+		}
 	},
-	"contextmenu_edit" : {
-		"message": "Edita idiomes...",
+	"contextmenu_edit": {
+		"message": "Modifica els idiomes...",
 		"description": "Title of the option inside the 'Translate section into...' context menu."
 	},
-	"options_welcome" : {
-		"message": "Benvingut!",
+	"options_welcome": {
+		"message": "Benvinguda!",
 		"description": "Title of the options page"
 	},
-	"options_introduction" : {
-		"message": "Si us plau, selecciona els idiomes que vols que surtin al menú \"traduïr\".",
+	"options_introduction": {
+		"message": "Si us plau, selecciona els idiomes que vols que surtin al menú \"traduir\".",
 		"description": "Introduction paragraph to the options pages"
 	},
-	"options_languageselectheader" : {
+	"options_languageselectheader": {
 		"message": "Idiomes:",
 		"description": "Header of the language select option."
 	},
-	"options_otheroptionsheader" : {
+	"options_otheroptionsheader": {
 		"message": "Altres opcions:",
 		"description": "Header of the options page."
 	},
-	"options_tabsoption_1" : {
-		"message": "Obre Google Traductor en una nova pestanya per a cada traducció.",
+	"options_tabsoption_1": {
+		"message": "Obre Google Traductor en una pestanya nova per a cada traducció.",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
-	"options_tabsoption_2" : {
-		"message": "Obre Google Traductor en una única pestanya i reemplaça l'última traducció en comptes d'obrir varies pestanyes.",
+	"options_tabsoption_2": {
+		"message": "Obre Google Traductor en una única pestanya i reemplaça l'última traducció en comptes d'obrir diverses pestanyes.",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
-	"options_tabsoption_3" : {
-		"message": "Obre Google Traductor en un panel i reemplaça l'última traducció (fa falta activar la bandera <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a>). <sup style='color:red; font-weight: bold;'>EXPERIMENTAL</sup>",
+	"options_tabsoption_3": {
+		"message": "Obre Google Traductor en un panell (fa falta activar la bandera <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a>). <sup style='color:red; font-weight: bold;'>EXPERIMENTAL</sup>",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
-	"options_savebutton" : {
-		"message": "Desar",
-		"description": "Save button in the settings app"
+	"options_savebutton": {
+		"message": "Desa",
+		"description": "Save button in the settings page"
 	},
 	"options_addlanguage": {
-		"message": "Afegir idioma",
+		"message": "Afegeix un idioma",
 		"description": "Title for the 'Add language' dialog"
 	},
 	"options_addlanguage_addbutton": {
@@ -73,7 +73,7 @@
 		"message": "Idioma:",
 		"description": "Label for the language selector in the 'Add language' dialog"
 	},
-	"options_credits" : {
+	"options_credits": {
 		"message": "Crèdits",
 		"description": "Title for the credits link and dialog"
 	},
@@ -82,21 +82,33 @@
 		"description": "Homepage link for an item in the credits. NOTE: put in in lowercase letters"
 	},
 	"options_credits_by": {
-		"message": "",
+		"message": "per",
 		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
 	},
 	"options_ok": {
-		"message": "OK",
+		"message": "D'acord",
 		"description": "OK button in the dialogs"
 	},
 	"options_cancel": {
 		"message": "Cancel·lar",
 		"description": "Cancel button in the dialogs"
 	},
-	"notification_install_title": { "message": "Gràcies per instal·lar 'Traduïr Text Seleccionat'" },
-	"notification_install_message": { "message": "Fes clic en aquesta notificació per a configurar l'extensión." },
-	"notification_upgradedtostorage_title": { "message": "'Traduïr Text Seleccionat' s'ha actualizat a v0.6!" },
-	"notification_upgradedtostorage_message": { "message": "Ara la configuració es sincronitzarà en tots els teus dispositius! La part dolenta és que has de configurar l'extensión una altra vegada :-( Fes clic en aquesta notificación per a configurar-la." },
-	"notification_reorder_title": { "message": "'Traduïr Text Seleccionat' s'ha actualizat a v0.7!" },
-	"notification_reorder_message": { "message": "Ara pots configurar en quin ordre vols que apareixin els idiomes en el menú contextual." }
+	"notification_install_title": {
+		"message": "Gràcies per instal·lar 'Traduir Text Seleccionat'"
+	},
+	"notification_install_message": {
+		"message": "Fes clic en aquesta notificació per a configurar l'extensió."
+	},
+	"notification_upgradedtostorage_title": {
+		"message": "'Traduir Text Seleccionat' s'ha actualizat a v0.6!"
+	},
+	"notification_upgradedtostorage_message": {
+		"message": "Ara la configuració es sincronitzarà en tots els teus dispositius! La part dolenta és que has de configurar l'extensión una altra vegada :-( Fes clic en aquesta notificació per a configurar-la."
+	},
+	"notification_reorder_title": {
+		"message": "'Traduir Text Seleccionat' s'ha actualizat a v0.7!"
+	},
+	"notification_reorder_message": {
+		"message": "Ara pots configurar en quin ordre vols que apareixin els idiomes en el menú contextual."
+	}
 }

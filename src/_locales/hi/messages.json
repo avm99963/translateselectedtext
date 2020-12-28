@@ -1,0 +1,114 @@
+{
+	"appName": {
+		"message": "Translate Selected Text",
+		"description": "The app name"
+	},
+	"appBetaName": {
+		"message": "Translate Selected Text (बीटा)",
+		"description": "The beta app name"
+	},
+	"appDescription": {
+		"message": "Google Translate के साथ चयनित पाठ का अनुवाद करें",
+		"description": "The app description"
+	},
+	"contextmenu_title": {
+		"message": "चयन का अनुवाद करें इसमें...",
+		"description": "Title of the context menu that appears when a right click is done. Inside this parent menu there are the menus"
+	},
+	"contextmenu_title2": {
+		"message": "चयन का अनुवाद '$language$' में करें",
+		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
+		"placeholders": {
+			"language": {
+				"content": "$1",
+				"example": "Language to translate into."
+			}
+		}
+	},
+	"contextmenu_edit": {
+		"message": "भाषाएं संपादित करें...",
+		"description": "Title of the option inside the 'Translate section into...' context menu."
+	},
+	"options_welcome": {
+		"message": "स्वागत हे!",
+		"description": "Title of the options page"
+	},
+	"options_introduction": {
+		"message": "कृप्या, उन भाषाओं का चयन करे जिन्हें आप \"अनुवाद\" मेनू में देखना चाहते हैं।",
+		"description": "Introduction paragraph to the options pages"
+	},
+	"options_languageselectheader": {
+		"message": "भाषाएँ:",
+		"description": "Header of the language select option."
+	},
+	"options_otheroptionsheader": {
+		"message": "दूसरे विकल्प:",
+		"description": "Header of the options page."
+	},
+	"options_tabsoption_1": {
+		"message": "हर एक अनुवाद के लिए Google Translate को एक नया टैब में खोलें।",
+		"description": "Option which defines how should the app behave in relation to tabs."
+	},
+	"options_tabsoption_2": {
+		"message": "Google ट्रांसलेट को एक अद्वितीय टैब में खोलें और पिछले अनुवाद को ओवरराइड करें कई टैब खोलने के बजाय|",
+		"description": "Option which defines how should the app behave in relation to tabs."
+	},
+	"options_tabsoption_3": {
+		"message": "Google ट्रांसलेट को एक पैनल में खोलें (आपको सक्रिय करना होगा <a href='chrome://flags/#enable-panels' id='panelsflag'>--पैनलों को सक्षम करें</a>फ्लैग)| <sup style='color:red; font-weight: bold;'>प्रयोगात्मक</sup>",
+		"description": "Option which defines how should the app behave in relation to tabs."
+	},
+	"options_savebutton": {
+		"message": "सहेजें",
+		"description": "Save button in the settings page"
+	},
+	"options_addlanguage": {
+		"message": "भाषा जोड़ें",
+		"description": "Title for the 'Add language' dialog"
+	},
+	"options_addlanguage_addbutton": {
+		"message": "जोड़ें",
+		"description": "Add button in the footer of the languages list"
+	},
+	"options_language_label": {
+		"message": "भाषा:",
+		"description": "Label for the language selector in the 'Add language' dialog"
+	},
+	"options_credits": {
+		"message": "क्रेडिट",
+		"description": "Title for the credits link and dialog"
+	},
+	"options_credits_homepage": {
+		"message": "होमपेज",
+		"description": "Homepage link for an item in the credits. NOTE: put in in lowercase letters"
+	},
+	"options_credits_by": {
+		"message": "द्वारा",
+		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
+	},
+	"options_ok": {
+		"message": "ठीक है",
+		"description": "OK button in the dialogs"
+	},
+	"options_cancel": {
+		"message": "रद्द करें",
+		"description": "Cancel button in the dialogs"
+	},
+	"notification_install_title": {
+		"message": "'Translate Selected Text' इंस्टॉल करने के लिए धन्यवाद"
+	},
+	"notification_install_message": {
+		"message": "इस नोटिफिकेशन को क्लिक करें इसे सेट अप करने के लिए|"
+	},
+	"notification_upgradedtostorage_title": {
+		"message": "'Translate Selected Text' v0.6 में अपडेट किया गया!"
+	},
+	"notification_upgradedtostorage_message": {
+		"message": "अब आपके विकल्प आपके सभी उपकरणों पर सिंक कर दिए जायेंगे! बुरा पक्ष है कि आपको एक्सटेंशन को फिर से सेट करना पड़ेगा :-( इस नोटिफिकेशन पर क्लिक करें इसे सेट अप करने के लिए ।"
+	},
+	"notification_reorder_title": {
+		"message": "'Translate Selected Text' v0.7 में अपडेट किया गया!"
+	},
+	"notification_reorder_message": {
+		"message": "अब आप यह कॉन्फ़िगर कर सकते हैं की संदर्भ मेनू में किस क्रम में भाषाएं प्रकट होंगी| "
+	}
+}

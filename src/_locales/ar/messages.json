@@ -1,22 +1,22 @@
 {
 	"appName": {
-		"message": "Traducir Texto Seleccionado",
+		"message": "ترجمة النص المحدد",
 		"description": "The app name"
 	},
 	"appBetaName": {
-		"message": "Traducir Texto Seleccionado (Beta)",
+		"message": "ترجمة النص المحدد (تجريبي)",
 		"description": "The beta app name"
 	},
 	"appDescription": {
-		"message": "Traduce el texto que selecciones con el Traductor de Google.",
+		"message": "ترجمة النص المحدد مع ترجمة جوجل",
 		"description": "The app description"
 	},
 	"contextmenu_title": {
-		"message": "Traducir selección al...",
+		"message": "ترجمة المحدد إلى...",
 		"description": "Title of the context menu that appears when a right click is done. Inside this parent menu there are the menus"
 	},
 	"contextmenu_title2": {
-		"message": "Traducir selección al '$language$'",
+		"message": "ترجمة التحديد إلى '$language$'",
 		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
 		"placeholders": {
 			"language": {
@@ -26,89 +26,89 @@
 		}
 	},
 	"contextmenu_edit": {
-		"message": "Modifica idiomas...",
+		"message": "تحرير لغات...",
 		"description": "Title of the option inside the 'Translate section into...' context menu."
 	},
 	"options_welcome": {
-		"message": "¡Bienvenido!",
+		"message": "مرحبا!",
 		"description": "Title of the options page"
 	},
 	"options_introduction": {
-		"message": "Por favor, selecciona los idiomas que quieres que se muestren en el menú \"traducir\".",
+		"message": "من فضلك، حدد اللغات التي تريد أن تظهر في قائمة\"ترجمة\".",
 		"description": "Introduction paragraph to the options pages"
 	},
 	"options_languageselectheader": {
-		"message": "Idiomas:",
+		"message": "اللغات:",
 		"description": "Header of the language select option."
 	},
 	"options_otheroptionsheader": {
-		"message": "Otras opciones:",
+		"message": "خيارات أخرى:",
 		"description": "Header of the options page."
 	},
 	"options_tabsoption_1": {
-		"message": "Abre Google Traductor en una nueva pestaña para cada traducción.",
+		"message": "افتح ترجمة جوجل في علامة تبويب جديدة لكل ترجمة.",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
 	"options_tabsoption_2": {
-		"message": "Abre Google Traductor en una única pestaña y reemplaza la última traducción en vez de abrir varias pestañas.",
+		"message": "افتح جوجل ترجمة في علامة تبويب فريدة وتجاوز الترجمة الآخرى بدلاً من فتح العديد من علامات التبويب.",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
 	"options_tabsoption_3": {
-		"message": "Abre Google Traductor en un panel (hace falta activar la bandera <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a>). <sup style='color:red; font-weight: bold;'>EXPERIMENTAL</sup>",
+		"message": "افتح جوجل ترجمة في لوحة (أنت بحاجة إلى تنشيط <a href='chrome://flags/#enable-panels' id='panelsflag'>-تمكين-اللوحات</a> علم). <sup style='color:red; font-weight: bold;'> التجريبية</sup>",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
 	"options_savebutton": {
-		"message": "Guardar",
+		"message": "حفظ",
 		"description": "Save button in the settings page"
 	},
 	"options_addlanguage": {
-		"message": "Añadir idioma",
+		"message": "إضافة لغة",
 		"description": "Title for the 'Add language' dialog"
 	},
 	"options_addlanguage_addbutton": {
-		"message": "Añade",
+		"message": "إضافة",
 		"description": "Add button in the footer of the languages list"
 	},
 	"options_language_label": {
-		"message": "Idioma:",
+		"message": "اللغة:",
 		"description": "Label for the language selector in the 'Add language' dialog"
 	},
 	"options_credits": {
-		"message": "Créditos",
+		"message": "إعتمادات",
 		"description": "Title for the credits link and dialog"
 	},
 	"options_credits_homepage": {
-		"message": "página web",
+		"message": "الصفحة الرئيسية",
 		"description": "Homepage link for an item in the credits. NOTE: put in in lowercase letters"
 	},
 	"options_credits_by": {
-		"message": "por",
+		"message": "بواسطة",
 		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
 	},
 	"options_ok": {
-		"message": "Aceptar",
+		"message": "موافق",
 		"description": "OK button in the dialogs"
 	},
 	"options_cancel": {
-		"message": "Cancelar",
+		"message": "إلغاء",
 		"description": "Cancel button in the dialogs"
 	},
 	"notification_install_title": {
-		"message": "Gracias por instalar 'Traducir Texto Seleccionado'"
+		"message": "شكرا لتثبيت '\"ترجمة النص المحدد\"'"
 	},
 	"notification_install_message": {
-		"message": "Haz clic en esta notificación para configurar la extensión."
+		"message": "انقر فوق هذا الإشعار لإعداده."
 	},
 	"notification_upgradedtostorage_title": {
-		"message": "'Traducir Texto Seleccionado' se ha actualizado a v0.6!"
+		"message": "تم تحديث \"ترجمة النص المحدد\" إلى v0.6!"
 	},
 	"notification_upgradedtostorage_message": {
-		"message": "¡Ahora la configuración se sincronizará en todos tus dispositivos! La parte mala es que tienes que configurar la extensión otra vez :-( Haz clic en esta notificación para configurarla."
+		"message": "الآن سوف يتم مزامنة خياراتك عبر كافة الأجهزة الخاصة بك! الجانب السيئ أنه يجب أن تعد الإضافة مرة أخرى:-( انقر فوق هذا الإشعار لإعداده."
 	},
 	"notification_reorder_title": {
-		"message": "'Traducir Texto Seleccionado' se ha actualizado a v0.7!"
+		"message": "تم تحديث \"ترجمة النص المحدد\" إلى v0.7!"
 	},
 	"notification_reorder_message": {
-		"message": "Ahora puedes configurar en qué orden quieres que aparezcan los idiomas en el menú contextual."
+		"message": "الآن يمكنك تهيئة الترتيب الذي تريده للغات التي تظهر في قائمة السياق. "
 	}
 }

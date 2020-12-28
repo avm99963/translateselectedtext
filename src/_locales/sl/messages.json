@@ -1,102 +1,114 @@
 {
 	"appName": {
-		"message": "Translate Selected Text",
+		"message": "Prevedi izbrano besedilo",
 		"description": "The app name"
 	},
 	"appBetaName": {
-		"message": "Translate Selected Text (Beta)",
+		"message": "Prevedi izbrano besedilo (Beta)",
 		"description": "The beta app name"
 	},
 	"appDescription": {
-		"message": "Translate selected text with Google Translate",
+		"message": "Prevedi izbrano besedilo z Google Prevajalnikom",
 		"description": "The app description"
 	},
 	"contextmenu_title": {
-		"message": "Translate selection into...",
+		"message": "Prevedi izbrano v...",
 		"description": "Title of the context menu that appears when a right click is done. Inside this parent menu there are the menus"
 	},
 	"contextmenu_title2": {
-		"message": "Translate selection into '$language$'",
+		"message": "Prevedi izbrano v '$language$'",
 		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
 		"placeholders": {
-          "language": {
-            "content": "$1",
-            "example": "Language to translate into."
-          }
-        }
+			"language": {
+				"content": "$1",
+				"example": "Language to translate into."
+			}
+		}
 	},
 	"contextmenu_edit": {
-		"message": "Edit languages...",
+		"message": "Urejajte jezike...",
 		"description": "Title of the option inside the 'Translate section into...' context menu."
 	},
 	"options_welcome": {
-		"message": "Welcome!",
+		"message": "Dobrodošli!",
 		"description": "Title of the options page"
 	},
 	"options_introduction": {
-		"message": "Please, select the languages you want to show up in the \"translate\" menu.",
+		"message": "Prosimo, izberite jezike, za katere želite, da se pokažejo v meniju \"prevedi\".",
 		"description": "Introduction paragraph to the options pages"
 	},
 	"options_languageselectheader": {
-		"message": "Languages:",
+		"message": "Jeziki:",
 		"description": "Header of the language select option."
 	},
 	"options_otheroptionsheader": {
-		"message": "Other options:",
+		"message": "Druge možnosti:",
 		"description": "Header of the options page."
 	},
 	"options_tabsoption_1": {
-		"message": "Open Google Translate in a new tab for each translation.",
+		"message": "Za vsak prevod odpri Google Prevajalnik v novem zavihku.",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
 	"options_tabsoption_2": {
-		"message": "Open Google Translate in a unique tab and override the last translation instead of opening several tabs.",
+		"message": "Odpri Google Prevajalnik v lastnem zavihku in prikaži samo zadnji prevod, namesto odpiranja več zavihkov.",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
 	"options_tabsoption_3": {
-		"message": "Open Google Translate in a panel (you need to activate <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a> flag). <sup style='color:red; font-weight: bold;'> EXPERIMENTAL</sup>",
+		"message": "Odpri Google prevajalnik na plošči (aktivirati morate zastavo <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a>). <sup style='color:red; font-weight: bold;'>EKSPERIMENTALNO</sup>",
 		"description": "Option which defines how should the app behave in relation to tabs."
 	},
 	"options_savebutton": {
-		"message": "Save",
+		"message": "Shrani",
 		"description": "Save button in the settings page"
 	},
 	"options_addlanguage": {
-		"message": "Add language",
+		"message": "Dodaj jezik",
 		"description": "Title for the 'Add language' dialog"
 	},
 	"options_addlanguage_addbutton": {
-		"message": "Add",
+		"message": "Dodaj",
 		"description": "Add button in the footer of the languages list"
 	},
 	"options_language_label": {
-		"message": "Language:",
+		"message": "Jezik:",
 		"description": "Label for the language selector in the 'Add language' dialog"
 	},
 	"options_credits": {
-		"message": "Credits",
+		"message": "Zasluge",
 		"description": "Title for the credits link and dialog"
 	},
 	"options_credits_homepage": {
-		"message": "homepage",
+		"message": "domača stran",
 		"description": "Homepage link for an item in the credits. NOTE: put in in lowercase letters"
 	},
 	"options_credits_by": {
-		"message": "by",
+		"message": "avtorja/ice",
 		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
 	},
 	"options_ok": {
-		"message": "OK",
+		"message": "V redu",
 		"description": "OK button in the dialogs"
 	},
 	"options_cancel": {
-		"message": "Cancel",
+		"message": "Prekliči",
 		"description": "Cancel button in the dialogs"
 	},
-	"notification_install_title": { "message": "Thanks for installing 'Translate Selected Text'" },
-	"notification_install_message": { "message": "Click this notification to set it up." },
-	"notification_upgradedtostorage_title": { "message": "'Translate Selected Text' was updated to v0.6!" },
-	"notification_upgradedtostorage_message": { "message": "Now your options will be synced across all your devices! The bad side is that you have to set up the extension again :-( Click this notification to set it up." },
-	"notification_reorder_title": { "message": "'Translate Selected Text' was updated to v0.7!" },
-	"notification_reorder_message": { "message": "Now you can configure in which order you want the languages to appear in the context menu. " }
+	"notification_install_title": {
+		"message": "Hvala, ker ste namestili 'Translate Selected Text'"
+	},
+	"notification_install_message": {
+		"message": "Kliknite to obvestilo, da jo nastavite."
+	},
+	"notification_upgradedtostorage_title": {
+		"message": "'Translate Selected Text' je bil posodobljen na različico 0.6!"
+	},
+	"notification_upgradedtostorage_message": {
+		"message": "Zdaj bodo vaše možnosti enake na vseh vaših napravah! Slabost tega je, da morate žal to razširitev ponovno nastaviti :-( Kliknite to obvestilo, da jo nastavite."
+	},
+	"notification_reorder_title": {
+		"message": "'Translate Selected Text' je bil posodobljen na različico 0.7!"
+	},
+	"notification_reorder_message": {
+		"message": "Zdaj lahko nastavite, v kakšnem zaporedju naj se jeziki pojavijo v kontekstnem meniju. "
+	}
 }
