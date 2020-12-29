@@ -62,7 +62,14 @@ function init() {
     });
 
     $('#save').addEventListener('click', _ => {
-      saveOptions();
+      saveOptions(true);
+    });
+
+    // Save automatically
+    $all('input[type="radio"]').forEach(radio => {
+      radio.addEventListener('change', _ => {
+        saveOptions();
+      });
     });
 
     // Print selected language list
@@ -86,6 +93,8 @@ function init() {
                       'li[data-language=' + this.getAttribute('data-language') +
                       ']'));
               printListModal();
+              // Save automatically
+              saveOptions();
             });
       }
     }
@@ -124,8 +133,13 @@ function init() {
                     $('li[data-language=' + this.getAttribute('data-language') +
                       ']'));
             printListModal();
+            // Save automatically
+            saveOptions();
           });
       $('dialog').close();
+
+      // Save automatically
+      saveOptions();
     });
 
     // About credits...
@@ -219,7 +233,7 @@ function init() {
   });
 }
 
-function saveOptions() {
+function saveOptions(close = false) {
   var languages = document.getElementById('languages');
   var options = {
     uniquetab: '',
@@ -242,7 +256,7 @@ function saveOptions() {
 
     background.translator_tab = false;
     background.translator_window = false;
-    window.close();
+    if (close) window.close();
   });
 }
 
