@@ -1,3 +1,4 @@
 out/
 src/manifest.json
+src/json/i18n-credits.json
 crowdin.yaml

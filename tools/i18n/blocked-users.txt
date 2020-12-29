@@ -1,0 +1,21 @@
+# These users were blocked because they are spammers, and therefore shouldn't be
+# included in the credits section.
+watabas
+p.karlsen
+Julpetter
+viki19822
+jjroot19
+mattiasxxpersson
+
+# These users joined the project but didn't make any translation, so they
+# shouldn't be credited neither.
+# NOTE: This list should be revisited in the future in case they actually
+# contribute.
+yolandarobinson3838
+ema168rutter
+bsiwanon
+nlmyst-35
+
+# This is the extension creator, so he shouldn't be credited as a translator
+# neither.
+avm99963

@@ -104,7 +104,7 @@ dialog select {
   width: 100%;
 }
 
-dialog .action_buttons {
+dialog#languages_add_dialog .action_buttons {
   margin-top: 10px;
   float: right;
 }
@@ -140,6 +140,7 @@ dialog#credits_dialog {
   left: 50%;
   margin-left: -216px;
   margin-top: -231px;
+  padding: 0;
   height: 430px;
   width: 400px;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -147,23 +148,47 @@ dialog#credits_dialog {
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
 
+dialog#credits_dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+dialog#credits_dialog .scrollable {
+  padding: 1em;
+  overflow-y: auto;
+}
+
 dialog#credits_dialog .content_area h4 {
   margin-bottom: 0px;
 }
 
-dialog#credits_dialog .content_area a.homepage {
+dialog#credits_dialog .entry {
+  position: relative;
+}
+
+dialog#credits_dialog .entry a.homepage {
   position: absolute;
   right: 16px;
   font-size: 14px;
 }
 
-dialog#credits_dialog .content_area p,
-dialog#credits_dialog .content_area span {
+dialog#credits_dialog p,
+dialog#credits_dialog span {
   font-size: 14px;
 }
 
-dialog#credits_dialog .content_area p.author {
+dialog#credits_dialog p.author {
   margin-top: 7px;
+}
+
+dialog#credits_dialog #translators .name {
+  font-weight: bold;
+}
+
+dialog .action_buttons {
+  border-top: 1px solid #ccc;
+  padding: 1em;
+  text-align: right;
 }
 
 #otheroptions p {

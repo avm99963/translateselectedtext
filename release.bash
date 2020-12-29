@@ -15,6 +15,8 @@ function usage() {
     -b, --browser  indicates the target browser for the release. As of
                    now it can only be "chromium", which is also the
                    default value.
+    -f, --fast     indicates that the release shouldn't generate the
+                   i18n credits JSON file.
 
 END
 }
@@ -25,11 +27,12 @@ function set_manifest_field() {
 }
 
 # Get options
-opts=$(getopt -l "help,channel:,browser:" -o "hc:b:" -n "$progname" -- "$@")
+opts=$(getopt -l "help,channel:,browser:,fast" -o "hc:b:f" -n "$progname" -- "$@")
 eval set -- "$opts"
 
 channel=stable
 browser=chromium
+fast=0
 
 while true; do
   case "$1" in
@@ -44,6 +47,10 @@ while true; do
     -b | --browser)
       browser="$2"
       shift 2
+      ;;
+    -f | --fast)
+      fast=1
+      shift
       ;;
     *) break ;;
   esac
@@ -68,6 +75,11 @@ echo "Started building release..."
 dependencies=(${browser})
 
 bash generateManifest.bash "${dependencies[@]}"
+
+# Also, generate the credits for the translators
+if [[ $fast == 0 ]]; then
+  bash generatei18nCredits.bash
+fi
 
 # This is the version name which git gives us
 version=$(git describe --always --tags --dirty)

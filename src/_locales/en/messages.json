@@ -85,6 +85,14 @@
 		"message": "by",
 		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
 	},
+  "options_credits_translations": {
+    "message": "Translations",
+    "description": "Header for the section in the credits dialog which recognizes translators."
+  },
+  "options_credits_translations_paragraph": {
+    "message": "I would like to give a very special thank you to the following contributors, who have selflessly translated the extension interface to many languages:",
+    "description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
+  },
 	"options_ok": {
 		"message": "OK",
 		"description": "OK button in the dialogs"

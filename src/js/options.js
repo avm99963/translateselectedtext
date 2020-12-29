@@ -129,12 +129,17 @@ function init() {
     });
 
     // About credits...
-    fetch('json/credits.json')
-        .then(res => res.json())
-        .then(json => {
+    var normalCredits = fetch('json/credits.json').then(res => res.json());
+    var i18nCredits = fetch('json/i18n-credits.json').then(res => res.json());
+
+    Promise.all([normalCredits, i18nCredits])
+        .then(values => {
+          var credits = values[0];
+          var i18nCredits = values[1];
           var content = $('dialog#credits_dialog .content_area');
-          json.forEach(item => {
+          credits.forEach(item => {
             var div = document.createElement('div');
+            div.classList.add('entry');
             if (item.url) {
               var a = document.createElement('a');
               a.classList.add('homepage');
@@ -160,9 +165,35 @@ function init() {
             content.append(div);
           });
 
+          var cList = document.getElementById('translators');
+          i18nCredits.forEach(contributor => {
+            var li = document.createElement('li');
+            var languages = [];
+            if (contributor.languages) {
+              contributor.languages.forEach(lang => {
+                languages.push(lang.name || 'undefined');
+              });
+            }
+
+            var name = document.createElement('span');
+            name.classList.add('name');
+            name.textContent = contributor.name || 'undefined';
+            li.append(name);
+
+            if (languages.length > 0) {
+              var languages =
+                  document.createTextNode(': ' + languages.join(', '));
+              li.append(languages);
+            }
+
+            cList.append(li);
+          });
+
           window.onhashchange = function() {
             if (location.hash == '#credits') {
-              $('dialog#credits_dialog').showModal();
+              var credits = document.getElementById('credits_dialog');
+              credits.showModal();
+              credits.querySelector('.scrollable').scrollTo(0, 0);
               $('#credits_ok').focus();
             }
           };
