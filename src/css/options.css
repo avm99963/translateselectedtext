@@ -22,7 +22,7 @@ h2 {
 
 #languages_container {
   width: 300px;
-  height: 365px;
+  height: 250px;
   border: 1px solid #ccc;
   background-color: #E3F2FD;
   overflow: auto;
@@ -185,7 +185,7 @@ dialog#credits_dialog #translators .name {
   font-weight: bold;
 }
 
-dialog .action_buttons {
+dialog#credits_dialog .action_buttons {
   border-top: 1px solid #ccc;
   padding: 1em;
   text-align: right;

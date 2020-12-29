@@ -4,6 +4,13 @@ function isEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
 
+function inObject(hayStack, el) {
+  for (var i of Object.keys(hayStack)) {
+    if (hayStack[i] == el) return true;
+  }
+  return false;
+}
+
 function getTranslationUrl(lang, text) {
   var params = new URLSearchParams({
     sl: 'auto',
@@ -15,7 +22,6 @@ function getTranslationUrl(lang, text) {
 }
 
 function translationClick(info, tab) {
-  console.log(info.selectionText);
   chrome.storage.sync.get('uniquetab', items => {
     var url = getTranslationUrl(
         array_elements[info.menuItemId]['langCode'], info.selectionText);
@@ -102,6 +108,10 @@ function createmenus() {
       for (var language_id of Object.keys(items.translateinto)) {
         var language = items.translateinto[language_id];
         var languagem = isoLangs[language];
+        if (languagem === undefined) {
+          console.error(language + ' doesn\'t exist!');
+          continue;
+        }
         var id = chrome.contextMenus.create({
           'id': 'tr_single_parent',
           'title': chrome.i18n.getMessage('contextmenu_title2', languagem.name),
@@ -119,6 +129,10 @@ function createmenus() {
       for (var language_id of Object.keys(items.translateinto)) {
         var language = items.translateinto[language_id];
         var languagem = isoLangs[language];
+        if (languagem === undefined) {
+          console.error(language + ' doesn\'t exist!');
+          continue;
+        }
         var title = languagem.name + ' (' + languagem.nativeName + ')';
         var id = chrome.contextMenus.create({
           'id': 'tr_language_' + language,
@@ -150,12 +164,15 @@ chrome.runtime.onInstalled.addListener(function(details) {
     if (details.reason == 'install') {
       if (isEmpty(items)) {
         var settings = {'translateinto': {}, 'uniquetab': ''},
-            default_language =
+            default_language_1 =
+                chrome.i18n.getMessage('@@ui_locale').replace('_', '-'),
+            default_language_2 =
                 chrome.i18n.getMessage('@@ui_locale').split('_')[0];
 
-        if (isoLangs[default_language] != 'undefined') {
-          settings.translateinto[default_language] = default_language;
-        }
+        if (isoLangs[default_language_1] != undefined)
+          settings.translateinto['0'] = default_language_1;
+        else if (isoLangs[default_language_2] != undefined)
+          settings.translateinto['0'] = default_language_2;
 
         chrome.storage.sync.set(settings, function() {
           chrome.notifications.create('install', {
@@ -180,7 +197,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
         var default_language =
             chrome.i18n.getMessage('@@ui_locale').split('_')[0];
 
-        if (isoLangs[default_language] != 'undefined')
+        if (isoLangs[default_language] != undefined)
           settings.languages[default_language] = default_language;
 
         chrome.storage.sync.set(settings, function() {
@@ -214,6 +231,40 @@ chrome.runtime.onInstalled.addListener(function(details) {
             isClickable: true
           });
         });
+      }
+
+      // Remove non-existent languages or change with correct language code
+      if (items.translateinto) {
+        var modified = false;
+        for (var language_id of Object.keys(items.translateinto)) {
+          var language = items.translateinto[language_id];
+          if (isoLangs[language] === undefined) {
+            if (convertLanguages[language] === undefined) {
+              // The language doesn't exist
+              console.log(
+                  'Deleting ' + language +
+                  ' from items.translateinto because it doesn\'t exist.');
+              delete items.translateinto[language_id];
+            } else {
+              // The language doesn't exist but a known replacement is known
+              var newLanguage = convertLanguages[language];
+              console.log('Replacing ' + language + ' with ' + newLanguage);
+
+              // If the converted language is already on the list, just remove
+              // the wrong language, otherwise convert the language
+              if (inObject(items.translateinto, newLanguage))
+                delete items.translateinto[language_id];
+              else
+                items.translateinto[language_id] = newLanguage;
+            }
+            modified = true;
+          }
+        }
+        if (modified) chrome.storage.sync.set(items);
+      } else {
+        console.log('items.translateinto doesn\'t exist: let\'s create it.');
+        items['translateinto'] = {};
+        chrome.storage.sync.set(items);
       }
     }
   });

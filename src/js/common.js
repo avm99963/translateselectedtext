@@ -107,5 +107,12 @@ var isoLangs = {
   'yo': {'name': 'Yoruba', 'nativeName': 'Yorùbá'},
   'zh-CN': {'name': 'Chinese (Simplified)', 'nativeName': '汉语'},
   'zh-TW': {'name': 'Chinese (Traditional)', 'nativeName': '漢語'},
-  'zu': {'name': 'Zulu', 'nativeName': 'isiZulu'}
+  'zu': {'name': 'Zulu', 'nativeName': 'isiZulu'},
+};
+
+// Some languages were incorrectly set. This map serves as a conversion between
+// the previous wrong languages and the correct code.
+var convertLanguages = {
+  'jv': 'jw',
+  'zh': 'zh-CN',
 };
