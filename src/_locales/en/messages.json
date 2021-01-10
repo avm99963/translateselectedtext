@@ -54,8 +54,8 @@
 		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
 	},
 	"options_tabsoption_3": {
-		"message": "Open Google Translate in a panel (you need to activate <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a> flag). <sup style='color:red; font-weight: bold;'> EXPERIMENTAL</sup>",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new panel)."
+		"message": "Open Google Translate in a popup.",
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
 	},
 	"options_savebutton": {
 		"message": "Save",

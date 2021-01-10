@@ -39,10 +39,10 @@ function translationClick(info, tab) {
               });
             });
       });
-    } else if (items.uniquetab == 'panel') {
+    } else if (items.uniquetab == 'panel' || items.uniquetab == 'popup') {
       chrome.windows.create(
           {
-            type: 'panel',
+            type: 'popup',
             url,
             width: 1000,
             height: 382,
@@ -163,7 +163,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
   chrome.storage.sync.get(null, function(items) {
     if (details.reason == 'install') {
       if (isEmpty(items)) {
-        var settings = {'translateinto': {}, 'uniquetab': ''},
+        var settings = {'translateinto': {}, 'uniquetab': 'popup'},
             default_language_1 =
                 chrome.i18n.getMessage('@@ui_locale').replace('_', '-'),
             default_language_2 =

@@ -45,7 +45,7 @@ function init() {
     if (isEmpty(items)) {
       items = {
         translateinto: {},
-        uniquetab: '',
+        uniquetab: 'popup',
       };
       chrome.storage.sync.set(items);
     }
@@ -53,14 +53,10 @@ function init() {
     // Check the checkbox of the window opening
     if (items.uniquetab === 'yep') $('#uniquetab').checked = true;
     if (items.uniquetab === '') $('#varioustabs').checked = true;
-    if (items.uniquetab === 'panel') $('#panel').checked = true;
+    if (items.uniquetab === 'panel' || items.uniquetab === 'popup')
+      $('#popup').checked = true;
 
     // Add event listeners for certain buttons and links
-    $('#panelsflag').addEventListener('click', _ => {
-      event.preventDefault();
-      chrome.tabs.create({url: 'chrome://flags/#enable-panels'});
-    });
-
     $('#save').addEventListener('click', _ => {
       saveOptions(true);
     });
