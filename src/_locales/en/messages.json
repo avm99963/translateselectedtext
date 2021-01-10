@@ -77,6 +77,10 @@
 		"message": "Credits",
 		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
 	},
+  "options_credits_createdby": {
+    "message": "Extension created by: <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adrià Vilanova Martínez)",
+    "description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
+  },
 	"options_credits_homepage": {
 		"message": "homepage",
 		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"

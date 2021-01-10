@@ -191,6 +191,10 @@ dialog#credits_dialog .action_buttons {
   text-align: right;
 }
 
+dialog#credits_dialog .createdby {
+  font-style: italic;
+}
+
 #otheroptions p {
   margin-top: 0;
   margin-bottom: 0;
