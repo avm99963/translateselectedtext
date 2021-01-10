@@ -13,7 +13,7 @@
 	},
 	"contextmenu_title": {
 		"message": "Преведете избраното на...",
-		"description": "Title of the context menu that appears when a right click is done. Inside this parent menu there are the menus"
+		"description": "Title of the context menu that appears when a right click is done. Inside this parent item there are the target languages."
 	},
 	"contextmenu_title2": {
 		"message": "Преведете избраното на '$language$'",
@@ -27,35 +27,31 @@
 	},
 	"contextmenu_edit": {
 		"message": "Редактиране на езиците...",
-		"description": "Title of the option inside the 'Translate section into...' context menu."
+		"description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
 	},
 	"options_welcome": {
 		"message": "Добре дошли!",
-		"description": "Title of the options page"
+		"description": "Title of the options page which welcomes users"
 	},
 	"options_introduction": {
 		"message": "Изберете езиците, които искате да се показват в менюто за превод.",
-		"description": "Introduction paragraph to the options pages"
+		"description": "Introduction paragraph in the options page preceding the language list."
 	},
 	"options_languageselectheader": {
 		"message": "Езици:",
-		"description": "Header of the language select option."
+		"description": "Header of the selected languages list."
 	},
 	"options_otheroptionsheader": {
 		"message": "Други опции:",
-		"description": "Header of the options page."
+		"description": "Subheader in the options page before the options to choose where should the translation be shown.."
 	},
 	"options_tabsoption_1": {
 		"message": "Отваряне на Google Преводач в ново табло за всеки превод.",
-		"description": "Option which defines how should the app behave in relation to tabs."
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
 	},
 	"options_tabsoption_2": {
 		"message": "Отваряне на Google Преводач в едно уникално табло и заменяне на последния превод вместо да се отварят много табла.",
-		"description": "Option which defines how should the app behave in relation to tabs."
-	},
-	"options_tabsoption_3": {
-		"message": "Отворете Google Преводач в нов панел (трябва да активирате <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a> знамето). <sup style='color:red; font-weight: bold;'>ФУНКЦИЯТА Е ЕКСПЕРИМЕНТАЛНА</sup>",
-		"description": "Option which defines how should the app behave in relation to tabs."
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
 	},
 	"options_savebutton": {
 		"message": "Запазване",
@@ -67,7 +63,7 @@
 	},
 	"options_addlanguage_addbutton": {
 		"message": "Добавяне",
-		"description": "Add button in the footer of the languages list"
+		"description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
 	},
 	"options_language_label": {
 		"message": "Език:",
@@ -75,11 +71,11 @@
 	},
 	"options_credits": {
 		"message": "Благодарности",
-		"description": "Title for the credits link and dialog"
+		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
 	},
 	"options_credits_homepage": {
 		"message": "начална страница",
-		"description": "Homepage link for an item in the credits. NOTE: put in in lowercase letters"
+		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
 	},
 	"options_credits_by": {
 		"message": "от",
@@ -87,11 +83,11 @@
 	},
 	"options_ok": {
 		"message": "Добре",
-		"description": "OK button in the dialogs"
+		"description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
 	},
 	"options_cancel": {
 		"message": "Отказ",
-		"description": "Cancel button in the dialogs"
+		"description": "Cancel button in the dialogs, to reject an action."
 	},
 	"notification_install_title": {
 		"message": "Благодарим за инсталирането на 'Превод на избрания текст'"

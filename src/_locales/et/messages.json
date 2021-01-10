@@ -13,7 +13,7 @@
 	},
 	"contextmenu_title": {
 		"message": "Tõlgi valitud tekst...",
-		"description": "Title of the context menu that appears when a right click is done. Inside this parent menu there are the menus"
+		"description": "Title of the context menu that appears when a right click is done. Inside this parent item there are the target languages."
 	},
 	"contextmenu_title2": {
 		"message": "Tõlgi valitud '$language$' keelde",
@@ -27,35 +27,35 @@
 	},
 	"contextmenu_edit": {
 		"message": "Muuda keeli...",
-		"description": "Title of the option inside the 'Translate section into...' context menu."
+		"description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
 	},
 	"options_welcome": {
 		"message": "Tere tulemast!",
-		"description": "Title of the options page"
+		"description": "Title of the options page which welcomes users"
 	},
 	"options_introduction": {
 		"message": "Palun valige keeled mida soovite, et kuvaksime \"tõlkimise\" menüüs.",
-		"description": "Introduction paragraph to the options pages"
+		"description": "Introduction paragraph in the options page preceding the language list."
 	},
 	"options_languageselectheader": {
 		"message": "Keeled:",
-		"description": "Header of the language select option."
+		"description": "Header of the selected languages list."
 	},
 	"options_otheroptionsheader": {
 		"message": "Teised valikud:",
-		"description": "Header of the options page."
+		"description": "Subheader in the options page before the options to choose where should the translation be shown.."
 	},
 	"options_tabsoption_1": {
 		"message": "Ava Google'i tõlge iga tõlke kohta uues vahelehes.",
-		"description": "Option which defines how should the app behave in relation to tabs."
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
 	},
 	"options_tabsoption_2": {
 		"message": "Ava Google'i tõlge uues vahelehes ja kirjuta viimase tõlkega see iga kord üle - avamata uusi vahelehti.",
-		"description": "Option which defines how should the app behave in relation to tabs."
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
 	},
 	"options_tabsoption_3": {
-		"message": "Ava Google'i tõlge paneelis (selleks tuleb teil aktiveeirda <a href='chrome://flags/#enable-panels' id='panelsflag'>--enable-panels</a> flag). <sup style='color:red; font-weight: bold;'> EKSPERIMENTAALNE</sup>",
-		"description": "Option which defines how should the app behave in relation to tabs."
+		"message": "Ava Google'i tõlge hüpikaknas.",
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
 	},
 	"options_savebutton": {
 		"message": "Salvesta",
@@ -67,31 +67,39 @@
 	},
 	"options_addlanguage_addbutton": {
 		"message": "Lisa",
-		"description": "Add button in the footer of the languages list"
+		"description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
 	},
 	"options_language_label": {
 		"message": "Keel:",
 		"description": "Label for the language selector in the 'Add language' dialog"
 	},
 	"options_credits": {
-		"message": "Krediidid",
-		"description": "Title for the credits link and dialog"
+		"message": "Tunnustus",
+		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
+	},
+	"options_credits_createdby": {
+		"message": "Laienduse looja: <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adrià Vilanova Martínez)",
+		"description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
 	},
 	"options_credits_homepage": {
 		"message": "koduleht",
-		"description": "Homepage link for an item in the credits. NOTE: put in in lowercase letters"
+		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
 	},
 	"options_credits_by": {
 		"message": "autor",
 		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
 	},
+	"options_credits_translations": {
+		"message": "Tõlked",
+		"description": "Header for the section in the credits dialog which recognizes translators."
+	},
 	"options_ok": {
 		"message": "OK",
-		"description": "OK button in the dialogs"
+		"description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
 	},
 	"options_cancel": {
 		"message": "Loobu",
-		"description": "Cancel button in the dialogs"
+		"description": "Cancel button in the dialogs, to reject an action."
 	},
 	"notification_install_title": {
 		"message": "Täname, et paigaldasite 'Tõlgi valitud tekst'"
