@@ -93,6 +93,10 @@
 		"message": "Tõlked",
 		"description": "Header for the section in the credits dialog which recognizes translators."
 	},
+	"options_credits_translations_paragraph": {
+		"message": "Tahaksin avaldada erilist tänu järgnevatele panustajatele, kes on ennastsalgavalt tõlkinud käesolevat laiendusliidest mitmetesse keeltesse:",
+		"description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
+	},
 	"options_ok": {
 		"message": "OK",
 		"description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
