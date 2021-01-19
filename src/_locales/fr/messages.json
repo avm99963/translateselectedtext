@@ -53,6 +53,10 @@
 		"message": "Ouvrir Google Traduction dans un onglet unique et remplacer la traduction précédente au lieu d’ouvrir plusieurs onglets.",
 		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
 	},
+	"options_tabsoption_3": {
+		"message": "Ouvrir Google Traduction dans un pop-up.",
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
+	},
 	"options_savebutton": {
 		"message": "Enregistrer",
 		"description": "Save button in the settings page"
@@ -73,6 +77,10 @@
 		"message": "Crédits",
 		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
 	},
+	"options_credits_createdby": {
+		"message": "Extension créée par: <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adrià Vilanova Martínez)",
+		"description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
+	},
 	"options_credits_homepage": {
 		"message": "page d'accueil",
 		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
@@ -80,6 +88,14 @@
 	"options_credits_by": {
 		"message": "par",
 		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
+	},
+	"options_credits_translations": {
+		"message": "Traductions",
+		"description": "Header for the section in the credits dialog which recognizes translators."
+	},
+	"options_credits_translations_paragraph": {
+		"message": "Je tiens à remercier particulièrement les contributeurs suivants, qui ont traduit de manière désintéressée l'interface d'extension dans de nombreuses langues:",
+		"description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
 	},
 	"options_ok": {
 		"message": "OK",

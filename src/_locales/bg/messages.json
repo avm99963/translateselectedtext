@@ -53,6 +53,10 @@
 		"message": "Отваряне на Google Преводач в едно уникално табло и заменяне на последния превод вместо да се отварят много табла.",
 		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
 	},
+	"options_tabsoption_3": {
+		"message": "Отваряне на Google Преводач в изскачащ прозорец.",
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
+	},
 	"options_savebutton": {
 		"message": "Запазване",
 		"description": "Save button in the settings page"
@@ -73,6 +77,10 @@
 		"message": "Благодарности",
 		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
 	},
+	"options_credits_createdby": {
+		"message": "Разширението е създадено от <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Адрия Виланова Мартинес Adrià Vilanova Martínez)",
+		"description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
+	},
 	"options_credits_homepage": {
 		"message": "начална страница",
 		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
@@ -80,6 +88,14 @@
 	"options_credits_by": {
 		"message": "от",
 		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
+	},
+	"options_credits_translations": {
+		"message": "Преводи",
+		"description": "Header for the section in the credits dialog which recognizes translators."
+	},
+	"options_credits_translations_paragraph": {
+		"message": "Желая да дам много специални благодарности на следните сътрудници, които безкористно превеждаха интерфейса на разширението на много езици:",
+		"description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
 	},
 	"options_ok": {
 		"message": "Добре",
