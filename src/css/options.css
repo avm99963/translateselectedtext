@@ -1,5 +1,9 @@
 /*@import url("widgets.css");*/
 
+html {
+  direction: __MSG_@@bidi_dir__;
+}
+
 body {
   padding: 10px;
   font-family: "Roboto", "Arial", sans-serif !important;
@@ -48,7 +52,7 @@ h2 {
 
 #languages li .delete {
   font-size: 14px;
-  float: right;
+  float: __MSG_@@bidi_end_edge__;
   cursor: pointer;
   color: red;
 }
@@ -69,7 +73,7 @@ option {
 }
 
 #languages_add {
-  margin-left: 4px;
+  margin-__MSG_@@bidi_start_edge__: 4px;
   margin-top: 4px;
 }
 
@@ -106,7 +110,7 @@ dialog select {
 
 dialog#languages_add_dialog .action_buttons {
   margin-top: 10px;
-  float: right;
+  float: __MSG_@@bidi_end_edge__;
 }
 
 dialog::backdrop {
@@ -122,7 +126,7 @@ dialog::backdrop {
 #credits_container {
   position: absolute;
   top: 0px;
-  right: 50px;
+  __MSG_@@bidi_end_edge__: 50px;
   background: rgb(195, 235, 204);
   border: solid 1px rgb(139, 139, 139);
   border-top: 0;
@@ -168,7 +172,7 @@ dialog#credits_dialog .entry {
 
 dialog#credits_dialog .entry a.homepage {
   position: absolute;
-  right: 16px;
+  __MSG_@@bidi_end_edge__: 16px;
   font-size: 14px;
 }
 
@@ -188,7 +192,7 @@ dialog#credits_dialog #translators .name {
 dialog#credits_dialog .action_buttons {
   border-top: 1px solid #ccc;
   padding: 1em;
-  text-align: right;
+  text-align: __MSG_@@bidi_end_edge__;
 }
 
 dialog#credits_dialog .createdby {
