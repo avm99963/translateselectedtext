@@ -1,4 +1,11 @@
 #!/bin/bash
+#
+# Downloads updated translations from Crowdin and creates a new commit with the
+# new updates.
+#
+# This commit should be uploaded afterwards for review with the |git review|
+# command (take a look to check everything went well before uploading it).
+
 emptyTranslationFile="{}"
 
 # Download new translations

@@ -6,6 +6,7 @@ Julpetter
 viki19822
 jjroot19
 mattiasxxpersson
+JeremyMaloney
 
 # These users joined the project but didn't make any translation, so they
 # shouldn't be credited neither.
