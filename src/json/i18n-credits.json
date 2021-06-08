@@ -35,6 +35,19 @@
     ]
   },
   {
+    "name": "Serhiy Dmytryshyn (dies)",
+    "languages": [
+      {
+        "id": "ru",
+        "name": "Russian"
+      },
+      {
+        "id": "uk",
+        "name": "Ukrainian"
+      }
+    ]
+  },
+  {
     "name": "Dremski",
     "languages": [
       {
@@ -80,33 +93,6 @@
     ]
   },
   {
-    "name": "Csegöldi Csaba (csacseg)",
-    "languages": [
-      {
-        "id": "hu",
-        "name": "Hungarian"
-      }
-    ]
-  },
-  {
-    "name": "Ahmed Mohamed Abbas (moodfactor)",
-    "languages": [
-      {
-        "id": "ar",
-        "name": "Arabic"
-      }
-    ]
-  },
-  {
-    "name": "Can Altıntaş (crybois)",
-    "languages": [
-      {
-        "id": "en-GB",
-        "name": "English, United Kingdom"
-      }
-    ]
-  },
-  {
     "name": "zararina",
     "languages": [
       {
@@ -125,11 +111,38 @@
     ]
   },
   {
-    "name": "M Angga Ariska (anggaariska)",
+    "name": "Can Altıntaş (crybois)",
     "languages": [
       {
-        "id": "id",
-        "name": "Indonesian"
+        "id": "en-GB",
+        "name": "English, United Kingdom"
+      }
+    ]
+  },
+  {
+    "name": "dusttanker (macio955)",
+    "languages": [
+      {
+        "id": "pl",
+        "name": "Polish"
+      }
+    ]
+  },
+  {
+    "name": "Ahmed Mohamed Abbas (moodfactor)",
+    "languages": [
+      {
+        "id": "ar",
+        "name": "Arabic"
+      }
+    ]
+  },
+  {
+    "name": "Csegöldi Csaba (csacseg)",
+    "languages": [
+      {
+        "id": "hu",
+        "name": "Hungarian"
       }
     ]
   },
@@ -143,11 +156,11 @@
     ]
   },
   {
-    "name": "dusttanker (macio955)",
+    "name": "M Angga Ariska (anggaariska)",
     "languages": [
       {
-        "id": "pl",
-        "name": "Polish"
+        "id": "id",
+        "name": "Indonesian"
       }
     ]
   },
@@ -170,20 +183,20 @@
     ]
   },
   {
-    "name": "Grimpy",
-    "languages": [
-      {
-        "id": "sl",
-        "name": "Slovenian"
-      }
-    ]
-  },
-  {
     "name": "jznsamuel (jasonsamuel88)",
     "languages": [
       {
         "id": "hi",
         "name": "Hindi"
+      }
+    ]
+  },
+  {
+    "name": "Grimpy",
+    "languages": [
+      {
+        "id": "sl",
+        "name": "Slovenian"
       }
     ]
   },
@@ -283,6 +296,19 @@
       {
         "id": "es-ES",
         "name": "Spanish"
+      }
+    ]
+  },
+  {
+    "name": "Я. Николов (qroslavnikolaev)",
+    "languages": [
+      {
+        "id": "bg",
+        "name": "Bulgarian"
+      },
+      {
+        "id": "en-GB",
+        "name": "English, United Kingdom"
       }
     ]
   },

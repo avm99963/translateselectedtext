@@ -17,6 +17,13 @@ ema168rutter
 bsiwanon
 nlmyst-35
 
+# These users joined the project and submitted translations, but all of them
+# are incorrect (e.g. they were submitted to the wrong language).
+# We block them so they aren't listed with the wrong language.
+# NOTE: Once their translations have been cleaned/moved, each translator should
+# be removed from this list.
+mikkosaarinentapani
+
 # This is the extension creator, so he shouldn't be credited as a translator
 # neither.
 avm99963
