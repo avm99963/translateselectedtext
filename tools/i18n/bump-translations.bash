@@ -15,9 +15,12 @@ fi
 
 crowdin download -c crowdin.yml
 
-cd ../../src/_locales
+# Generate i18n credits file
+go run generate-i18n-credits.go
+git add ../../src/json/i18n-credits.json
 
 # Delete empty translations
+cd ../../src/_locales
 for lang in *; do
   if [[ "$lang" == "README.md" ]]; then
     continue
