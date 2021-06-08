@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "Kliknite to obvestilo, da jo nastavite."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Translate Selected Text' je bil posodobljen na različico 0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Zdaj bodo vaše možnosti enake na vseh vaših napravah! Slabost tega je, da morate žal to razširitev ponovno nastaviti :-( Kliknite to obvestilo, da jo nastavite."
-	},
-	"notification_reorder_title": {
-		"message": "'Translate Selected Text' je bil posodobljen na različico 0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "Zdaj lahko nastavite, v kakšnem zaporedju naj se jeziki pojavijo v kontekstnem meniju. "
 	}
 }

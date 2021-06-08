@@ -110,17 +110,5 @@
 	},
 	"notification_install_message": {
 		"message": "Uzantıyı yapılandırmak için bu bildirimi tıklayın."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Seçili Metni Çevir' v0.6'ya güncellendi!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Artık ayarlarınız tüm cihazlarınız üzerinde senkronize olacak! Tek kötü tarafi, uzantıyı yeniden yüklemeniz gerekmesi. :-( Yüklemek için bu bildirimi tıklayın."
-	},
-	"notification_reorder_title": {
-		"message": "'Seçili Metni Çevir' v0.7'ye güncellendi!"
-	},
-	"notification_reorder_message": {
-		"message": "Şimdi dillerin içerik menüsünde görünmesini istediğiniz sırayı yapılandırabilirsiniz. "
 	}
 }

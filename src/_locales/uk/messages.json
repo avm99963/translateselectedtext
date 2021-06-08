@@ -110,17 +110,5 @@
 	},
 	"notification_install_message": {
 		"message": "Натисніть для налаштувань."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Переклад виділеного тексту' оновлено до v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Тепер ваші налаштування будуть синхронізовані на всіх ваших пристроях! Та вам вам необхідно ще раз налаштувати розширення :-( Натисніть на це сповіщення, для налаштувань."
-	},
-	"notification_reorder_title": {
-		"message": "'Переклад виділеного тексту' оновлено до v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "Тепер ви можете налаштувати порядок відображення мов у контекстному меню. "
 	}
 }

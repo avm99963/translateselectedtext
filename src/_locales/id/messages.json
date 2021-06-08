@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "Klik pemberitahuan ini untuk menyelesaikannya."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Translate Selected Text' telah diupdate ke v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Pilihan Anda sekarang akan di sinkronkan ke semua perangkat Anda! Sisi buruknya adalah Anda harus mengatur ekstensi lagi :-( klik pemberitahuan ini untuk menyelesaikannya."
-	},
-	"notification_reorder_title": {
-		"message": "'Translate Selected Text' telah diupdate ke v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "Anda sekarang dapat mengkonfirgurasi dalam urutan yang Anda inginkan agar bahasa muncul dalam menu konteks. "
 	}
 }

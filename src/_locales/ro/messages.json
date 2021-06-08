@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "Apăsați pe această notificare pentru a o configura."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Translate Selected Text' a fost actualizat la v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Acum opțiunile dumneavoastră vor fi sincronizate pe toate aparatele! Partea proastă este că trebuie să configurați extensia din nou :-( Apăsați pe această notificare pentru a o configura."
-	},
-	"notification_reorder_title": {
-		"message": "'Translate Selected Text' a fost actualizat la v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "Acum puteți configura în ce ordine doriți să apară limbile din meniul contextual. "
 	}
 }

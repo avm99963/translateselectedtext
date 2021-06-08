@@ -200,17 +200,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
         if (isoLangs[default_language] != undefined)
           settings.languages[default_language] = default_language;
 
-        chrome.storage.sync.set(settings, function() {
-          chrome.notifications.create('upgradedtostorage', {
-            type: 'basic',
-            iconUrl: 'icons/translate-128.png',
-            title:
-                chrome.i18n.getMessage('notification_upgradedtostorage_title'),
-            message: chrome.i18n.getMessage(
-                'notification_upgradedtostorage_message'),
-            isClickable: true,
-          });
-        });
+        chrome.storage.sync.set(settings);
       }
 
       // Updating from a version previous to v0.7
@@ -222,15 +212,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
           i++;
         }
         delete items.languages;
-        chrome.storage.sync.set(items, _ => {
-          chrome.notifications.create('reorder', {
-            type: 'basic',
-            iconUrl: 'icons/translate-128.png',
-            title: chrome.i18n.getMessage('notification_reorder_title'),
-            message: chrome.i18n.getMessage('notification_reorder_message'),
-            isClickable: true
-          });
-        });
+        chrome.storage.sync.set(items);
       }
 
       // Remove non-existent languages or change with correct language code
@@ -296,8 +278,6 @@ chrome.storage.sync.get(null, items => {
 chrome.notifications.onClicked.addListener(notification_id => {
   switch (notification_id) {
     case 'install':
-    case 'upgradedtostorage':
-    case 'reorder':
       openOptionsPage();
       break;
   }

@@ -110,17 +110,5 @@
 	},
 	"notification_install_message": {
 		"message": "Cliquez sur cette notification pour la paramétrer."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "« Traduire le texte sélectionné » a été mis à niveau à la version v0.6 !"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Maintenant vos options seront synchronisées sur tous vos appareils ! L'inconvénient, c'est que vous devrez à nouveau configurer l’extension  :-( Cliquez sur cette notification pour la paramétrer."
-	},
-	"notification_reorder_title": {
-		"message": "« Traduire le texte sélectionné » a été mis à niveau à la version v0.7 !"
-	},
-	"notification_reorder_message": {
-		"message": "Maintenant, vous pouvez configurer l’ordre dans lequel vous voulez que les langues apparaissent dans le menu contextuel. "
 	}
 }

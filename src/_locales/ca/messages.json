@@ -110,17 +110,5 @@
 	},
 	"notification_install_message": {
 		"message": "Fes clic en aquesta notificació per a configurar l'extensió."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Traduir Text Seleccionat' s'ha actualizat a v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Ara la configuració es sincronitzarà en tots els teus dispositius! La part dolenta és que has de configurar l'extensión una altra vegada :-( Fes clic en aquesta notificació per a configurar-la."
-	},
-	"notification_reorder_title": {
-		"message": "'Traduir Text Seleccionat' s'ha actualizat a v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "Ara pots configurar en quin ordre vols que apareixin els idiomes en el menú contextual."
 	}
 }

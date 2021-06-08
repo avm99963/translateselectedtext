@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "এটি সেট আপ করতে এই বিজ্ঞপ্তিটি ক্লিক করুন।"
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Translate Selected Text' v0.6 তে আপডেট করা হয়েছে!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "এখন আপনার বিকল্পগুলি আপনার সমস্ত ডিভাইস জুড়ে সিঙ্ক হবে! খারাপ দিক হলো আপনাকে আবার এক্সটেনশন সেট আপ করতে হবে :-( এটি সেট আপ করতে এই বিজ্ঞপ্তিটি ক্লিক করুন।"
-	},
-	"notification_reorder_title": {
-		"message": "'Translate Selected Text' v0.7 তে আপডেট করা হয়েছে!"
-	},
-	"notification_reorder_message": {
-		"message": "এখন আপনি কনটেক্সট মেনুতে যে ভাষাগুলি প্রদর্শিত করতে চান তা কনফিগার করতে পারেন। "
 	}
 }

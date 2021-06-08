@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "Clique nesta notificação para configurá-lo."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Traduzir o texto selecionado' foi atualizado para v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Agora suas opções serão sincrinizadas em todos os seus dispositivos! O lado ruim é que você tem que configurar a extensão novamente :-( Clique nesta notificação para configurá-lo."
-	},
-	"notification_reorder_title": {
-		"message": "'Traduzir o texto selecionado' foi atualizado para v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "Agora você pode configurar em que ordem você quer nas linguas que aparecem no menu de contexto. "
 	}
 }

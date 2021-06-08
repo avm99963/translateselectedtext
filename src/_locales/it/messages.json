@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "Cliccate su questa notificazione per configurarlo."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Translate Selected Text' è stata aggiornata alla v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Ora i vostri opzioni saranno sincronizzate su tutti i dispositivi! L'unico lato negativo è che è necessario impostare l'estensiones di nuovo :-( Cliccate su questa notificazione per configurarlo."
-	},
-	"notification_reorder_title": {
-		"message": "'Translate Selected Text' è stata aggiornata alla v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "Ora puoi configurare in quale ordine si desidera che le lingue appaiano nel menu di scelta rapida. "
 	}
 }

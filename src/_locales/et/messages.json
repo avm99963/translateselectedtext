@@ -110,17 +110,5 @@
 	},
 	"notification_install_message": {
 		"message": "Klikake seadistamiseks sellele teatele."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Tõlgi valitud tekst' on uuendatud v0.6'le!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Nüüd on valikud sünkroonis kõikide teie seadmetega! Halb külg on see, et peate laienduse uuesti seadistama :-( Klikake seadistamiseks sellele teatisele."
-	},
-	"notification_reorder_title": {
-		"message": "'Tõlgi valitud tekst' on uuendatud v0.7'le!"
-	},
-	"notification_reorder_message": {
-		"message": "Nüüd te saate seadistada, millises järjekorras me menüüs teile keeli kuvame. "
 	}
 }

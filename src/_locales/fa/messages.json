@@ -110,17 +110,5 @@
 	},
 	"notification_install_message": {
 		"message": "برای تنظیم کردن روی اعلان کلیک کنید."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Translate Selected Text' به نسخه 0.6 ارتقا یافت."
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "حالا تنظیمات شما در همه دستگاه های شما همگام سازی می شوند! اما خبر بد این است که شما باید دوباره افزونه را تنظیم کنید :-( برای تنظیم کردن روی اعلان کلیک کنید."
-	},
-	"notification_reorder_title": {
-		"message": "'Translate Selected Text' به نسخه 0.7 ارتقا یافت."
-	},
-	"notification_reorder_message": {
-		"message": "حالا شما می توانید ترتیب زبان ها در منو را تنظیم کنید."
 	}
 }

@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "Klik op deze melding om de extensie te configureren."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Vertaal Geselecteerde Tekst' werd bijgewerkt aan v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Uw instellingen worden nu gesynchroniseerd op al uw apparaten! Het enige slechte is dat u de extensie opnieuw moet installeren. :-( Klik op deze melding om te installeren."
-	},
-	"notification_reorder_title": {
-		"message": "'Vertaal Geselecteerde Tekst' werd bijgewerkt aan v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "Nu kunt u de volgorde configureren waarin u de talen wilt weergeven in het inhoudsmenu. "
 	}
 }

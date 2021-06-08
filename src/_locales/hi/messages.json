@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "इस नोटिफिकेशन को क्लिक करें इसे सेट अप करने के लिए|"
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Translate Selected Text' v0.6 में अपडेट किया गया!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "अब आपके विकल्प आपके सभी उपकरणों पर सिंक कर दिए जायेंगे! बुरा पक्ष है कि आपको एक्सटेंशन को फिर से सेट करना पड़ेगा :-( इस नोटिफिकेशन पर क्लिक करें इसे सेट अप करने के लिए ।"
-	},
-	"notification_reorder_title": {
-		"message": "'Translate Selected Text' v0.7 में अपडेट किया गया!"
-	},
-	"notification_reorder_message": {
-		"message": "अब आप यह कॉन्फ़िगर कर सकते हैं की संदर्भ मेनू में किस क्रम में भाषाएं प्रकट होंगी| "
 	}
 }

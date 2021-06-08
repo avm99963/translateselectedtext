@@ -110,17 +110,5 @@
 	},
 	"notification_install_message": {
 		"message": "Kliknij to powiadomienie, aby skonfigurować."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Translate Selected Text' został zaktualizowany do wersji v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Teraz twoje opcje zostaną zsynchronizowane na wszystkich twoich urządzeniach! Minusem jest to, że teraz musisz skonfigurować rozszerzenie jeszcze raz :-( Kliknij to powiadomienie, aby skonfigurować."
-	},
-	"notification_reorder_title": {
-		"message": "'Translate Selected Text' został zaktualizowany do wersji v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "Teraz możesz konfigurować w jakiej kolejności chcesz mieć wyświetlane języki w menu kontekstowym. "
 	}
 }

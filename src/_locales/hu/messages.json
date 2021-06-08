@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "Kattints erre az értesítésre a beállításhoz."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Translate Selected Text' frissítve lett a ver.. 06!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Most az Ön beállításai szinkronizálódnak minden eszközön! A kellemetlenség az, hogy újra be kell állítania a kiterjesztést :-( Kattintson erre az értesítésre a beállításhoz."
-	},
-	"notification_reorder_title": {
-		"message": "'Translate Selected Text' frissítve lett a ver.. 07!"
-	},
-	"notification_reorder_message": {
-		"message": "Most beállíthatja, hogy milyen sorrendben jelenjen meg a nyelv a helyi menüben. "
 	}
 }

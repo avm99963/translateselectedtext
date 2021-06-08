@@ -90,17 +90,5 @@
 	},
 	"notification_install_message": {
 		"message": "单击此通知将其设置。"
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "\"翻译所选文本\" 更新为 v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "现在您的选项将在所有设备上同步！ \n不好的一面是你必须再次设置扩展名:-(点击这个通知进行设置。"
-	},
-	"notification_reorder_title": {
-		"message": "\"翻译所选文本\" 更新为 v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "现在您可以按照您希望语言出现在上下文菜单中的顺序进行配置。 "
 	}
 }

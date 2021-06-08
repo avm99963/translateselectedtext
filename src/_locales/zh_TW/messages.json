@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "按一下此通知將其設置。"
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "\"翻譯所選文本\" 更新為 v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "現在您的選項將在所有設備上同步！ \n壞的一面是你必須重新設置擴展名:-(點擊這個通知來設置它。"
-	},
-	"notification_reorder_title": {
-		"message": "\"翻譯所選文本\" 更新為 v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "現在, 您可以配置您希望語言在內容功能表中顯示的順序。"
 	}
 }

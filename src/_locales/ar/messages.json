@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "انقر فوق هذا الإشعار لإعداده."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "تم تحديث \"ترجمة النص المحدد\" إلى v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "الآن سوف يتم مزامنة خياراتك عبر كافة الأجهزة الخاصة بك! الجانب السيئ أنه يجب أن تعد الإضافة مرة أخرى:-( انقر فوق هذا الإشعار لإعداده."
-	},
-	"notification_reorder_title": {
-		"message": "تم تحديث \"ترجمة النص المحدد\" إلى v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "الآن يمكنك تهيئة الترتيب الذي تريده للغات التي تظهر في قائمة السياق. "
 	}
 }

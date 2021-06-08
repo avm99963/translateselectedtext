@@ -94,17 +94,5 @@
 	},
 	"notification_install_message": {
 		"message": "I-clik ang abiso para ito ay ma set-up."
-	},
-	"notification_upgradedtostorage_title": {
-		"message": "'Isalin ang Napiling Teksto' ay na-update na sa v0.6!"
-	},
-	"notification_upgradedtostorage_message": {
-		"message": "Ang mga pagpipilian mo ngayon ay nka-sync na sa lahat ng iyong mga device! Ang negatibong bahagi ay kailangan mong i-set ang extension ulit :-( I-click itong abisong para ma set-up ito."
-	},
-	"notification_reorder_title": {
-		"message": "'Isalin ang Napiling Teksto' ay na-update na sa v0.7!"
-	},
-	"notification_reorder_message": {
-		"message": "Maaari mo nang i-configure ngayon kung ano ang gusto mong pagkakaayos ng mga wikang lilitaw sa menu ng konteksto."
 	}
 }
