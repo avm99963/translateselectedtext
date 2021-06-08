@@ -11,9 +11,12 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	"gopkg.in/yaml.v2"
 )
 
 const blockFileName = "blocked-users.txt"
+const crowdinConfigFileName = "crowdin.yml"
 const projectId = "191707"
 const checkAttempts = 5
 const checkWaitTime = 2 * time.Second
@@ -119,10 +122,38 @@ func getJSONFromResponseBody(body *io.ReadCloser) (map[string]interface{}, error
 	return responseJSON, nil
 }
 
+func getTokenFromCrowdinConfig(fileName string) (string, error) {
+	crowdinFile, err := os.Open(fileName)
+	if err != nil {
+		return "", err
+	}
+	defer crowdinFile.Close()
+
+	configRaw, err := ioutil.ReadAll(crowdinFile)
+	if err != nil {
+		return "", err
+	}
+
+	var configYaml map[interface{}]interface{}
+	if err := yaml.Unmarshal([]byte(configRaw), &configYaml); err != nil {
+		return "", err
+	}
+
+	if val, ok := configYaml["api_token"]; ok {
+		return val.(string), nil
+	}
+
+	return "", fmt.Errorf("api_token value isn't set")
+}
+
 func apiCall(path string, method string, body string) (*http.Response, error) {
 	token, isTokenSet := os.LookupEnv("GTRANSLATE_CROWDIN_API_KEY")
 	if !isTokenSet {
-		return nil, fmt.Errorf("Environmental variable GTRANSLATE_CROWDIN_API_KEY is not set.")
+		var err error
+		token, err = getTokenFromCrowdinConfig(crowdinConfigFileName)
+		if err != nil {
+			return nil, fmt.Errorf("Environmental variable GTRANSLATE_CROWDIN_API_KEY is not set and couldn't find the API key in %s (%v).", crowdinConfigFileName, err)
+		}
 	}
 
 	if body == "" {
