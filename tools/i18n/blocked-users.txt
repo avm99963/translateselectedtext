@@ -23,6 +23,7 @@ nlmyst-35
 # NOTE: Once their translations have been cleaned/moved, each translator should
 # be removed from this list.
 mikkosaarinentapani
+deepIQ
 
 # This is the extension creator, so he shouldn't be credited as a translator
 # neither.
