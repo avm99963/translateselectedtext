@@ -1,0 +1,114 @@
+{
+	"appName": {
+		"message": "Translate Selected Text",
+		"description": "The app name"
+	},
+	"appBetaName": {
+		"message": "Translate Selected Text (Beta)",
+		"description": "The beta app name"
+	},
+	"appDescription": {
+		"message": "Preložte zvýraznený text pomocou prekladača Google",
+		"description": "The app description"
+	},
+	"contextmenu_title": {
+		"message": "Preložiť označený text do...",
+		"description": "Title of the context menu that appears when a right click is done. Inside this parent item there are the target languages."
+	},
+	"contextmenu_title2": {
+		"message": "Preložiť označený text do '$language$'",
+		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
+		"placeholders": {
+			"language": {
+				"content": "$1",
+				"example": "Language to translate into."
+			}
+		}
+	},
+	"contextmenu_edit": {
+		"message": "Upraviť jazyky...",
+		"description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
+	},
+	"options_welcome": {
+		"message": "Vitajte!",
+		"description": "Title of the options page which welcomes users"
+	},
+	"options_introduction": {
+		"message": "V ponuke \"Preložiť\" vyberte jazyky, ktoré chcete zobraziť.",
+		"description": "Introduction paragraph in the options page preceding the language list."
+	},
+	"options_languageselectheader": {
+		"message": "Jazyky:",
+		"description": "Header of the selected languages list."
+	},
+	"options_otheroptionsheader": {
+		"message": "Ďalšie možnosti:",
+		"description": "Subheader in the options page before the options to choose where should the translation be shown.."
+	},
+	"options_tabsoption_1": {
+		"message": "Pre každý preklad otvorte prekladač Google na novej karte.",
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
+	},
+	"options_tabsoption_2": {
+		"message": "Namiesto otvárania viacerých kariet otvorte prekladač Google na jedinečnej karte a prepíšte posledný preklad.",
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
+	},
+	"options_tabsoption_3": {
+		"message": "Vo vyskakovacom okne otvoriť prekladač Google.",
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
+	},
+	"options_savebutton": {
+		"message": "Uložiť",
+		"description": "Save button in the settings page"
+	},
+	"options_addlanguage": {
+		"message": "Pridať jazyk",
+		"description": "Title for the 'Add language' dialog"
+	},
+	"options_addlanguage_addbutton": {
+		"message": "Pridať",
+		"description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
+	},
+	"options_language_label": {
+		"message": "Jazyk:",
+		"description": "Label for the language selector in the 'Add language' dialog"
+	},
+	"options_credits": {
+		"message": "Poďakovania",
+		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
+	},
+	"options_credits_createdby": {
+		"message": "Rozšírenie vytvoril: <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adrià Vilanova Martínez)",
+		"description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
+	},
+	"options_credits_homepage": {
+		"message": "domovská stránka",
+		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
+	},
+	"options_credits_by": {
+		"message": "od",
+		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
+	},
+	"options_credits_translations": {
+		"message": "Preklady",
+		"description": "Header for the section in the credits dialog which recognizes translators."
+	},
+	"options_credits_translations_paragraph": {
+		"message": "Chcel by som poďakovať nasledujúcim prispievateľom, ktorí obetavo preložili rozhranie tohto rozšírenia do mnohých jazykov:",
+		"description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
+	},
+	"options_ok": {
+		"message": "OK",
+		"description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
+	},
+	"options_cancel": {
+		"message": "Zrušiť",
+		"description": "Cancel button in the dialogs, to reject an action."
+	},
+	"notification_install_title": {
+		"message": "Ďakujeme za inštaláciu 'Translate Selected Text'"
+	},
+	"notification_install_message": {
+		"message": "Nastavte kliknutím na túto notifikáciu."
+	}
+}
