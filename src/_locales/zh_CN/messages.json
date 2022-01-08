@@ -7,6 +7,10 @@
 		"message": "应用程序名称 (Beta)",
 		"description": "The beta app name"
 	},
+	"appDescription": {
+		"message": "用 Google 翻译翻译选中的文本",
+		"description": "The app description"
+	},
 	"contextmenu_title": {
 		"message": "将所选内容转换为...",
 		"description": "Title of the context menu that appears when a right click is done. Inside this parent item there are the target languages."
@@ -49,6 +53,10 @@
 		"message": "在唯一标签中打开Google翻译，并覆盖最后一次翻译，而不是打开多个标签。",
 		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
 	},
+	"options_tabsoption_3": {
+		"message": "在弹出窗口中打开 Google 翻译。",
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
+	},
 	"options_savebutton": {
 		"message": "保存",
 		"description": "Save button in the settings page"
@@ -69,6 +77,10 @@
 		"message": "贡献人员",
 		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
 	},
+	"options_credits_createdby": {
+		"message": "扩展作者： <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adriaassum-Vilanova Martinez)",
+		"description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
+	},
 	"options_credits_homepage": {
 		"message": "主页",
 		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
@@ -76,6 +88,14 @@
 	"options_credits_by": {
 		"message": "由",
 		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
+	},
+	"options_credits_translations": {
+		"message": "翻译",
+		"description": "Header for the section in the credits dialog which recognizes translators."
+	},
+	"options_credits_translations_paragraph": {
+		"message": "我要特别感谢以下贡献者，他们无私地将扩展界面翻译成了多种语言:",
+		"description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
 	},
 	"options_ok": {
 		"message": "好的",
