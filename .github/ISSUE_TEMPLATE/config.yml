@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a bug
+    url: https://bugs.avm99963.com/p/translateselectedtext/issues/entry?template=Defect+report+from+user
+    about: This will redirect you to Monorail, which is the new Issue Tracker.
+  - name: Request a new feature
+    url: https://bugs.avm99963.com/p/translateselectedtext/issues/entry?template=Feature+Request
+    about: This will redirect you to Monorail, which is the new Issue Tracker.
