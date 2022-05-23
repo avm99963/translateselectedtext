@@ -8,6 +8,8 @@ jjroot19
 mattiasxxpersson
 JeremyMaloney
 greenairbus01
+rebecca05030817
+dr.gigalsss
 
 # These users joined the project but didn't make any translation, so they
 # shouldn't be credited neither.
