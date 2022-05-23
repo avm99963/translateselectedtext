@@ -75,8 +75,8 @@
     "name": "Bengali",
     "nativeName": "বাংলা"
   },
-  "bh": {
-    "name": "Bihari",
+  "bho": {
+    "name": "Bhojpuri",
     "nativeName": "भोजपुरी"
   },
   "bi": {
@@ -102,6 +102,10 @@
   "ca": {
     "name": "Catalan; Valencian",
     "nativeName": "Català"
+  },
+  "ckb": {
+    "name": "Central Kurdish",
+    "nativeName": "کوردیی ناوەندی"
   },
   "ch": {
     "name": "Chamorro",
@@ -149,7 +153,11 @@
   },
   "dv": {
     "name": "Divehi; Dhivehi; Maldivian;",
-    "nativeName": ""
+    "nativeName": "ދިވެހި"
+  },
+  "doi": {
+    "name": "Dogri",
+    "nativeName": "𑠖𑠵𑠌𑠤𑠮"
   },
   "nl": {
     "name": "Dutch",
@@ -275,6 +283,10 @@
     "name": "Icelandic",
     "nativeName": "Íslenska"
   },
+  "ilo": {
+    "name": "Ilocano",
+    "nativeName": "Ilokano"
+  },
   "it": {
     "name": "Italian",
     "nativeName": "Italiano"
@@ -335,9 +347,17 @@
     "name": "Kongo",
     "nativeName": "KiKongo"
   },
+  "gom": {
+    "name": "Konkani",
+    "nativeName": "कोंकणी"
+  },
   "ko": {
     "name": "Korean",
     "nativeName": "한국어 (韓國語), 조선말 (朝鮮語)"
+  },
+  "kri": {
+    "name": "Krio",
+    "nativeName": "Krio"
   },
   "ku": {
     "name": "Kurdish",
@@ -391,6 +411,10 @@
     "name": "Macedonian",
     "nativeName": "македонски јазик"
   },
+  "mai": {
+    "name": "Maithili",
+    "nativeName": "मैथिली"
+  },
   "mg": {
     "name": "Malagasy",
     "nativeName": "Malagasy fiteny"
@@ -418,6 +442,14 @@
   "mh": {
     "name": "Marshallese",
     "nativeName": "Kajin M̧ajeļ"
+  },
+  "mni-Mtei": {
+    "name": "Meiteilon (Manipuri)",
+    "nativeName": "ꯃꯤꯇꯩꯂꯣꯟ"
+  },
+  "lus": {
+    "name": "Mizo",
+    "nativeName": "Mizo ṭawng"
   },
   "mn": {
     "name": "Mongolian",
@@ -458,6 +490,10 @@
   "ii": {
     "name": "Nuosu",
     "nativeName": "ꆈꌠ꒿ Nuosuhxop"
+  },
+  "nso": {
+    "name": "Sepedi",
+    "nativeName": "Pedi"
   },
   "nr": {
     "name": "South Ndebele",

@@ -7,10 +7,13 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"regexp"
 	"strings"
 )
 
 const isoLangsFileName = "isoLangs.json"
+
+var initDataRe = regexp.MustCompile(`AF_initDataCallback\(.*data: ?(.+), ?sideChannel`)
 
 type Language struct {
 	CodeName   string `json:"-"`
@@ -55,31 +58,43 @@ func main() {
 		log.Fatalf("Couldn't unmarshal JSON file %v, error: %v", isoLangsFileName, err)
 	}
 
-	resp, err := http.Get("http://translate.google.com/translate_a/l?client=chrome")
+	resp, err := http.Get("http://translate.google.com/")
 	if err != nil {
-		log.Fatalf("Couldn't get current Google Translate languages from server, error: %v", err)
+		log.Fatalf("Couldn't get current Google Translate page from server, error: %v", err)
 	}
 	defer resp.Body.Close()
 
 	gTranslateRawData, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Fatalf("Couldn't read body data from Google Translate languages request, error: %v", err)
+		log.Fatalf("Couldn't read body data from Google Translate request, error: %v", err)
 	}
 
-	var gTranslateJson map[string]interface{}
-	if err := json.Unmarshal(gTranslateRawData, &gTranslateJson); err != nil {
+  initDataMatches := initDataRe.FindSubmatch(gTranslateRawData)
+  if len(initDataMatches) < 2 {
+    log.Fatalln("Couldn't find languages information in Google Translate homepage.")
+  }
+  initDataRaw := initDataMatches[1]
+
+	var gTranslateJson []interface{}
+	if err := json.Unmarshal(initDataRaw, &gTranslateJson); err != nil {
 		log.Fatalf("Couldn't unmarshal JSON data from the Google Translate languages request, error: %v", err)
 	}
 
-	gTranslateLangs := gTranslateJson["tl"].(map[string]interface{})
+	gTranslateLangs := gTranslateJson[1].([]interface{})
 	langs := make(map[string]Language, len(gTranslateLangs))
 
-	for langCode, name := range gTranslateLangs {
+	for _, lang := range gTranslateLangs {
+		langSlice := lang.([]interface{})
+		if len(langSlice) < 2 {
+			log.Fatalln("A Google Translate language entry is malformed.")
+		}
+		langCode := langSlice[0].(string)
+    name := langSlice[1].(string)
 		isoLang, err := getLanguage(isoLangs, langCode)
 		if err != nil {
 			log.Fatalf("Didn't find language '%v' in isoLangs, error: %v", langCode, err)
 		}
-		isoLang.Name = name.(string)
+		isoLang.Name = name
 		langs[langCode] = isoLang
 	}
 
