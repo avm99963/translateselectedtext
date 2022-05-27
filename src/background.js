@@ -1,3 +1,5 @@
+import {convertLanguages, isoLangs} from './common/consts.js';
+
 var array_elements = [], translator_tab = null, translator_window = null;
 
 function isEmpty(obj) {

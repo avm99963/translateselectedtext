@@ -1,4 +1,6 @@
 .DS_Store
+node_modules/
 out/
+dist/
 src/manifest.json
 crowdin.yaml

@@ -1,3 +1,9 @@
+import Sortable from 'sortablejs/modular/sortable.core.esm.js';
+
+import {isoLangs} from '../common/consts.js';
+
+let sortable;
+
 function $(selector) {
   return document.querySelector(selector);
 }

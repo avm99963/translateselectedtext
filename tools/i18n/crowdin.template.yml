@@ -11,10 +11,10 @@
 files: [
  {
   # Source files filter
-  "source" : "src/_locales/en/messages.json",
+  "source" : "src/static/_locales/en/messages.json",
 
   # Where translations will be placed
-  "translation" : "src/_locales/%osx_locale%/%original_file_name%",
+  "translation" : "src/static/_locales/%osx_locale%/%original_file_name%",
 
   # Files or directories for ignore
   "ignore" : ["OWNERS"],

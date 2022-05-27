@@ -1,4 +1,4 @@
-var isoLangs = {
+export const isoLangs = {
   'af': {'name': 'Afrikaans', 'nativeName': 'Afrikaans'},
   'ak': {'name': 'Twi', 'nativeName': 'Akan'},
   'am': {'name': 'Amharic', 'nativeName': 'አማርኛ'},
@@ -136,7 +136,7 @@ var isoLangs = {
 
 // Some languages were incorrectly set. This map serves as a conversion between
 // the previous wrong languages and the correct code.
-var convertLanguages = {
+export const convertLanguages = {
   'jv': 'jw',
   'zh': 'zh-CN',
 };

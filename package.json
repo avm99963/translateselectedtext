@@ -1,0 +1,38 @@
+{
+  "name": "translateselectedtext",
+  "version": "0.0.0",
+  "description": "Chrome extension that lets you translate selected text with Google Translate",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://gerrit.avm99963.com/translateselectedtext"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "webext",
+    "add-on",
+    "translate",
+    "selected",
+    "text",
+    "selection",
+    "translator"
+  ],
+  "author": "Adrià Vilanova Martínez (avm99963)",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "json5": "^2.2.1",
+    "path": "^0.12.7",
+    "sortablejs": "^1.15.0",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-preprocessor-loader": "^1.2.0",
+    "webpack-shell-plugin-next": "^2.2.2"
+  }
+}
