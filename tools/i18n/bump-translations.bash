@@ -17,7 +17,7 @@ crowdin download -c crowdin.yml
 
 # Generate i18n credits file
 go run generate-i18n-credits.go
-git add ../../src/static/json/i18n-credits.json
+git add ../../src/options/i18n-credits.json5
 
 # Delete empty translations
 cd ../../src/static/_locales

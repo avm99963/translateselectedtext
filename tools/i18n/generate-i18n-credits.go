@@ -21,7 +21,7 @@ const projectId = "191707"
 const checkAttempts = 5
 const checkWaitTime = 2 * time.Second
 const baseApiURL = "https://api.crowdin.com/api/v2/"
-const i18nCreditsFile = "../../src/static/json/i18n-credits.json"
+const i18nCreditsFile = "../../src/options/i18n-credits.json5"
 
 // Contributors who have sent translations before the Crowdin instance
 // was set up:

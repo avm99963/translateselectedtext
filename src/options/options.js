@@ -2,6 +2,9 @@ import Sortable from 'sortablejs/modular/sortable.core.esm.js';
 
 import {isoLangs} from '../common/consts.js';
 
+import credits from './credits.json5';
+import i18nCredits from './i18n-credits.json5';
+
 let sortable;
 
 function $(selector) {
@@ -145,93 +148,81 @@ function init() {
     });
 
     // About credits...
-    var normalCredits = fetch('json/credits.json').then(res => res.json());
-    var i18nCredits = fetch('json/i18n-credits.json').then(res => res.json());
+    var content = $('dialog#credits_dialog .content_area');
+    credits.forEach(item => {
+      var div = document.createElement('div');
+      div.classList.add('entry');
+      if (item.url) {
+        var a = document.createElement('a');
+        a.classList.add('homepage');
+        a.href = item.url;
+        a.target = '_blank';
+        a.textContent = chrome.i18n.getMessage('options_credits_homepage');
+        div.append(a);
+      }
 
-    Promise.all([normalCredits, i18nCredits])
-        .then(values => {
-          var credits = values[0];
-          var i18nCredits = values[1];
-          var content = $('dialog#credits_dialog .content_area');
-          credits.forEach(item => {
-            var div = document.createElement('div');
-            div.classList.add('entry');
-            if (item.url) {
-              var a = document.createElement('a');
-              a.classList.add('homepage');
-              a.href = item.url;
-              a.target = '_blank';
-              a.textContent =
-                  chrome.i18n.getMessage('options_credits_homepage');
-              div.append(a);
-            }
+      var h4 = document.createElement('h4');
+      h4.textContent = item.name;
+      div.append(h4);
 
-            var h4 = document.createElement('h4');
-            h4.textContent = item.name;
-            div.append(h4);
+      if (item.author) {
+        var p = document.createElement('p');
+        p.classList.add('author');
+        p.textContent = chrome.i18n.getMessage('options_credits_by') + ' ' +
+            item.author + (item.license ? ' - ' + item.license : '');
+        div.append(p);
+      }
+      content.append(div);
+    });
 
-            if (item.author) {
-              var p = document.createElement('p');
-              p.classList.add('author');
-              p.textContent = chrome.i18n.getMessage('options_credits_by') +
-                  ' ' + item.author +
-                  (item.license ? ' - ' + item.license : '');
-              div.append(p);
-            }
-            content.append(div);
-          });
+    var cList = document.getElementById('translators');
+    i18nCredits.forEach(contributor => {
+      var li = document.createElement('li');
+      var languages = [];
+      if (contributor.languages) {
+        contributor.languages.forEach(lang => {
+          languages.push(lang.name || 'undefined');
+        });
+      }
 
-          var cList = document.getElementById('translators');
-          i18nCredits.forEach(contributor => {
-            var li = document.createElement('li');
-            var languages = [];
-            if (contributor.languages) {
-              contributor.languages.forEach(lang => {
-                languages.push(lang.name || 'undefined');
-              });
-            }
+      var name = document.createElement('span');
+      name.classList.add('name');
+      name.textContent = contributor.name || 'undefined';
+      li.append(name);
 
-            var name = document.createElement('span');
-            name.classList.add('name');
-            name.textContent = contributor.name || 'undefined';
-            li.append(name);
+      if (languages.length > 0) {
+        var languages = document.createTextNode(': ' + languages.join(', '));
+        li.append(languages);
+      }
 
-            if (languages.length > 0) {
-              var languages =
-                  document.createTextNode(': ' + languages.join(', '));
-              li.append(languages);
-            }
+      cList.append(li);
+    });
 
-            cList.append(li);
-          });
+    window.onhashchange = function() {
+      if (location.hash == '#credits') {
+        var credits = document.getElementById('credits_dialog');
+        credits.showModal();
+        credits.querySelector('.scrollable').scrollTo(0, 0);
+        $('#credits_ok').focus();
+      }
+    };
 
-          window.onhashchange = function() {
-            if (location.hash == '#credits') {
-              var credits = document.getElementById('credits_dialog');
-              credits.showModal();
-              credits.querySelector('.scrollable').scrollTo(0, 0);
-              $('#credits_ok').focus();
-            }
-          };
+    if (location.hash == '#credits') {
+      $('dialog#credits_dialog').showModal();
+      $('#credits_ok').focus();
+    }
 
-          if (location.hash == '#credits') {
-            $('dialog#credits_dialog').showModal();
-            $('#credits_ok').focus();
-          }
+    $('#credits_ok').addEventListener('click', _ => {
+      $('dialog#credits_dialog').close();
+    });
+    $('dialog#credits_dialog').addEventListener('close', _ => {
+      history.pushState(
+          '', document.title,
+          window.location.pathname + window.location.search);
+    });
 
-          $('#credits_ok').addEventListener('click', _ => {
-            $('dialog#credits_dialog').close();
-          });
-          $('dialog#credits_dialog').addEventListener('close', _ => {
-            history.pushState(
-                '', document.title,
-                window.location.pathname + window.location.search);
-          });
-
-          // Print language list in the modal dialog
-          printListModal();
-        })
-        .catch(err => console.log(err));
+    // Print language list in the modal dialog
+    printListModal();
   });
 }
 
