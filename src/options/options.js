@@ -36,14 +36,14 @@ export class OptionsPage extends LitElement {
           position: absolute;
           top: 0px;
           inset-inline-end: 50px;
-          background: rgb(195, 235, 204);
+          background: #e3f2fd;
           border: solid 1px rgb(139, 139, 139);
           border-top: 0;
           border-radius: 0px 0px 5px 5px;
         }
 
         #credits_container button#credits {
-          color: green!important;
+          color: #1f649d!important;
           margin: 0 5px;
           padding: 1px 3px;
           text-decoration: underline;

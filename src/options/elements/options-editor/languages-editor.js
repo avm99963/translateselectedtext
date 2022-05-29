@@ -20,7 +20,7 @@ export class LanguagesEditor extends LitElement {
           width: 300px;
           height: 250px;
           border: 1px solid #ccc;
-          background-color: #E3F2FD;
+          background-color: #fafafa;
           overflow: auto;
         }
 
@@ -36,7 +36,7 @@ export class LanguagesEditor extends LitElement {
           align-items: center;
           padding: 15px;
           border-bottom: 1px dashed #ddd;
-          background-color: #EEF7FD;
+          background-color: white;
           -webkit-user-select: none;
         }
 
