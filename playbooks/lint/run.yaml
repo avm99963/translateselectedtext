@@ -1,0 +1,6 @@
+- hosts: all
+  roles:
+    - role: build-extension
+      make_target: build_test_extension
+    - role: web-ext-lint
+      source_dir: "dist/chromium"

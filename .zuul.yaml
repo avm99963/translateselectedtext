@@ -1,4 +1,23 @@
+# == Zuul configuration file ==
+#
+# This file is used to configure this project and its associated jobs in Zuul.
+# Zuul is the CI/CD tool which lets us check changes before they are committed,
+# and build a canary version of the extension on a regular basis.
+#
+# More info about Zuul: https://zuul-ci.org/docs/zuul/
+
+- job:
+    name: translateselectedtext-lint
+    parent: web-ext-lint
+    pre-run: playbooks/lint/pre.yaml
+    run: playbooks/lint/run.yaml
+    irrelevant-files:
+      - ".github/.*"
+      - "docs/.*"
+      - "OWNERS"
+      - "README.md"
+
 - project:
     check:
       jobs:
-        - noop
+        - translateselectedtext-lint
