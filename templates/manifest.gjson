@@ -30,5 +30,6 @@
     "chrome_style": true
   },
   "browser_action": {},
-  "default_locale": "en"
+  "default_locale": "en",
+  "minimum_chrome_version": "86.0.4198.0"
 }

@@ -1,271 +1,92 @@
-import Sortable from 'sortablejs/modular/sortable.core.esm.js';
+import {css, html, LitElement} from 'lit';
 
-import {isoLangs} from '../common/consts.js';
+import {msg} from '../common/i18n.js';
 
-import credits from './credits.json5';
-import i18nCredits from './i18n-credits.json5';
+import CreditsDialog from './elements/credits-dialog/credits-dialog.js';
+import OptionsEditor from './elements/options-editor/options-editor.js';
 
-let sortable;
+import {SHARED_STYLES} from './shared/shared-styles.js';
 
-function $(selector) {
-  return document.querySelector(selector);
-}
-
-function $all(selector) {
-  return document.querySelectorAll(selector);
-}
-
-function isEmpty(obj) {
-  return Object.keys(obj).length === 0;
-}
-
-function i18n() {
-  $all('[data-i18n]').forEach(el => {
-    el.innerHTML =
-        chrome.i18n.getMessage('options_' + el.getAttribute('data-i18n'));
-  });
-}
-
-function printListModal() {
-  $('#select_language').textContent = '';
-  var heysortable = sortable.toArray();
-  var languages = [];
-  for (var langCode of Object.keys(isoLangs)) {
-    var l = isoLangs[langCode];
-    l['code'] = langCode;
-    languages.push(l);
+export class OptionsPage extends LitElement {
+  static properties = {
+    _storageData: {type: Object, state: true},
   }
 
-  languages.sort((a, b) => a.name < b.name ? -1 : (a.name > b.name ? 1 : 0));
-  languages.forEach(language => {
-    if (!inArray(language['code'], heysortable)) {
-      var el = document.createElement('option');
-      el.setAttribute('value', language['code']);
-      el.textContent = language['name'] + ' (' + language['nativeName'] + ')';
-      $('#select_language').appendChild(el);
-    }
-  });
-}
-
-function init() {
-  i18n();
-  chrome.storage.sync.get(null, items => {
-    // If no settings are set
-    if (isEmpty(items)) {
-      items = {
-        translateinto: {},
-        uniquetab: 'popup',
-      };
-      chrome.storage.sync.set(items);
-    }
-
-    // Check the checkbox of the window opening
-    if (items.uniquetab === 'yep') $('#uniquetab').checked = true;
-    if (items.uniquetab === '') $('#varioustabs').checked = true;
-    if (items.uniquetab === 'panel' || items.uniquetab === 'popup')
-      $('#popup').checked = true;
-
-    // Add event listeners for certain buttons and links
-    $('#save').addEventListener('click', _ => {
-      saveOptions(true);
+  constructor() {
+    super();
+    this._storageData = undefined;
+    this.updateStorageData();
+    chrome.storage.onChanged.addListener((changes, areaName) => {
+      if (areaName == 'sync') this.updateStorageData();
     });
-
-    // Save automatically
-    $all('input[type="radio"]').forEach(radio => {
-      radio.addEventListener('change', _ => {
-        saveOptions();
-      });
-    });
-
-    // Print selected language list
-    var languages = items.translateinto;
-
-    if (languages) {
-      for (var language_id of Object.keys(languages)) {
-        var language = languages[language_id];
-        var el = document.createElement('li');
-        el.setAttribute('data-language', language);
-        el.setAttribute('data-id', language);
-        el.innerHTML = isoLangs[language]['name'] + ' (' +
-            isoLangs[language]['nativeName'] + ')' +
-            '<span data-language=\'' + language +
-            '\' class=\'delete\'>x</span>';
-        $('#languages').appendChild(el);
-        $('#languages li[data-language=' + language + '] .delete')
-            .addEventListener('click', function() {
-              $('#languages')
-                  .removeChild($(
-                      'li[data-language=' + this.getAttribute('data-language') +
-                      ']'));
-              printListModal();
-              // Save automatically
-              saveOptions();
-            });
-      }
-    }
-
-    // Initiate Sortable
-    sortable = new Sortable($('#languages'), {animation: 150});
-
-    // Handling The Dialog
-    $('#languages_add').addEventListener('click', _ => {
-      $('dialog#languages_add_dialog').showModal();
-      $('#select_language').focus();
-    });
-
-    $('#languages_add_cancel').addEventListener('click', _ => {
-      $('dialog#languages_add_dialog').close();
-    });
-
-    $('#languages_add_ok').addEventListener('click', _ => {
-      var el = document.createElement('li');
-      var language = $('#select_language').value;
-      if (inArray(language, sortable.toArray())) {
-        return;
-      }
-      el.setAttribute('data-language', language);
-      el.setAttribute('data-id', language);
-      el.innerHTML = isoLangs[language]['name'] + ' (' +
-          isoLangs[language]['nativeName'] + ')' +
-          '<span data-language=\'' + language + '\' class=\'delete\'>x</span>';
-      $('#languages').appendChild(el);
-      var selection = $('#select_language option[value=' + language + ']');
-      selection.parentNode.removeChild(selection);
-      $('#languages li[data-id=' + language + '] .delete')
-          .addEventListener('click', function() {
-            $('#languages')
-                .removeChild(
-                    $('li[data-language=' + this.getAttribute('data-language') +
-                      ']'));
-            printListModal();
-            // Save automatically
-            saveOptions();
-          });
-      $('dialog').close();
-
-      // Save automatically
-      saveOptions();
-    });
-
-    // About credits...
-    var content = $('dialog#credits_dialog .content_area');
-    credits.forEach(item => {
-      var div = document.createElement('div');
-      div.classList.add('entry');
-      if (item.url) {
-        var a = document.createElement('a');
-        a.classList.add('homepage');
-        a.href = item.url;
-        a.target = '_blank';
-        a.textContent = chrome.i18n.getMessage('options_credits_homepage');
-        div.append(a);
-      }
-
-      var h4 = document.createElement('h4');
-      h4.textContent = item.name;
-      div.append(h4);
-
-      if (item.author) {
-        var p = document.createElement('p');
-        p.classList.add('author');
-        p.textContent = chrome.i18n.getMessage('options_credits_by') + ' ' +
-            item.author + (item.license ? ' - ' + item.license : '');
-        div.append(p);
-      }
-      content.append(div);
-    });
-
-    var cList = document.getElementById('translators');
-    i18nCredits.forEach(contributor => {
-      var li = document.createElement('li');
-      var languages = [];
-      if (contributor.languages) {
-        contributor.languages.forEach(lang => {
-          languages.push(lang.name || 'undefined');
-        });
-      }
-
-      var name = document.createElement('span');
-      name.classList.add('name');
-      name.textContent = contributor.name || 'undefined';
-      li.append(name);
-
-      if (languages.length > 0) {
-        var languages = document.createTextNode(': ' + languages.join(', '));
-        li.append(languages);
-      }
-
-      cList.append(li);
-    });
-
-    window.onhashchange = function() {
-      if (location.hash == '#credits') {
-        var credits = document.getElementById('credits_dialog');
-        credits.showModal();
-        credits.querySelector('.scrollable').scrollTo(0, 0);
-        $('#credits_ok').focus();
-      }
-    };
-
-    if (location.hash == '#credits') {
-      $('dialog#credits_dialog').showModal();
-      $('#credits_ok').focus();
-    }
-
-    $('#credits_ok').addEventListener('click', _ => {
-      $('dialog#credits_dialog').close();
-    });
-    $('dialog#credits_dialog').addEventListener('close', _ => {
-      history.pushState(
-          '', document.title,
-          window.location.pathname + window.location.search);
-    });
-
-    // Print language list in the modal dialog
-    printListModal();
-  });
-}
-
-function saveOptions(close = false) {
-  var languages = document.getElementById('languages');
-  var options = {
-    uniquetab: '',
-    translateinto: {},
-  };
-
-  options.uniquetab = radioSelected('uniquetab');
-
-  var selected_languages = sortable.toArray();
-
-  var i = 0;
-  for (var language_id in selected_languages) {
-    var language = selected_languages[language_id];
-    options.translateinto[i] = language;
-    i++;
   }
 
-  chrome.storage.sync.set(options, function() {
-    var background = chrome.extension.getBackgroundPage();
+  static get styles() {
+    return [
+      SHARED_STYLES,
+      css`
+        :host {
+          display: block;
+          padding: 10px;
+          margin: 14px 17px;
+          font-family: "Roboto", "Arial", sans-serif!important;
+        }
 
-    background.translator_tab = false;
-    background.translator_window = false;
-    if (close) window.close();
-  });
-}
+        #credits_container {
+          position: absolute;
+          top: 0px;
+          inset-inline-end: 50px;
+          background: rgb(195, 235, 204);
+          border: solid 1px rgb(139, 139, 139);
+          border-top: 0;
+          border-radius: 0px 0px 5px 5px;
+        }
 
-function radioSelected(a) {
-  var elements = document.getElementsByName(a);
-
-  for (var i = 0; i < elements.length; i++)
-    if (elements[i].checked) return elements[i].value;
-}
-
-function inArray(needle, haystack) {
-  var length = haystack.length;
-  for (var i = 0; i < length; i++) {
-    if (haystack[i] == needle) return true;
+        #credits_container button#credits {
+          color: green!important;
+          margin: 0 5px;
+          padding: 1px 3px;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      `,
+    ];
   }
-  return false;
-}
 
-window.addEventListener('load', init);
+  render() {
+    return html`
+      <div id="credits_container">
+        <button
+            @click="${this.showCredits}" id="credits"
+            class="notbtn" tabindex="0" role="button">
+          ${msg('options_credits')}
+        </button>
+      </div>
+      <h1 id="welcome">${msg('options_welcome')}</h1>
+      <p id="introduction">${msg('options_introduction')}</p>
+      <options-editor .storageData=${this._storageData}></options-editor>
+      <credits-dialog></credits-dialog>
+    `;
+  }
+
+  updateStorageData() {
+    chrome.storage.sync.get(null, items => {
+      // If no settings are set
+      if (Object.keys(items).length === 0) {
+        items = {
+          translateinto: {},
+          uniquetab: 'popup',
+        };
+        chrome.storage.sync.set(items);
+      }
+      this._storageData = items;
+    });
+  }
+
+  showCredits() {
+    const e =
+        new CustomEvent('show-credits-dialog', {bubbles: true, composed: true});
+    this.renderRoot.querySelector('credits-dialog').dispatchEvent(e);
+  }
+}
+customElements.define('options-page', OptionsPage);

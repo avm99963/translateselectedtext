@@ -1,72 +1,21 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="UTF-8">
-  <title>Options</title>
-  <link rel="stylesheet" type="text/css" href="css/options.css">
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
-</head>
-
-<body>
-  <div id="credits_container">
-    <a href="#credits" id="credits" data-i18n="credits"></a>
-  </div>
-
-  <h1 id="welcome" data-i18n="welcome"></h1>
-
-  <p id="introduction" data-i18n="introduction"></p>
-
-  <div id="languages_container">
-    <ul id="languages"></ul>
-  </div>
-  <div id="languages_footer">
-    <button id="languages_add" data-i18n="addlanguage_addbutton"></button>
-  </div>
-
-  <h2 id="otheroptionsheader" data-i18n="otheroptionsheader"></h2>
-
-  <div id="otheroptions">
-    <p><input type="radio" name="uniquetab" id="varioustabs" value=""> <label id="varioustabs_label" for="varioustabs" data-i18n="tabsoption_1"></label></p>
-    <p><input type="radio" name="uniquetab" id="uniquetab" value="yep"> <label id="uniquetab_label" for="uniquetab" data-i18n="tabsoption_2"></label></p>
-    <p><input type="radio" name="uniquetab" id="popup" value="popup"> <label id="popup_label" for="popup" data-i18n="tabsoption_3"></label></p>
-  </div>
-
-  <button id="save" data-i18n="savebutton"></button>
-
-  <dialog id="languages_add_dialog">
-    <h3 data-i18n="addlanguage"></h3>
-    <div class="content_area">
-      <label id="language_label" for="select_language" data-i18n="language_label"></label>
-      <select id="select_language"></select>
-    </div>
-    <div class="action_buttons">
-      <button id="languages_add_cancel" data-i18n="cancel"></button>
-      <button id="languages_add_ok" data-i18n="addlanguage_addbutton"></button>
-    </div>
-  </dialog>
-  <dialog id="credits_dialog">
-    <div class="scrollable">
-      <h3 data-i18n="credits"></h3>
-      <div class="entry createdby">
-        <div data-i18n="credits_createdby"></div>
-      </div>
-      <div class="entry">
-        <a href="https://gtranslate.avm99963.com/" class="homepage" target="_blank" data-i18n="credits_homepage"></a>
-        <h4 data-i18n="credits_translations"></h4>
-        <div data-i18n="credits_translations_paragraph"></div>
-        <ul id="translators"></ul>
-      </div>
-      <div class="content_area">
-      </div>
-    </div>
-    <div class="action_buttons">
-      <button id="credits_ok" data-i18n="ok"></button>
-    </div>
-  </dialog>
-
-  <script src="options.bundle.js"></script>
-  <script src="js/sortable.js"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8">
+    <title>Options</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 470px;
+        font-size: 90%;
+        background-color: #BBDEFB;
+      }
+    </style>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <options-page></options-page>
+    <script src="options.bundle.js"></script>
+  </body>
 </html>

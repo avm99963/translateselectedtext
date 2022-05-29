@@ -28,6 +28,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "json5": "^2.2.1",
+    "lit": "^2.2.5",
     "path": "^0.12.7",
     "sortablejs": "^1.15.0",
     "webpack": "^5.72.1",
