@@ -5,12 +5,6 @@
     "author": "dAKirby309"
   },
   {
-    "name": "Sortable",
-    "url": "https://github.com/RubaXa/Sortable",
-    "author": "Lebedev Konstantin",
-    "license": "MIT License"
-  },
-  {
     "name": "Chromium",
     "url": "https://code.google.com/p/chromium/",
     "author": "The Chromium Authors",
@@ -21,5 +15,59 @@
     "url": "https://github.com/enricolucia/what-2-nite/blob/master/isoLangs.json",
     "author": "Google, Inc.",
     "license": "MIT License"
-  }
+  },
+  {
+    "name": "clean-webpack-plugin",
+    "url": "https://github.com/johnagan/clean-webpack-plugin",
+    "author": "John Agan",
+    "license": "MIT License"
+  },
+  {
+    "name": "copy-webpack-plugin",
+    "url": "https://github.com/webpack-contrib/copy-webpack-plugin",
+    "author": "JS Foundation and other contributors",
+    "license": "MIT License"
+  },
+  {
+    "name": "json5",
+    "url": "https://github.com/json5/json5",
+    "author": "Aseem Kishore, and others",
+    "license": "MIT License"
+  },
+  {
+    "name": "lit",
+    "url": "https://github.com/lit/lit",
+    "author": "Google LLC",
+    "license": "BSD-3-Clause License"
+  },
+  {
+    "name": "path",
+    "url": "https://github.com/jinder/path",
+    "author": "Joyent, Inc. and other Node contributors",
+    "license": "MIT License"
+  },
+  {
+    "name": "webpack",
+    "url": "https://github.com/webpack/webpack",
+    "author": "JS Foundation and other contributors",
+    "license": "MIT License"
+  },
+  {
+    "name": "webpack-cli",
+    "url": "https://github.com/webpack/webpack-cli",
+    "author": "JS Foundation and other contributors",
+    "license": "MIT License"
+  },
+  {
+    "name": "webpack-preprocessor-loader",
+    "url": "https://github.com/afterwind-io/preprocessor-loader",
+    "author": "Afterwind",
+    "license": "MIT License"
+  },
+  {
+    "name": "webpack-shell-plugin-next",
+    "url": "https://github.com/s00d/webpack-shell-plugin-next",
+    "author": "Pavel Kuzmin",
+    "license": "MIT License"
+  },
 ]
