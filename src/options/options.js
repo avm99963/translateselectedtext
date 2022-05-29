@@ -7,6 +7,23 @@ import OptionsEditor from './elements/options-editor/options-editor.js';
 
 import {SHARED_STYLES} from './shared/shared-styles.js';
 
+let bodyStyles = document.createElement('style');
+// #!if browser_target == 'chromium'
+let widthProperty = 'width: 470px;';
+// #!else
+let widthProperty = '';
+// #!endif
+bodyStyles.textContent = `
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 90%;
+    ${widthProperty}
+  }
+`;
+
+document.head.append(bodyStyles);
+
 export class OptionsPage extends LitElement {
   static properties = {
     _storageData: {type: Object, state: true},
