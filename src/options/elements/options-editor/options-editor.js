@@ -2,30 +2,10 @@ import {css, html, LitElement} from 'lit';
 import {map} from 'lit/directives/map.js';
 
 import {msg} from '../../../common/i18n.js';
+import {TAB_OPTIONS} from '../../../common/options.js';
 import {SHARED_STYLES} from '../../shared/shared-styles.js';
 
 import LanguagesEditor from './languages-editor.js';
-
-const TAB_OPTIONS = [
-  // Open in new tab for each translation
-  {
-    value: '',
-    labelMsg: 'options_tabsoption_1',
-    deprecatedValues: [],
-  },
-  // Open in a unique tab
-  {
-    value: 'yep',
-    labelMsg: 'options_tabsoption_2',
-    deprecatedValues: [],
-  },
-  // Open in a popup
-  {
-    value: 'popup',
-    labelMsg: 'options_tabsoption_3',
-    deprecatedValues: ['panel'],
-  },
-];
 
 export class OptionsEditor extends LitElement {
   static properties = {
@@ -58,7 +38,7 @@ export class OptionsEditor extends LitElement {
       return html`
             <p>
               <input type="radio" name="uniquetab" id="uniquetab_${i}"
-                  value="${option?.value}" ?checked="${checked}"
+                  value="${option?.value}" .checked="${checked}"
                   @change="${() => this.changeTabOption(option.value)}">
               <label for="uniquetab_${i}">${msg(option.labelMsg)}</label></p>
           `;

@@ -1,10 +1,10 @@
 import {css, html, LitElement} from 'lit';
 
 import {msg} from '../common/i18n.js';
+import Options from '../common/options.js';
 
 import CreditsDialog from './elements/credits-dialog/credits-dialog.js';
 import OptionsEditor from './elements/options-editor/options-editor.js';
-
 import {SHARED_STYLES} from './shared/shared-styles.js';
 
 let bodyStyles = document.createElement('style');
@@ -87,17 +87,16 @@ export class OptionsPage extends LitElement {
   }
 
   updateStorageData() {
-    chrome.storage.sync.get(null, items => {
-      // If no settings are set
-      if (Object.keys(items).length === 0) {
-        items = {
-          translateinto: {},
-          uniquetab: 'popup',
-        };
-        chrome.storage.sync.set(items);
-      }
-      this._storageData = items;
-    });
+    Options.getOptions(/* readOnly = */ true)
+        .then(options => {
+          this._storageData = {
+            translateinto: options.targetLangs,
+            uniquetab: options.uniqueTab,
+          };
+        })
+        .catch(err => {
+          console.error('Error retrieving user options.', err);
+        });
   }
 
   showCredits() {
