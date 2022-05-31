@@ -83,9 +83,9 @@ export default class Options {
             let defaultLang2 = uiLocale.split('_')[0];
 
             items.translateinto = {};
-            if (isoLangs[default_language_1] != undefined)
+            if (isoLangs[defaultLang1] != undefined)
               items.translateinto['0'] = defaultLang1;
-            else if (isoLangs[default_language_2] != undefined)
+            else if (isoLangs[defaultLang2] != undefined)
               items.translateinto['0'] = defaultLang2;
           }
         }
