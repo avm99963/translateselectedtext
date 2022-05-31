@@ -1,10 +1,10 @@
-interface IsoLang {
+export interface IsoLang {
   name: string;
   nativeName: string;
-};
-interface IsoLangs {
+}
+export interface IsoLangs {
   [key: string]: IsoLang;
-};
+}
 
 export const isoLangs: IsoLangs = {
   'af': {'name': 'Afrikaans', 'nativeName': 'Afrikaans'},

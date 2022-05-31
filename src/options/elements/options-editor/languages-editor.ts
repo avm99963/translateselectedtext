@@ -1,16 +1,17 @@
+import './add-language-dialog';
+
 import {css, html, LitElement} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 import {map} from 'lit/directives/map.js';
 
 import {isoLangs} from '../../../common/consts';
 import {msg} from '../../../common/i18n';
+import {TargetLangs} from '../../../common/options';
 import {SHARED_STYLES} from '../../shared/shared-styles';
 
-import AddLanguageDialog from './add-language-dialog';
-
-export class LanguagesEditor extends LitElement {
-  static properties = {
-    languages: {type: Object},
-  };
+@customElement('languages-editor')
+export default class LanguagesEditor extends LitElement {
+  @property({type: Object}) languages: TargetLangs;
 
   static get styles() {
     return [
@@ -84,16 +85,10 @@ export class LanguagesEditor extends LitElement {
     ];
   }
 
-  constructor() {
-    super();
-    this.addEventListener('show-credits-dialog', this.showDialog);
-    this.sortable = undefined;
-  }
-
   render() {
-    let languageCodes = Object.values(this.languages ?? {});
-    let languageList = map(languageCodes, (lang, i) => {
-      let moveBtns = [];
+    const languageCodes = Object.values(this.languages ?? {});
+    const languageList = map(languageCodes, (lang, i) => {
+      const moveBtns = [];
       if (i != 0) {
         moveBtns.push(html`
           <button
@@ -160,29 +155,28 @@ export class LanguagesEditor extends LitElement {
     this.renderRoot.querySelector('add-language-dialog').dispatchEvent(e);
   }
 
-  save(languageCodes) {
-    let translateinto = Object.assign({}, languageCodes);
+  save(languageCodes: string[]) {
+    const translateinto = Object.assign({}, languageCodes);
     chrome.storage.sync.set({translateinto});
   }
 
-  deleteLanguage(deleteLang) {
-    let languageCodes =
+  deleteLanguage(deleteLang: string) {
+    const languageCodes =
         Object.values(this.languages ?? {}).filter(lang => lang != deleteLang);
     this.save(languageCodes);
   }
 
-  swapLanguages(i, j) {
-    let languageCodes = Object.values(this.languages ?? {});
+  swapLanguages(i: number, j: number) {
+    const languageCodes = Object.values(this.languages ?? {});
     if (i >= languageCodes.length || j >= languageCodes.length || i < 0 ||
         j < 0) {
       console.error(
           'Can\'t swap languages because the indexes are out of the range.');
       return;
     }
-    let tmp = languageCodes[j];
+    const tmp = languageCodes[j];
     languageCodes[j] = languageCodes[i];
     languageCodes[i] = tmp;
     this.save(languageCodes);
   }
 }
-customElements.define('languages-editor', LanguagesEditor);

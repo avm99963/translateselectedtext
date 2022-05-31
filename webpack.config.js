@@ -9,7 +9,7 @@ module.exports = (env, args) => {
   // web_accessible_resources in //templates/manifest.gjson.
   let entry = {
     background: './src/background.ts',
-    options: './src/options/options.js',
+    options: './src/options/options.ts',
   };
 
   let outputPath = path.join(__dirname, 'dist', env.browser_target);

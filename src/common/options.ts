@@ -1,6 +1,6 @@
 import {convertLanguages, isoLangs} from './consts';
 
-type TabOptionValue = ''|'yep'|'popup';
+export type TabOptionValue = ''|'yep'|'popup';
 type DeprecatedTabOptionValue = 'panel';
 type TabOptionValueIncludingDeprecated =
     TabOptionValue|DeprecatedTabOptionValue;
@@ -11,10 +11,10 @@ interface TabOption {
   deprecatedValues: TabOptionValueIncludingDeprecated[];
 }
 
-interface TargetLangs {
+export interface TargetLangs {
   [key: string]: string;  // Here the key is a string with a number.
 }
-interface OptionsV0 {
+export interface OptionsV0 {
   translateinto: TargetLangs;
   uniquetab: TabOptionValue;
 }
@@ -79,7 +79,7 @@ export default class Options {
 
   // Returns a promise that resolves in an instance of the Object class with the
   // current options.
-  static getOptions(readOnly: boolean = true): Promise<Options> {
+  static getOptions(readOnly = true): Promise<Options> {
     return Options.getOptionsRaw(readOnly).then(res => {
       return new Options(res.options, res.isFirstRun);
     });
@@ -100,13 +100,13 @@ export default class Options {
           return rej(chrome.runtime.lastError);
         }
 
-        let items = <LegacyOptions>itemsAny;
+        const items = <LegacyOptions>itemsAny;
         let didTranslateintoChange = false;
         let didUniquetabChange = false;
 
         // If the extension sync storage area is blank, set this as being the
         // first run.
-        let isFirstRun = Object.keys(items).length === 0;
+        const isFirstRun = Object.keys(items).length === 0;
 
         // Create |translateinto| property if it doesn't exist.
         if (items.translateinto === undefined) {
@@ -119,9 +119,9 @@ export default class Options {
             items.translateinto =
                 Object.assign(newTranslateinto, Object.values(items.languages));
           } else {
-            let uiLocale = chrome.i18n.getMessage('@@ui_locale');
-            let defaultLang1 = uiLocale.replace('_', '-');
-            let defaultLang2 = uiLocale.split('_')[0];
+            const uiLocale = chrome.i18n.getMessage('@@ui_locale');
+            const defaultLang1 = uiLocale.replace('_', '-');
+            const defaultLang2 = uiLocale.split('_')[0];
 
             items.translateinto = {};
             if (isoLangs[defaultLang1] != undefined)
@@ -133,7 +133,7 @@ export default class Options {
 
         // Normalize |translateinto| property: remove non-existent languages or
         // change them with the correct language code.
-        for (let [index, language] of Object.entries(items.translateinto)) {
+        for (const [index, language] of Object.entries(items.translateinto)) {
           if (isoLangs[language] === undefined) {
             didTranslateintoChange = true;
             if (convertLanguages[language] === undefined) {
@@ -144,7 +144,7 @@ export default class Options {
               delete items.translateinto[index];
             } else {
               // The language doesn't exist but a known replacement is known
-              let newLanguage = convertLanguages[language];
+              const newLanguage = convertLanguages[language];
               console.log('Replacing ' + language + ' with ' + newLanguage);
 
               // If the converted language is already on the list, just remove
@@ -165,7 +165,7 @@ export default class Options {
         // the default value.
         let uniquetabNewValue: TabOptionValue;
         let foundValue = false;
-        for (let opt of TAB_OPTIONS) {
+        for (const opt of TAB_OPTIONS) {
           if (opt.value == items?.uniquetab) {
             uniquetabNewValue = opt.value;
             foundValue = true;
@@ -188,7 +188,7 @@ export default class Options {
           chrome.storage.sync.remove('languages');
         }
 
-        let returnObject: OptionsWrapper = {
+        const returnObject: OptionsWrapper = {
           isFirstRun,
           options: {
             translateinto: items.translateinto,

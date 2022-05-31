@@ -1,16 +1,16 @@
+import './languages-editor';
+
 import {css, html, LitElement} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 import {map} from 'lit/directives/map.js';
 
 import {msg} from '../../../common/i18n';
-import {TAB_OPTIONS} from '../../../common/options';
+import {OptionsV0, TAB_OPTIONS, TabOptionValue} from '../../../common/options';
 import {SHARED_STYLES} from '../../shared/shared-styles';
 
-import LanguagesEditor from './languages-editor';
-
-export class OptionsEditor extends LitElement {
-  static properties = {
-    storageData: {type: Object},
-  };
+@customElement('options-editor')
+export default class OptionsEditor extends LitElement {
+  @property({type: Object}) storageData: OptionsV0;
 
   static get styles() {
     return [
@@ -24,16 +24,11 @@ export class OptionsEditor extends LitElement {
     ];
   }
 
-  constructor() {
-    super();
-    this.addEventListener('show-credits-dialog', this.showDialog);
-  }
-
   render() {
-    let currentTabOption = this.storageData?.uniquetab;
+    const currentTabOption = this.storageData?.uniquetab;
 
-    let otherOptions = map(TAB_OPTIONS, (option, i) => {
-      let checked = option.value == currentTabOption ||
+    const otherOptions = map(TAB_OPTIONS, (option, i) => {
+      const checked = option.value == currentTabOption ||
           option.deprecatedValues.includes(currentTabOption);
       return html`
             <p>
@@ -56,10 +51,9 @@ export class OptionsEditor extends LitElement {
     `;
   }
 
-  changeTabOption(value) {
+  changeTabOption(value: TabOptionValue) {
     chrome.storage.sync.set({uniquetab: value}, function() {
       chrome.runtime.sendMessage({action: 'clearTranslatorTab'});
     });
   }
 }
-customElements.define('options-editor', OptionsEditor);

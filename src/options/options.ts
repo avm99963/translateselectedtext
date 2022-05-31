@@ -1,17 +1,21 @@
+import './elements/credits-dialog/credits-dialog';
+import './elements/options-editor/options-editor';
+
 import {css, html, LitElement} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 
 import {msg} from '../common/i18n';
-import Options from '../common/options';
+import {default as Options, OptionsV0} from '../common/options';
 
-import CreditsDialog from './elements/credits-dialog/credits-dialog';
-import OptionsEditor from './elements/options-editor/options-editor';
 import {SHARED_STYLES} from './shared/shared-styles';
 
-let bodyStyles = document.createElement('style');
-// #!if browser_target == 'chromium'
-let widthProperty = 'width: 470px;';
-// #!else
-let widthProperty = '';
+const bodyStyles = document.createElement('style');
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore #!if browser_target == 'chromium'
+const widthProperty = 'width: 470px;';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore #!else
+const widthProperty = '';
 // #!endif
 bodyStyles.textContent = `
   body {
@@ -24,16 +28,15 @@ bodyStyles.textContent = `
 
 document.head.append(bodyStyles);
 
+@customElement('options-page')
 export class OptionsPage extends LitElement {
-  static properties = {
-    _storageData: {type: Object, state: true},
-  }
+  @property({type: Object, state: true}) _storageData: OptionsV0;
 
   constructor() {
     super();
     this._storageData = undefined;
     this.updateStorageData();
-    chrome.storage.onChanged.addListener((changes, areaName) => {
+    chrome.storage.onChanged.addListener((_changes, areaName) => {
       if (areaName == 'sync') this.updateStorageData();
     });
   }
@@ -105,4 +108,3 @@ export class OptionsPage extends LitElement {
     this.renderRoot.querySelector('credits-dialog').dispatchEvent(e);
   }
 }
-customElements.define('options-page', OptionsPage);

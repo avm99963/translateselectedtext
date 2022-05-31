@@ -1,14 +1,15 @@
 import {css, html, LitElement} from 'lit';
+import {customElement} from 'lit/decorators.js';
 import {map} from 'lit/directives/map.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 import {msg} from '../../../common/i18n';
-import credits from '../../credits.json5';
-import i18nCredits from '../../i18n-credits.json5';
 import {DIALOG_STYLES} from '../../shared/dialog-styles';
 import {SHARED_STYLES} from '../../shared/shared-styles';
+import {credits, i18nCredits} from '../../tsCredits';
 
-export class CreditsDialog extends LitElement {
+@customElement('credits-dialog')
+export default class CreditsDialog extends LitElement {
   static get styles() {
     return [
       SHARED_STYLES,
@@ -64,34 +65,29 @@ export class CreditsDialog extends LitElement {
   }
 
   render() {
-    let translators = map(i18nCredits, contributor => {
-      let languagesArray =
-          contributor?.languages?.map?.(lang => lang?.name ?? 'undefined');
-      let languages =
+    const translators = map(i18nCredits, (contributor) => {
+      const languagesArray =
+          contributor?.languages?.map?.((lang) => lang?.name ?? 'undefined');
+      const languages =
           languagesArray.length > 0 ? ': ' + languagesArray.join(', ') : '';
       return html`
-        <li>
-          <span class="name">${contributor?.name}</span>${languages}
-        </li>
+        <li><span class="name">${contributor?.name}</span>${languages}</li>
       `;
     });
 
-    let homepageMsg = msg('options_credits_homepage');
-    let creditsByMsg = msg('options_credits_by');
+    const homepageMsg = msg('options_credits_homepage');
+    const creditsByMsg = msg('options_credits_by');
 
-    let otherCredits = map(credits, c => {
-      let url = c.url ? html`
-            <a href=${c?.url} target="_blank" class="homepage">
-              ${homepageMsg}
-            </a>` :
-                        undefined;
-      let license = c.license ? ' - ' + c.license : '';
-      let author = c.author ? html`
-        <p class="author">
-          ${creditsByMsg} ${c.author}${license}
-        </p>
-      ` :
-                              undefined;
+    const otherCredits = map(credits, (c) => {
+      const url = c.url ?
+          html` <a href=${c?.url} target="_blank" class="homepage">
+            ${homepageMsg}
+          </a>` :
+          undefined;
+      const license = c.license ? ' - ' + c.license : '';
+      const author = c.author ?
+          html` <p class="author">${creditsByMsg} ${c.author}${license}</p> ` :
+          undefined;
 
       return html`
         <div class="entry">
@@ -119,9 +115,7 @@ export class CreditsDialog extends LitElement {
               ${translators}
             </ul>
           </div>
-          <div class="content_area">
-            ${otherCredits}
-          </div>
+          <div class="content_area">${otherCredits}</div>
         </div>
         <div class="action_buttons">
           <button id="credits_ok" @click="${this.closeDialog}">
@@ -133,14 +127,13 @@ export class CreditsDialog extends LitElement {
   }
 
   showDialog() {
-    let dialog = this.renderRoot.querySelector('dialog');
+    const dialog = this.renderRoot.querySelector('dialog');
     dialog.showModal();
     dialog.querySelector('.scrollable').scrollTo(0, 0);
-    dialog.querySelector('#credits_ok').focus();
+    (dialog.querySelector('#credits_ok') as HTMLElement).focus();
   }
 
   closeDialog() {
     this.renderRoot.querySelector('dialog').close();
   }
 }
-customElements.define('credits-dialog', CreditsDialog);

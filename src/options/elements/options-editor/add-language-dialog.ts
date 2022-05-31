@@ -1,23 +1,30 @@
 import {css, html, LitElement} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 
-import {isoLangs} from '../../../common/consts';
+import {IsoLang, isoLangs} from '../../../common/consts';
 import {msg} from '../../../common/i18n';
+import {TargetLangs} from '../../../common/options';
 import {DIALOG_STYLES} from '../../shared/dialog-styles';
 import {SHARED_STYLES} from '../../shared/shared-styles';
+
+interface IsoLangWCode extends IsoLang {
+  code: string;
+}
 
 const ALL_LANGUAGES =
     Object.entries(isoLangs)
         .map(entry => {
-          let lang = entry[1];
-          lang.code = entry[0];
+          const lang: IsoLangWCode = Object.assign(entry[1], {code: entry[0]});
           return lang;
         })
         .sort((a, b) => a.name < b.name ? -1 : (a.name > b.name ? 1 : 0));
 
-export class AddLanguageDialog extends LitElement {
+@customElement('add-language-dialog')
+export default class AddLanguageDialog extends LitElement {
   static properties = {
     languages: {type: Object},
   };
+  @property({type: Object}) languages: TargetLangs;
 
   static get styles() {
     return [
@@ -51,8 +58,8 @@ export class AddLanguageDialog extends LitElement {
   }
 
   render() {
-    let languageCodes = Object.values(this.languages ?? {});
-    let languages = ALL_LANGUAGES
+    const languageCodes = Object.values(this.languages ?? {});
+    const languages = ALL_LANGUAGES
                         .filter(lang => {
                           return !languageCodes.includes(lang.code);
                         })
@@ -88,7 +95,7 @@ export class AddLanguageDialog extends LitElement {
   }
 
   showDialog() {
-    let dialog = this.renderRoot.querySelector('dialog');
+    const dialog = this.renderRoot.querySelector('dialog');
     dialog.showModal();
   }
 
@@ -97,16 +104,15 @@ export class AddLanguageDialog extends LitElement {
   }
 
   addLanguage() {
-    let languageCodes = Object.values(this.languages ?? {});
-    let select = this.renderRoot.querySelector('#select_language');
+    const languageCodes = Object.values(this.languages ?? {});
+    const select = this.renderRoot.querySelector('#select_language') as HTMLSelectElement;
 
-    let newLang = select.value;
+    const newLang = select.value;
     languageCodes.push(newLang);
-    let translateinto = Object.assign({}, languageCodes);
+    const translateinto = Object.assign({}, languageCodes);
     chrome.storage.sync.set({translateinto}, () => {
       select.selectedIndex = 0;
       this.closeDialog();
     });
   }
 }
-customElements.define('add-language-dialog', AddLanguageDialog);
