@@ -83,6 +83,9 @@ module.exports = (env, args) => {
             {loader: 'source-map-loader'},
             preprocessorLoader,
           ],
+          exclude: [
+            path.resolve(__dirname, 'node_modules'),
+          ],
         },
         {
           test: /\.tsx?$/,

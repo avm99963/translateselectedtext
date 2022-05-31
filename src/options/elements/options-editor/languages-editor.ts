@@ -1,3 +1,4 @@
+import '@polymer/paper-button/paper-button.js';
 import './add-language-dialog';
 
 import {css, html, LitElement} from 'lit';
@@ -48,25 +49,28 @@ export default class LanguagesEditor extends LitElement {
         #languages li .delete {
           font-size: 18px;
           color: red;
-          padding-left: 2px;
-          margin-left: 2px;
         }
 
         #languages li .movebtn {
-          font-size: 16px;
-          color: blue;
-          padding: 0 2px;
-          margin: 0 2px;
+          font-size: 15px;
+        }
+
+        #languages li .movebtn:not([disabled]) {
+          color: #1f649d;
         }
 
         #languages li :is(.delete, .movebtn) {
-          cursor: pointer;
-          text-align: center;
+          font-family: inherit!important;
+          min-width: 28px;
+          width: 28px;
+          min-height: 28px;
+          height: 28px;
+          padding: 4px;
+          margin: 0;
         }
 
-        #languages li .movebtn--disabled {
-          color: gray;
-          cursor: not-allowed;
+        #languages li paper-button:is(:hover, :focus) {
+          background: rgba(0, 0, 0, 0.06);
         }
 
         #languages_footer {
@@ -91,32 +95,32 @@ export default class LanguagesEditor extends LitElement {
       const moveBtns = [];
       if (i != 0) {
         moveBtns.push(html`
-          <button
-              class="notbtn movebtn"
+          <paper-button
+              class="movebtn"
               @click=${() => this.swapLanguages(i, i - 1)}>
             ↑
-          </button>
+          </paper-button>
         `);
       } else {
         moveBtns.push(html`
-          <button class="notbtn movebtn movebtn--disabled">
+          <paper-button class="movebtn" disabled>
             ↑
-          </button>
+          </paper-button>
         `);
       }
       if (i != languageCodes.length - 1) {
         moveBtns.push(html`
-          <button
-              class="notbtn movebtn"
+          <paper-button
+              class="movebtn"
               @click=${() => this.swapLanguages(i, i + 1)}>
             ↓
-          </button>
+          </paper-button>
         `);
       } else {
         moveBtns.push(html`
-          <button class="notbtn movebtn movebtn--disabled">
+          <paper-button class="movebtn" disabled>
             ↓
-          </button>
+          </paper-button>
         `);
       }
 
@@ -126,11 +130,11 @@ export default class LanguagesEditor extends LitElement {
             ${isoLangs?.[lang]?.['name']} (${isoLangs?.[lang]?.nativeName})
           </span>
           ${moveBtns}
-          <button
-              class="notbtn delete"
+          <paper-button
+              class="delete"
               @click=${() => this.deleteLanguage(lang)}>
             ×
-          </button>
+          </paper-button>
         </li>
       `;
     });

@@ -17,6 +17,12 @@
     "license": "MIT License"
   },
   {
+    "name": "@polymer/paper-button",
+    "url": "https://github.com/PolymerElements/paper-button",
+    "author": "The Polymer Project Authors",
+    "license": "BSD-style License"
+  },
+  {
     "name": "chrome-types",
     "url": "https://github.com/GoogleChrome/chrome-types",
     "author": "Google LLC",

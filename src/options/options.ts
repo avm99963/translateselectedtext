@@ -49,7 +49,9 @@ export class OptionsPage extends LitElement {
           display: block;
           padding: 10px;
           margin: 14px 17px;
-          font-family: "Roboto", "Arial", sans-serif!important;
+          font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+              Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+              'Segoe UI Emoji', 'Segoe UI Symbol'!important;
         }
 
         #credits_container {
