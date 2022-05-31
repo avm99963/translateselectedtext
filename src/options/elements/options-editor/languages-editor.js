@@ -1,11 +1,11 @@
 import {css, html, LitElement} from 'lit';
 import {map} from 'lit/directives/map.js';
 
-import {isoLangs} from '../../../common/consts.js';
-import {msg} from '../../../common/i18n.js';
-import {SHARED_STYLES} from '../../shared/shared-styles.js';
+import {isoLangs} from '../../../common/consts';
+import {msg} from '../../../common/i18n';
+import {SHARED_STYLES} from '../../shared/shared-styles';
 
-import AddLanguageDialog from './add-language-dialog.js';
+import AddLanguageDialog from './add-language-dialog';
 
 export class LanguagesEditor extends LitElement {
   static properties = {

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "node_modules/chrome-types/*"
+  ]
+}

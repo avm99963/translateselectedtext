@@ -1,4 +1,12 @@
-export const isoLangs = {
+interface IsoLang {
+  name: string;
+  nativeName: string;
+};
+interface IsoLangs {
+  [key: string]: IsoLang;
+};
+
+export const isoLangs: IsoLangs = {
   'af': {'name': 'Afrikaans', 'nativeName': 'Afrikaans'},
   'ak': {'name': 'Twi', 'nativeName': 'Akan'},
   'am': {'name': 'Amharic', 'nativeName': 'አማርኛ'},
@@ -134,9 +142,13 @@ export const isoLangs = {
   'zu': {'name': 'Zulu', 'nativeName': 'isiZulu'},
 };
 
+interface LanguageDictionary {
+  [key: string]: string;
+};
+
 // Some languages were incorrectly set. This map serves as a conversion between
 // the previous wrong languages and the correct code.
-export const convertLanguages = {
+export const convertLanguages: LanguageDictionary = {
   'jv': 'jw',
   'zh': 'zh-CN',
 };

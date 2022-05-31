@@ -1,5 +1,6 @@
 const path = require('path');
 const json5 = require('json5');
+const CleanTerminalPlugin = require('clean-terminal-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackShellPluginNext = require('webpack-shell-plugin-next');
 
@@ -7,7 +8,7 @@ module.exports = (env, args) => {
   // NOTE: When adding an entry, add the corresponding source map file to
   // web_accessible_resources in //templates/manifest.gjson.
   let entry = {
-    background: './src/background.js',
+    background: './src/background.ts',
     options: './src/options/options.js',
   };
 
@@ -58,6 +59,7 @@ module.exports = (env, args) => {
           },
         ]
       }),
+      new CleanTerminalPlugin(),
     ],
     devtool: (args.mode == 'production' ? 'source-map' : 'inline-source-map'),
     resolve: {

@@ -17,6 +17,18 @@
     "license": "MIT License"
   },
   {
+    "name": "chrome-types",
+    "url": "https://github.com/GoogleChrome/chrome-types",
+    "author": "Google LLC",
+    "license": "Apache-2.0 License"
+  },
+  {
+    "name": "clean-terminal-webpack-plugin",
+    "url": "https://github.com/danillouz/clean-terminal-webpack-plugin",
+    "author": "Daniël Illouz",
+    "license": "MIT License"
+  },
+  {
     "name": "clean-webpack-plugin",
     "url": "https://github.com/johnagan/clean-webpack-plugin",
     "author": "John Agan",

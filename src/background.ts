@@ -1,10 +1,14 @@
-import actionApi from './common/actionApi.js';
-import {isoLangs} from './common/consts.js';
-import Options from './common/options.js';
-import ExtSessionStorage from './common/sessionStorage.js';
+import actionApi from './common/actionApi';
+import {isoLangs} from './common/consts';
+import Options from './common/options';
+import ExtSessionStorage from './common/sessionStorage';
 
-function getTranslationUrl(lang, text) {
-  var params = new URLSearchParams({
+interface ContextMenuLangs {
+  [id: string]: string;
+}
+
+function getTranslationUrl(lang: string, text: string): string {
+  let params = new URLSearchParams({
     sl: 'auto',
     tl: lang,
     text: text,
@@ -13,7 +17,8 @@ function getTranslationUrl(lang, text) {
   return 'https://translate.google.com/?' + params.toString();
 }
 
-function translationClick(info, tab) {
+function translationClick(
+    info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab): void {
   let optionsPromise = Options.getOptions();
   let ssPromise = ExtSessionStorage.get(['contextMenuLangs', 'translatorTab']);
   Promise.all([optionsPromise, ssPromise])
@@ -55,10 +60,10 @@ function translationClick(info, tab) {
       });
 }
 
-function createMenus(options) {
+function createMenus(options: Options): Promise<void> {
   chrome.contextMenus.removeAll();
 
-  let contextMenuLangs = {};
+  let contextMenuLangs: ContextMenuLangs = {};
   let langs = options.targetLangs;
   let isSingleEntry = Object.values(langs).length == 1;
 
@@ -182,6 +187,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       break;
 
     default:
-      console.error(`Unknown action "${action}" received as a message.`);
+      console.error(`Unknown action "${request.action}" received as a message.`);
   }
+
+  return undefined;
 });

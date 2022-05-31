@@ -1,11 +1,11 @@
 import {css, html, LitElement} from 'lit';
 
-import {msg} from '../common/i18n.js';
-import Options from '../common/options.js';
+import {msg} from '../common/i18n';
+import Options from '../common/options';
 
-import CreditsDialog from './elements/credits-dialog/credits-dialog.js';
-import OptionsEditor from './elements/options-editor/options-editor.js';
-import {SHARED_STYLES} from './shared/shared-styles.js';
+import CreditsDialog from './elements/credits-dialog/credits-dialog';
+import OptionsEditor from './elements/options-editor/options-editor';
+import {SHARED_STYLES} from './shared/shared-styles';
 
 let bodyStyles = document.createElement('style');
 // #!if browser_target == 'chromium'

@@ -1,6 +1,43 @@
-import {convertLanguages, isoLangs} from './consts.js';
+import {convertLanguages, isoLangs} from './consts';
 
-export const TAB_OPTIONS = [
+type TabOptionValue = ''|'yep'|'popup';
+type DeprecatedTabOptionValue = 'panel';
+type TabOptionValueIncludingDeprecated =
+    TabOptionValue|DeprecatedTabOptionValue;
+
+interface TabOption {
+  value: TabOptionValue;
+  labelMsg: string;
+  deprecatedValues: TabOptionValueIncludingDeprecated[];
+}
+
+interface TargetLangs {
+  [key: string]: string;  // Here the key is a string with a number.
+}
+interface OptionsV0 {
+  translateinto: TargetLangs;
+  uniquetab: TabOptionValue;
+}
+
+interface LegacyLanguages {
+  [key: string]: string;  // Here the key is a string with the language code.
+}
+/**
+ * Backwards-compatible interface for the information available in the sync
+ * storage area.
+ */
+interface LegacyOptions {
+  translateinto: TargetLangs;
+  languages: LegacyLanguages;
+  uniquetab: TabOptionValueIncludingDeprecated;
+}
+
+interface OptionsWrapper {
+  options: OptionsV0;
+  isFirstRun: boolean;
+}
+
+export const TAB_OPTIONS: TabOption[] = [
   // Open in new tab for each translation
   {
     value: '',
@@ -24,22 +61,25 @@ export const TAB_OPTIONS = [
 // Class which can be used to retrieve the user options in order to act
 // accordingly.
 export default class Options {
-  constructor(options, isFirstRun) {
+  _options: OptionsV0;
+  isFirstRun: boolean;
+
+  constructor(options: OptionsV0, isFirstRun: boolean) {
     this._options = options;
     this.isFirstRun = isFirstRun;
   }
 
-  get uniqueTab() {
+  get uniqueTab(): TabOptionValue {
     return this._options.uniquetab;
   }
 
-  get targetLangs() {
+  get targetLangs(): TargetLangs {
     return this._options.translateinto;
   }
 
   // Returns a promise that resolves in an instance of the Object class with the
   // current options.
-  static getOptions(readOnly = true) {
+  static getOptions(readOnly: boolean = true): Promise<Options> {
     return Options.getOptionsRaw(readOnly).then(res => {
       return new Options(res.options, res.isFirstRun);
     });
@@ -53,20 +93,20 @@ export default class Options {
   //
   // If the options needed to be normalized/created, they are also saved in the
   // sync storage area.
-  static getOptionsRaw(readOnly) {
+  static getOptionsRaw(readOnly: boolean): Promise<OptionsWrapper> {
     return new Promise((res, rej) => {
-      chrome.storage.sync.get(null, items => {
+      chrome.storage.sync.get(null, itemsAny => {
         if (chrome.runtime.lastError) {
           return rej(chrome.runtime.lastError);
         }
 
+        let items = <LegacyOptions>itemsAny;
         let didTranslateintoChange = false;
         let didUniquetabChange = false;
-        let returnObject = {};
 
         // If the extension sync storage area is blank, set this as being the
         // first run.
-        returnObject.isFirstRun = Object.keys(items).length === 0;
+        let isFirstRun = Object.keys(items).length === 0;
 
         // Create |translateinto| property if it doesn't exist.
         if (items.translateinto === undefined) {
@@ -75,8 +115,9 @@ export default class Options {
           // Upgrade from a version previous to v0.7 if applicable, otherwise
           // create the property with the default values.
           if (items.languages !== undefined) {
+            let newTranslateinto: TargetLangs;
             items.translateinto =
-                Object.assign({}, Object.values(items.languages));
+                Object.assign(newTranslateinto, Object.values(items.languages));
           } else {
             let uiLocale = chrome.i18n.getMessage('@@ui_locale');
             let defaultLang1 = uiLocale.replace('_', '-');
@@ -122,20 +163,22 @@ export default class Options {
         // value we use now.
         // - If it is set to an incorrect value or it isn't set, change it to
         // the default value.
+        let uniquetabNewValue: TabOptionValue;
         let foundValue = false;
         for (let opt of TAB_OPTIONS) {
           if (opt.value == items?.uniquetab) {
+            uniquetabNewValue = opt.value;
             foundValue = true;
             break;
           }
           if (opt.deprecatedValues.includes(items?.uniquetab)) {
             foundValue = true;
-            items.uniquetab = opt.value;
+            uniquetabNewValue = opt.value;
             break;
           }
         }
         if (!foundValue) {
-          items.uniquetab = 'popup';
+          uniquetabNewValue = 'popup';
           didUniquetabChange = true;
         }
 
@@ -145,17 +188,21 @@ export default class Options {
           chrome.storage.sync.remove('languages');
         }
 
+        let returnObject: OptionsWrapper = {
+          isFirstRun,
+          options: {
+            translateinto: items.translateinto,
+            uniquetab: uniquetabNewValue,
+          }
+        };
+
         // Save properties that have changed if we're not in read-only mode
         if (!readOnly) {
           if (didTranslateintoChange || didUniquetabChange) {
-            chrome.storage.sync.set({
-              translateinto: items.translateinto,
-              uniquetab: items.uniquetab,
-            });
+            chrome.storage.sync.set(returnObject.options);
           }
         }
 
-        returnObject.options = items;
         res(returnObject);
       });
     });

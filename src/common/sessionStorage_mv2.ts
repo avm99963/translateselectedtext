@@ -1,5 +1,11 @@
+declare global {
+  interface Window {
+    extCustomStorage: any;
+  }
+}
+
 export default class ExtSessionStorage {
-  static set(items) {
+  static set(items: any): Promise<void> {
     return new Promise((res, rej) => {
       if (window.extCustomStorage === undefined) window.extCustomStorage = {};
 
@@ -10,7 +16,7 @@ export default class ExtSessionStorage {
     });
   }
 
-  static get(keys) {
+  static get(keys: string|Array<string>|undefined): Promise<any> {
     return new Promise((res, rej) => {
       if (window.extCustomStorage === undefined) window.extCustomStorage = {};
 
@@ -25,7 +31,7 @@ export default class ExtSessionStorage {
       }
 
       if (Array.isArray(keys)) {
-        let returnObject = {};
+        let returnObject: any = {};
         for (const key of keys) {
           returnObject[key] = window.extCustomStorage[key];
         }

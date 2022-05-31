@@ -1,11 +1,11 @@
 import {css, html, LitElement} from 'lit';
 import {map} from 'lit/directives/map.js';
 
-import {msg} from '../../../common/i18n.js';
-import {TAB_OPTIONS} from '../../../common/options.js';
-import {SHARED_STYLES} from '../../shared/shared-styles.js';
+import {msg} from '../../../common/i18n';
+import {TAB_OPTIONS} from '../../../common/options';
+import {SHARED_STYLES} from '../../shared/shared-styles';
 
-import LanguagesEditor from './languages-editor.js';
+import LanguagesEditor from './languages-editor';
 
 export class OptionsEditor extends LitElement {
   static properties = {

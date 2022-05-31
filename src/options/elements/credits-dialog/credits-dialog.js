@@ -2,11 +2,11 @@ import {css, html, LitElement} from 'lit';
 import {map} from 'lit/directives/map.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
-import {msg} from '../../../common/i18n.js';
+import {msg} from '../../../common/i18n';
 import credits from '../../credits.json5';
 import i18nCredits from '../../i18n-credits.json5';
-import {DIALOG_STYLES} from '../../shared/dialog-styles.js';
-import {SHARED_STYLES} from '../../shared/shared-styles.js';
+import {DIALOG_STYLES} from '../../shared/dialog-styles';
+import {SHARED_STYLES} from '../../shared/shared-styles';
 
 export class CreditsDialog extends LitElement {
   static get styles() {

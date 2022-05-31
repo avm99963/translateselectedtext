@@ -1,9 +1,9 @@
 import {css, html, LitElement} from 'lit';
 
-import {isoLangs} from '../../../common/consts.js';
-import {msg} from '../../../common/i18n.js';
-import {DIALOG_STYLES} from '../../shared/dialog-styles.js';
-import {SHARED_STYLES} from '../../shared/shared-styles.js';
+import {isoLangs} from '../../../common/consts';
+import {msg} from '../../../common/i18n';
+import {DIALOG_STYLES} from '../../shared/dialog-styles';
+import {SHARED_STYLES} from '../../shared/shared-styles';
 
 const ALL_LANGUAGES =
     Object.entries(isoLangs)
