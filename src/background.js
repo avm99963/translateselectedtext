@@ -1,7 +1,8 @@
 import {isoLangs} from './common/consts.js';
 import Options from './common/options.js';
 
-var array_elements = [], translator_tab = null, translator_window = null;
+window.contextMenuLangs = [];
+window.translator_tab = null;
 
 function getTranslationUrl(lang, text) {
   var params = new URLSearchParams({
@@ -16,11 +17,11 @@ function getTranslationUrl(lang, text) {
 function translationClick(info, tab) {
   Options.getOptions()
       .then(options => {
-        var url = getTranslationUrl(
-            array_elements[info.menuItemId]['langCode'], info.selectionText);
-        var settings_tab = {url};
-        if (translator_tab && options.uniqueTab == 'yep') {
-          chrome.tabs.update(translator_tab, settings_tab, tab => {
+        let url = getTranslationUrl(
+            window.contextMenuLangs[info.menuItemId], info.selectionText);
+        let settings_tab = {url};
+        if (window.translator_tab && options.uniqueTab == 'yep') {
+          chrome.tabs.update(window.translator_tab, settings_tab, tab => {
             chrome.tabs.highlight(
                 {
                   windowId: tab.windowId,
@@ -33,33 +34,16 @@ function translationClick(info, tab) {
                 });
           });
         } else if (options.uniqueTab == 'popup') {
-          chrome.windows.create(
-              {
-                type: 'popup',
-                url,
-                width: 1000,
-                height: 382,
-              },
-              function(tab) {
-                translator_window = tab.windowId;
-                translator_tab = tab.id;
-                chrome.windows.onRemoved.addListener(function(windowId) {
-                  if (windowId == translator_window) {
-                    translator_window = null;
-                    translator_tab = null;
-                  }
-                });
-              });
+          chrome.windows.create({
+            type: 'popup',
+            url,
+            width: 1000,
+            height: 382,
+          });
         } else {
           chrome.tabs.create(settings_tab, function(tab) {
-            translator_window = tab.windowId;
-            translator_tab = tab.id;
-            chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
-              if (tabId == translator_tab) {
-                translator_window = null;
-                translator_tab = null;
-              }
-            });
+            let translator_window = tab.windowId;
+            window.translator_tab = tab.id;
           });
         }
       })
@@ -102,8 +86,7 @@ function createMenus(options) {
       'parentId': parentEl,
       'contexts': ['selection']
     });
-    array_elements[id] = new Array();
-    array_elements[id]['langCode'] = language;
+    window.contextMenuLangs[id] = language;
   }
 
   if (!isSingleEntry) {
@@ -170,6 +153,13 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     chrome.runtime.openOptionsPage();
   } else {
     translationClick(info, tab);
+  }
+});
+
+chrome.tabs.onRemoved.addListener((tabId, removeInfo) => {
+  if (tabId == window.translator_tab) {
+    translator_window = null;
+    window.translator_tab = null;
   }
 });
 
