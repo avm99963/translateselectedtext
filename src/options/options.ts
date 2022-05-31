@@ -11,7 +11,7 @@ import {SHARED_STYLES} from './shared/shared-styles';
 
 const bodyStyles = document.createElement('style');
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore #!if browser_target == 'chromium'
+// @ts-ignore #!if ['chromium', 'chromium_mv3'].includes(browser_target)
 const widthProperty = 'width: 470px;';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore #!else
