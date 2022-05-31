@@ -60,6 +60,9 @@ module.exports = (env, args) => {
       }),
     ],
     devtool: (args.mode == 'production' ? 'source-map' : 'inline-source-map'),
+    resolve: {
+      extensions: ['.ts', '.tsx', '...'],
+    },
     module: {
       rules: [
         {
@@ -75,8 +78,16 @@ module.exports = (env, args) => {
         {
           test: /\.js$/i,
           use: [
+            {loader: 'source-map-loader'},
             preprocessorLoader,
           ],
+        },
+        {
+          test: /\.tsx?$/,
+          use: [
+            {loader: 'ts-loader'},
+            preprocessorLoader,
+          ]
         },
       ]
     },

@@ -47,6 +47,18 @@
     "license": "MIT License"
   },
   {
+    "name": "source-map-loader",
+    "url": "https://github.com/webpack-contrib/source-map-loader",
+    "author": "JS Foundation and other contributors",
+    "license": "MIT License"
+  },
+  {
+    "name": "ts-loader",
+    "url": "https://github.com/TypeStrong/ts-loader",
+    "author": "TypeStrong",
+    "license": "MIT License"
+  },
+  {
     "name": "webpack",
     "url": "https://github.com/webpack/webpack",
     "author": "JS Foundation and other contributors",
