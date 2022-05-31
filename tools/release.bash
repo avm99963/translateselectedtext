@@ -15,7 +15,8 @@ function usage() {
     -c, --channel  indicates the channel of the release. Can be "beta"
                    or "stable". Defaults to "stable".
     -b, --browser  indicates the target browser for the release. Can be
-                   "chromium" or "edge". Defaults to "chromium".
+                   "chromium", "chromium_mv3, "edge" or "edge_mv3".
+                   Defaults to "chromium".
     -f, --fast     indicates that the release shouldn't generate the
                    i18n credits JSON file.
 
@@ -63,7 +64,7 @@ if [[ $channel != "stable" && $channel != "beta" ]]; then
   exit
 fi
 
-if [[ $browser != "chromium" && $browser != "edge" ]]; then
+if [[ $browser != "chromium" && $browser != "chromium_mv3" && $browser != "edge" && $browser != "edge_mv3" ]]; then
   echo "browser parameter value is incorrect." >&2
   usage
   exit

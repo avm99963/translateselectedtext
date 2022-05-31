@@ -1,5 +1,10 @@
 {
+#if defined(CHROMIUM || EDGE)
   "manifest_version": 2,
+#endif
+#if defined(CHROMIUM_MV3 || EDGE_MV3)
+  "manifest_version": 3,
+#endif
   "name": "__MSG_appName__",
   "description": "__MSG_appDescription__",
   "author": "Adrià Vilanova Martínez (@avm99963)",
@@ -19,17 +24,34 @@
     "256": "icons/translate-256.png"
   },
   "background": {
+#if defined(CHROMIUM || EDGE)
     "scripts": [
       "background.bundle.js"
     ],
     "persistent": false
+#endif
+#if defined(CHROMIUM_MV3 || EDGE_MV3)
+    "service_worker": "background.bundle.js"
+#endif
   },
   "options_page": "options.html",
   "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
+#if defined(CHROMIUM || EDGE)
+    "chrome_style": true,
+#endif
+    "page": "options.html"
   },
+#if defined(CHROMIUM || EDGE)
   "browser_action": {},
+#endif
+#if defined(CHROMIUM_MV3 || EDGE_MV3)
+  "action": {},
+#endif
   "default_locale": "en",
+#if defined(CHROMIUM || EDGE)
   "minimum_chrome_version": "86.0.4198.0"
+#endif
+#if defined(CHROMIUM_MV3 || EDGE_MV3)
+  "minimum_chrome_version": "96.0.4664.45"
+#endif
 }

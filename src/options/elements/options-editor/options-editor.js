@@ -58,8 +58,7 @@ export class OptionsEditor extends LitElement {
 
   changeTabOption(value) {
     chrome.storage.sync.set({uniquetab: value}, function() {
-      var background = chrome.extension.getBackgroundPage();
-      background.translator_tab = null;
+      chrome.runtime.sendMessage({action: 'clearTranslatorTab'});
     });
   }
 }

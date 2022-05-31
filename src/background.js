@@ -1,8 +1,7 @@
+import actionApi from './common/actionApi.js';
 import {isoLangs} from './common/consts.js';
 import Options from './common/options.js';
-
-window.contextMenuLangs = [];
-window.translator_tab = null;
+import ExtSessionStorage from './common/sessionStorage.js';
 
 function getTranslationUrl(lang, text) {
   var params = new URLSearchParams({
@@ -15,24 +14,29 @@ function getTranslationUrl(lang, text) {
 }
 
 function translationClick(info, tab) {
-  Options.getOptions()
-      .then(options => {
+  let optionsPromise = Options.getOptions();
+  let ssPromise = ExtSessionStorage.get(['contextMenuLangs', 'translatorTab']);
+  Promise.all([optionsPromise, ssPromise])
+      .then(returnValues => {
+        const [options, sessionStorageItems] = returnValues;
         let url = getTranslationUrl(
-            window.contextMenuLangs[info.menuItemId], info.selectionText);
+            sessionStorageItems.contextMenuLangs?.[info.menuItemId],
+            info.selectionText);
         let settings_tab = {url};
-        if (window.translator_tab && options.uniqueTab == 'yep') {
-          chrome.tabs.update(window.translator_tab, settings_tab, tab => {
-            chrome.tabs.highlight(
-                {
-                  windowId: tab.windowId,
-                  tabs: tab.index,
-                },
-                () => {
-                  chrome.windows.update(tab.windowId, {
-                    focused: true,
-                  });
-                });
-          });
+        if (sessionStorageItems.translatorTab && options.uniqueTab == 'yep') {
+          chrome.tabs.update(
+              sessionStorageItems.translatorTab, settings_tab, tab => {
+                chrome.tabs.highlight(
+                    {
+                      windowId: tab.windowId,
+                      tabs: tab.index,
+                    },
+                    () => {
+                      chrome.windows.update(tab.windowId, {
+                        focused: true,
+                      });
+                    });
+              });
         } else if (options.uniqueTab == 'popup') {
           chrome.windows.create({
             type: 'popup',
@@ -42,19 +46,19 @@ function translationClick(info, tab) {
           });
         } else {
           chrome.tabs.create(settings_tab, function(tab) {
-            let translator_window = tab.windowId;
-            window.translator_tab = tab.id;
+            ExtSessionStorage.set({translatorTab: tab.id});
           });
         }
       })
       .catch(err => {
-        console.error('Error retrieving options to handle translation', err);
+        console.error('Error handling translation click', err);
       });
 }
 
 function createMenus(options) {
   chrome.contextMenus.removeAll();
 
+  let contextMenuLangs = {};
   let langs = options.targetLangs;
   let isSingleEntry = Object.values(langs).length == 1;
 
@@ -86,7 +90,7 @@ function createMenus(options) {
       'parentId': parentEl,
       'contexts': ['selection']
     });
-    window.contextMenuLangs[id] = language;
+    contextMenuLangs[id] = language;
   }
 
   if (!isSingleEntry) {
@@ -103,17 +107,19 @@ function createMenus(options) {
       'contexts': ['selection']
     });
   }
+
+  return ExtSessionStorage.set({contextMenuLangs});
 }
 
 chrome.storage.onChanged.addListener((changes, areaName) => {
   if (areaName == 'sync') {
     Options.getOptions(/* readOnly = */ false)
         .then(options => {
-          createMenus(options);
+          return createMenus(options);
         })
         .catch(err => {
           console.error(
-              'Error retrieving options to set up the extension after a change ' +
+              'Error setting up the extension after a change ' +
                   'in the storage area.',
               err);
         });
@@ -132,11 +138,10 @@ Options.getOptions(/* readOnly = */ false)
         });
       }
 
-      createMenus(options);
+      return createMenus(options);
     })
     .catch(err => {
-      console.error(
-          'Error retrieving options to initialize the extension.', err);
+      console.error('Error initializing the extension.', err);
     });
 
 chrome.notifications.onClicked.addListener(notification_id => {
@@ -157,12 +162,26 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 });
 
 chrome.tabs.onRemoved.addListener((tabId, removeInfo) => {
-  if (tabId == window.translator_tab) {
-    translator_window = null;
-    window.translator_tab = null;
-  }
+  ExtSessionStorage.get('translatorTab')
+      .then(items => {
+        if (tabId == items.translatorTab) {
+          ExtSessionStorage.set({translatorTab: null});
+        }
+      })
+      .catch(err => console.log(err));
 });
 
-chrome.browserAction.onClicked.addListener(() => {
+actionApi.onClicked.addListener(() => {
   chrome.runtime.openOptionsPage();
+});
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  switch (request.action) {
+    case 'clearTranslatorTab':
+      ExtSessionStorage.set({translatorTab: null});
+      break;
+
+    default:
+      console.error(`Unknown action "${action}" received as a message.`);
+  }
 });
