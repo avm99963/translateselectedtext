@@ -2,55 +2,90 @@ import actionApi from './common/actionApi';
 import {isoLangs} from './common/consts';
 import Options from './common/options';
 import ExtSessionStorage from './common/sessionStorage';
+import URLFactory from './common/urlFactory';
 
-interface ContextMenuLangs {
-  [id: string]: string;
+type NonEmptyArray<T> = [T, ...T[]];
+
+// Data types that the extension can translate.
+export enum DataType {
+  DataTypeText,
+  DataTypeURL,
 }
 
-function getTranslationUrl(lang: string, text: string): string {
-  const params = new URLSearchParams({
-    sl: 'auto',
-    tl: lang,
-    text: text,
-    op: 'translate',
-  });
-  return 'https://translate.google.com/?' + params.toString();
+// Information about a context menu item which we have added to the browser.
+interface MenuItemInfo {
+  language: string;    // Target language displayed in the item.
+  dataType: DataType;  // Data type handled by the context menu item.
 }
+
+// Object with the context menu items that have been added by the extension and
+// information about them.
+interface ContextMenuItems {
+  [id: string]: MenuItemInfo;
+}
+
+// Definition of the types of context menu items that the extension can inject.
+interface MenuItemType {
+  // Type of data which can be translated with this type of context menu items.
+  dataType: DataType;
+  // Contexts in which this type of context menu item will be shown.
+  contexts: NonEmptyArray<chrome.contextMenus.ContextType>;
+  // Prefix of the i18n messages for this type of context menu item, and used to
+  // generate the unique IDs of context menu items.
+  prefix: string;
+}
+type MenuItemTypes = MenuItemType[];
+
+const MENU_ITEM_TYPES: MenuItemTypes = [
+  {
+    dataType: DataType.DataTypeText,
+    contexts: ['selection'],
+    prefix: '',
+  },
+  /*
+   * @TODO(https://iavm.xyz/b/translateselectedtext/7): Delete this compile-time
+   * directive after the experimentation phase is done to launch the feature.
+   * #!if canary || !production
+   */
+  {
+    dataType: DataType.DataTypeURL,
+    contexts: ['link'],
+    prefix: 'link',
+  },
+  // #!endif
+];
 
 function translationClick(info: chrome.contextMenus.OnClickData): void {
   const optionsPromise = Options.getOptions();
   const ssPromise =
-      ExtSessionStorage.get(['contextMenuLangs', 'translatorTab']);
+      ExtSessionStorage.get(['contextMenuItems', 'translatorTab']);
   Promise.all([optionsPromise, ssPromise])
       .then(returnValues => {
         const [options, sessionStorageItems] = returnValues;
-        const url = getTranslationUrl(
-            sessionStorageItems.contextMenuLangs?.[info.menuItemId],
-            info.selectionText);
-        const settings_tab = {url};
-        if (sessionStorageItems.translatorTab && options.uniqueTab == 'yep') {
-          chrome.tabs.update(
-              sessionStorageItems.translatorTab, settings_tab, tab => {
-                chrome.tabs.highlight(
-                    {
-                      windowId: tab.windowId,
-                      tabs: tab.index,
-                    },
-                    () => {
-                      chrome.windows.update(tab.windowId, {
-                        focused: true,
-                      });
-                    });
-              });
-        } else if (options.uniqueTab == 'popup') {
-          chrome.windows.create({
-            type: 'popup',
-            url,
-            width: 1000,
-            height: 382,
+        const contextMenuItems: ContextMenuItems =
+            sessionStorageItems.contextMenuItems;
+        const contextMenuItem = contextMenuItems?.[info.menuItemId];
+        const translatorTab: number = sessionStorageItems.translatorTab;
+
+        const url = URLFactory.getTranslationURL(
+            contextMenuItem?.language, info, contextMenuItem?.dataType);
+
+        if (contextMenuItem?.dataType !== DataType.DataTypeText) {
+          // Always create a simple new tab for data types other than text.
+          // @TODO(https://iavm.xyz/b/translateselectedtext/7): Review this
+          // behavior in the future.
+          chrome.tabs.create({url});
+        } else if (translatorTab && options.uniqueTab == 'yep') {
+          chrome.tabs.update(translatorTab, {url}, tab => {
+            chrome.tabs.highlight(
+                {windowId: tab.windowId, tabs: tab.index}, () => {
+                  chrome.windows.update(tab.windowId, {focused: true});
+                });
           });
+        } else if (options.uniqueTab == 'popup') {
+          chrome.windows.create({type: 'popup', url, width: 1000, height: 382});
         } else {
-          chrome.tabs.create(settings_tab, function(tab) {
+          chrome.tabs.create({url}, tab => {
             ExtSessionStorage.set({translatorTab: tab.id});
           });
         }
@@ -63,60 +98,65 @@ function translationClick(info: chrome.contextMenus.OnClickData): void {
 function createMenus(options: Options): Promise<void> {
   chrome.contextMenus.removeAll();
 
-  const contextMenuLangs: ContextMenuLangs = {};
+  const contextMenuItems: ContextMenuItems = {};
   const langs = options.targetLangs;
   const isSingleEntry = Object.values(langs).length == 1;
 
-  let parentEl;
-  if (!isSingleEntry) {
-    parentEl = chrome.contextMenus.create({
-      'id': 'parent',
-      'title': chrome.i18n.getMessage('contextmenu_title'),
-      'contexts': ['selection']
-    });
-  }
-
-  for (const language of Object.values(langs)) {
-    const languageDetails = isoLangs[language];
-    if (languageDetails === undefined) {
-      console.error(language + ' doesn\'t exist!');
-      continue;
+  for (const type of MENU_ITEM_TYPES) {
+    let parentEl;
+    if (!isSingleEntry) {
+      parentEl = chrome.contextMenus.create({
+        'id': `${type.prefix}parent`,
+        'title': chrome.i18n.getMessage(`contextmenu${type.prefix}_title`),
+        'contexts': type.contexts,
+      });
     }
-    let title;
-    if (isSingleEntry) {
-      title =
-          chrome.i18n.getMessage('contextmenu_title2', languageDetails.name);
-    } else {
-      title = languageDetails.name + ' (' + languageDetails.nativeName + ')';
+
+    for (const language of Object.values(langs)) {
+      const languageDetails = isoLangs[language];
+      if (languageDetails === undefined) {
+        console.error(language + ' doesn\'t exist!');
+        continue;
+      }
+      let title;
+      if (isSingleEntry) {
+        title = chrome.i18n.getMessage(
+            `contextmenu${type.prefix}_title2`, languageDetails.name);
+      } else {
+        title = languageDetails.name + ' (' + languageDetails.nativeName + ')';
+      }
+      const id = chrome.contextMenus.create({
+        'id': `${type.prefix}tr_language_${language}`,
+        'title': title,
+        'parentId': parentEl,
+        'contexts': type.contexts,
+      });
+      contextMenuItems[id] = {
+        language,
+        dataType: type.dataType,
+      };
     }
-    const id = chrome.contextMenus.create({
-      'id': 'tr_language_' + language,
-      'title': title,
-      'parentId': parentEl,
-      'contexts': ['selection']
-    });
-    contextMenuLangs[id] = language;
+
+    if (!isSingleEntry) {
+      chrome.contextMenus.create({
+        'id': `${type.prefix}tr_separator`,
+        'type': 'separator',
+        'parentId': parentEl,
+        'contexts': type.contexts,
+      });
+      chrome.contextMenus.create({
+        'id': `${type.prefix}tr_options`,
+        'title': chrome.i18n.getMessage('contextmenu_edit'),
+        'parentId': parentEl,
+        'contexts': type.contexts,
+      });
+    }
   }
 
-  if (!isSingleEntry) {
-    chrome.contextMenus.create({
-      'id': 'tr_separator',
-      'type': 'separator',
-      'parentId': parentEl,
-      'contexts': ['selection']
-    });
-    chrome.contextMenus.create({
-      'id': 'tr_options',
-      'title': chrome.i18n.getMessage('contextmenu_edit'),
-      'parentId': parentEl,
-      'contexts': ['selection']
-    });
-  }
-
-  return ExtSessionStorage.set({contextMenuLangs});
+  return ExtSessionStorage.set({contextMenuItems});
 }
 
-chrome.storage.onChanged.addListener((changes, areaName) => {
+chrome.storage.onChanged.addListener((_changes, areaName) => {
   if (areaName == 'sync') {
     Options.getOptions(/* readOnly = */ false)
         .then(options => {
@@ -159,11 +199,14 @@ chrome.notifications.onClicked.addListener(notification_id => {
 });
 
 chrome.contextMenus.onClicked.addListener(info => {
-  if (info.menuItemId == 'tr_options') {
-    chrome.runtime.openOptionsPage();
-  } else {
-    translationClick(info);
+  for (const type of MENU_ITEM_TYPES) {
+    if (info.menuItemId == `${type.prefix}tr_options`) {
+      chrome.runtime.openOptionsPage();
+      return;
+    }
   }
+
+  translationClick(info);
 });
 
 chrome.tabs.onRemoved.addListener(tabId => {

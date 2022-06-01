@@ -35,5 +35,8 @@ files: [
       "zh-TW" : "zh_TW",
     }
   },
+
+  # This is so when editing a source string, the translations are preserved.
+  "update_option": "update_without_changes",
  }
 ]
