@@ -1,0 +1,33 @@
+- name: Build extension
+  include_role:
+    name: build-extension
+  vars:
+    make_target: release_chromium_canary
+
+- name: Get name of the compiled ZIP file
+  ansible.builtin.shell:
+    cmd: "ls -Art | tail -n 1"
+    chdir: "{{ zuul.project.src_dir }}/out"
+  register: zip_file
+
+- name: Check the ZIP file name is non-empty
+  when: zip_file.stdout == ""
+  fail:
+    msg: "zip_file.stdout is empty"
+
+- name: Print ZIP file name
+  when: not (zip_file.stdout == "")
+  debug:
+    msg: "zip_file.stdout is \"{{ zip_file.stdout }}\""
+
+- when: not (dryRun|bool)
+  include_role:
+    name: cws-upload
+  vars:
+    extensionId: "{{ extensionId }}"
+    clientId: "{{ credentials.clientId }}"
+    refreshToken: "{{ credentials.refreshToken }}"
+    workingDirectory: "{{ zuul.project.src_dir }}/out"
+    zipFile: "{{ zip_file.stdout|quote }}"
+    autopublish: true
+    trustedTesters: true

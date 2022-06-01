@@ -1,0 +1,4 @@
+- name: Get CWS upload/publish log
+  hosts: all
+  roles:
+    - fetch-cws-log

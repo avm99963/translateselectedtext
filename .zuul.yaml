@@ -19,7 +19,63 @@
       - "roles/cws-publish/*"
       - "playbooks/nightly-build/*"
 
+- job:
+    name: translateselectedtext-test-nightly-build
+    pre-run: playbooks/nightly-build/pre.yaml
+    run: playbooks/nightly-build/test.yaml
+    roles:
+      - zuul: zuul/jobs
+    vars:
+      credentials:
+        clientId: "testClientId"
+        refreshToken: "testRefreshToken"
+    files:
+      - "roles/cws-publish/*"
+      - "playbooks/nightly-build/*"
+
+- job:
+    name: translateselectedtext-nightly-build
+    attempts: 1
+    pre-run: playbooks/nightly-build/pre.yaml
+    run: playbooks/nightly-build/run.yaml
+    post-run: playbooks/nightly-build/post.yaml
+    roles:
+      - zuul: zuul/jobs
+    secrets:
+      - name: credentials
+        secret: credentials_tst
+
 - project:
     check:
       jobs:
+        - translateselectedtext-test-nightly-build
         - translateselectedtext-lint
+    nightly-build:
+      jobs:
+        - translateselectedtext-nightly-build
+
+- secret:
+    name: credentials_tst
+    data:
+      clientId: !encrypted/pkcs1-oaep
+        - Ll3agd9RAOdk51TBvYK2aueTqcBofH2Nd9X64+i+nkt89Xv5KZ7r7WTWLhXVEUEj/L3w/
+          tQLj03zuJEWMrk9Q/+JM2ajRwJNbYt/as7yMojBVCvHbBwXuXr4L7FM5v15bkLQCYZMwj
+          VzwZg3jf1Fscz8WU9UmWDtqZy6KiRJULHZphO/fyaS8zYzdChw8SVlGBzoeFcafSJhVOa
+          KW7UEONo7/b3XbLForU91HHiBwNdxzio9183zMF/y6qCALozYhxWi40RcO8/GON7RCFL9
+          zoc1ONLtSWWl3l1ZKuIbrtfFoPhTqZyx3jBF41XYSmrV7R/p/HA8wfrlwbUimbodnYNbX
+          A/iJ0wZ/AC2rcOrkfbPyopTGoqQ5HDYKevYFORGMx9vpmneXSSY4wcLZjJW4UyQbknEzl
+          cBs0jB9BvyvoWeN7v8hly/YiRF+lsfuaRK9by7yoPc51mR5K5gTXlfzSZQoSnwiAB8Xis
+          liwB9kGPOm58IBxjThoyFjdrn4dM9aancZ1bNuHDMLW720SKhNS48/jzPpHyjTW/JS9jS
+          hVLOhqMXgy+XcvzmGBLSQ9Mokmg4vQXIMTzxlfOVWpDbx2aXd0UeSGjmPzFY5B2O3zo33
+          fgcah9oH7/7MTthWM8mitLQLZNWhI6s5NtaCSv7JWPWTqMysFNFeh9Pq/6lDco=
+      refreshToken: !encrypted/pkcs1-oaep
+        - EDjPWnnZfQN5Tu1JuvLllaCjBunspbwY9lPJZ7Fe5MljCxknJXvD4nI2XPFx77dmMZRAN
+          ZaAmeZ97gy7VtWB3yqHQPyWsxYRdcFB94GGrVhT2QJ37cI78cd6mOuU1wD0opahXS5Gt1
+          rB+rt4h9lqhPPNzQr0t1cnc2/xKxKjVfagAxvBRmWot0xQjA01xRtuyEzTlutnOLT0tWr
+          1TPO3BNL+Bs1C2PKp/T2FINd1RRq+b5+bJxMDVJOlPXXXvGS9mHWAjswFm57XRbxaBLZu
+          zKfrnxw/wn5cbNdBHQhpadb7b8dTyYYXe+zyFUNZNYtUOxXmmowhETahUcfetXrd5xMCp
+          aHy7phYvp+rbRA9CbPr+3rLE/cYZXDhJfYE0IuObIYoqgqy+Wr7T+09CGJhh+jN2SlsfH
+          SLXfv5X+4V+Y9HfldSmkQWxUc8V1pmqqcOuVgpWh+5WwR/xUC5ebMNuT1vCaFCm7rrkWL
+          g2wkYfStGe/iwmyllddbGDPDTZJO/Xrjfy3VEEzPCj9nD+ag0HFmld69Ny9eOjmqYO/z3
+          ClxkxWukbDSKiJ90PY5mbejt5MFYdZMmrBcNVfJQ/6usfKmFLy12wOYCxcDhrmradlHJ7
+          MsEToOcwSB+ibK7C5rD8khrS9eJx3ixlTN1CfEi6YYjULzr9ecWIkslx3ooOAU=

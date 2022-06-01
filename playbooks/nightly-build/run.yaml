@@ -1,0 +1,6 @@
+- hosts: all
+  roles:
+    - role: cws-publish
+      vars:
+        extensionId: "locilfpallcbcbklndiigllcnbmbakgf"
+        dryRun: false

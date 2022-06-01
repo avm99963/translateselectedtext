@@ -1,0 +1,5 @@
+- hosts: all
+  roles:
+    - role: ensure-genmanifest
+    - role: ensure-cws-upload
+      version: "2.1.0"
