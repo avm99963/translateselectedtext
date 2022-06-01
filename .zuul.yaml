@@ -16,6 +16,8 @@
       - "docs/.*"
       - "OWNERS"
       - "README.md"
+      - "roles/cws-publish/*"
+      - "playbooks/nightly-build/*"
 
 - project:
     check:
