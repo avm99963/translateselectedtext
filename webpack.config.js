@@ -20,6 +20,7 @@ module.exports = (env, args) => {
       params: {
         browser_target: env.browser_target,
         production: args.mode == 'production',
+        canary: !!env.canary,
       },
     },
   };
@@ -43,7 +44,8 @@ module.exports = (env, args) => {
       new CopyWebpackPlugin({
         patterns: [
           {
-            from: path.join(__dirname, 'src/icons'),
+            from: path.join(
+                __dirname, 'src/icons', env.canary ? 'canary' : 'regular'),
             to: path.join(outputPath, 'icons'),
           },
         ]

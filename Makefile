@@ -1,4 +1,4 @@
-.PHONY: node_deps clean_dist deps clean_deps serve_chromium serve_chromium_mv3 serve_edge serve_edge_mv3 release release_chromium_stable release_chromium_beta release_edge build_test_extension clean_releases clean
+.PHONY: node_deps clean_dist deps clean_deps serve_chromium serve_chromium_mv3 serve_edge serve_edge_mv3 release release_chromium_stable release_chromium_beta release_chromium_canary release_edge build_test_extension clean_releases clean
 
 .DEFAULT_GOAL := release
 WEBPACK := ./node_modules/webpack-cli/bin/cli.js
@@ -40,6 +40,11 @@ release_chromium_beta: deps
 	$(WEBPACK) --mode production --env browser_target=chromium
 	$(RELEASE_SCRIPT) -c beta -b chromium -f
 	rm -rf dist/chromium
+
+release_chromium_canary: deps
+	$(WEBPACK) --mode production --env browser_target=chromium_mv3 --env canary
+	$(RELEASE_SCRIPT) -c canary -b chromium_mv3 -f
+	rm -rf dist/chromium_mv3
 
 release_edge: deps
 	$(WEBPACK) --mode production --env browser_target=edge

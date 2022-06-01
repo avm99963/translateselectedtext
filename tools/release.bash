@@ -12,8 +12,8 @@ function usage() {
 
   optional arguments:
     -h, --help     show this help message and exit
-    -c, --channel  indicates the channel of the release. Can be "beta"
-                   or "stable". Defaults to "stable".
+    -c, --channel  indicates the channel of the release. Can be "beta",
+                   "stable" or "canary". Defaults to "stable".
     -b, --browser  indicates the target browser for the release. Can be
                    "chromium", "chromium_mv3, "edge" or "edge_mv3".
                    Defaults to "chromium".
@@ -58,7 +58,7 @@ while true; do
   esac
 done
 
-if [[ $channel != "stable" && $channel != "beta" ]]; then
+if [[ $channel != "stable" && $channel != "beta" && $channel != "canary" ]]; then
   echo "channel parameter value is incorrect." >&2
   usage
   exit
@@ -83,17 +83,30 @@ version=$(git describe --always --tags --dirty)
 # If the version name contains a hyphen then it isn't a release
 # version. This is also the case if it doesn't start with a "v".
 if [[ $version == *"-"* || $version != "v"* ]]; then
-  # As it isn't a release version, setting version number to 0 so it
-  # cannot be uploaded to the Chrome Web Store
-  set_manifest_field "version" "0"
-  set_manifest_field "version_name" "$version-$channel"
+  if [[ $channel == "canary" && $version == "v"* && \
+    $version != *"dirty" ]]; then
+    # If we're releasing a canary build and the build is not dirty,
+    # generate a version number
+    IFS='-' read -ra versionExplode <<< "${version:1}"
+    versionCanary="${versionExplode[0]}.${versionExplode[1]}"
+    set_manifest_field "version" "$versionCanary"
+    set_manifest_field "version_name" "$versionCanary-$channel"
+  else
+    # As it isn't a release version, setting version number to 0 so it
+    # cannot be uploaded to the Chrome Web Store
+    set_manifest_field "version" "0"
+    set_manifest_field "version_name" "$version-$channel"
+  fi
 else
   # It is a release version, set the version fields accordingly.
   set_manifest_field "version" "${version:1}"
   set_manifest_field "version_name" "${version:1}-$channel"
 fi
 
-if [[ $channel == "beta" ]]; then
+if [[ $channel == "canary" ]]; then
+  # Change manifest.json to label the release as canary
+  set_manifest_field "name" "__MSG_appCanaryName__"
+elif [[ $channel == "beta" ]]; then
   # Change manifest.json to label the release as beta
   set_manifest_field "name" "__MSG_appBetaName__"
 fi
