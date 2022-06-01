@@ -7,6 +7,10 @@
 		"message": "Prevedi izbrano besedilo (Beta)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "Prevedi izbrano besedilo (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "Prevedi izbrano besedilo z Google Prevajalnikom",
 		"description": "The app description"

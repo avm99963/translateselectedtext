@@ -7,6 +7,10 @@
 		"message": "Translate Selected Text (বিটা)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "Translate Selected Text (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "Google Translate এর সাথে Translate selected text",
 		"description": "The app description"

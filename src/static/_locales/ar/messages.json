@@ -7,6 +7,10 @@
 		"message": "ترجمة النص المحدد (تجريبي)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "ترجمة النص المحدد (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "ترجمة النص المحدد مع ترجمة جوجل",
 		"description": "The app description"

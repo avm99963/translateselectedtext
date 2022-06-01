@@ -7,6 +7,10 @@
 		"message": "Перевести выбранный текст (Beta)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "Перевести выделенный текст (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "Перевод выбранного текста с помощью Google Переводчика",
 		"description": "The app description"

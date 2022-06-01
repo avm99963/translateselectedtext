@@ -254,20 +254,20 @@
     ]
   },
   {
-    "name": "Marek Siwak (siwakmarek1971)",
-    "languages": [
-      {
-        "id": "pl",
-        "name": "Polish"
-      }
-    ]
-  },
-  {
     "name": "hypnotichemionus",
     "languages": [
       {
         "id": "zh-CN",
         "name": "Chinese Simplified"
+      }
+    ]
+  },
+  {
+    "name": "Marek Siwak (siwakmarek1971)",
+    "languages": [
+      {
+        "id": "pl",
+        "name": "Polish"
       }
     ]
   },

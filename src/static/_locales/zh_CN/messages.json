@@ -7,6 +7,10 @@
 		"message": "应用程序名称 (Beta)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "应用程序名称 (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "用 Google 翻译翻译选中的文本",
 		"description": "The app description"

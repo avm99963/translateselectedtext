@@ -7,6 +7,10 @@
 		"message": "Terjemahkan teks yang dipilih (Beta)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "Terjemahkan teks yang dipilih (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "Terjemahkan teks yang dipilih dengan Google Terjemahan",
 		"description": "The app description"

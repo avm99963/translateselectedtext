@@ -7,6 +7,10 @@
 		"message": "ترجمه کردن متن انتخاب شده‌ (نسخه بتا)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "ترجمه کردن متن انتخاب شده (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "ترجمه کردن متن انتخاب شده با مترجم گوگل",
 		"description": "The app description"

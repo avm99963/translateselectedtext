@@ -7,6 +7,10 @@
 		"message": "የተመረጠ ጽሁፍ ተርጉም (ቤታ)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "የተመረጠ ጽሁፍ ተርጉም (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "የተመረጠውን ጽሑፍ በ ጉግል ትራንስሌት ይተርጉሙ",
 		"description": "The app description"

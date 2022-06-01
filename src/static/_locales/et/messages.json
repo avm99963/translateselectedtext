@@ -7,6 +7,10 @@
 		"message": "Tõlgi valitud tekst (Beta)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "Tõlgi valitud tekst (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "Tõlgi valitud tekst Google'i tõlkega",
 		"description": "The app description"

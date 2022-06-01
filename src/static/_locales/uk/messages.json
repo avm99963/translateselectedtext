@@ -7,6 +7,10 @@
 		"message": "Переклад виділеного тексту (бета-версія)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "Переклад виділеного тексту (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "Переклад виділеного тексту з Google Translate",
 		"description": "The app description"

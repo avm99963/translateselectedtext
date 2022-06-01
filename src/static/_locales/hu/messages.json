@@ -7,6 +7,10 @@
 		"message": "Kijelölt szöveg fordítása (Beta)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "Kijelölt szöveg fordítása (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "Kijelölt szöveg fordítása Google Translate-al",
 		"description": "The app description"

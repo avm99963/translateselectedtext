@@ -7,6 +7,10 @@
 		"message": "Prijevod označenog teksta (beta)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "Prijevod označenog teksta (canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "Prijevod označenog teksta pomoću Google prevoditelja",
 		"description": "The app description"

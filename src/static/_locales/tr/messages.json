@@ -7,6 +7,10 @@
 		"message": "Seçilen Metni Çevir (Beta)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "Seçilen Metni Çevir (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "Seçili metni Google Translate ile çevir",
 		"description": "The app description"

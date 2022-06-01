@@ -7,6 +7,10 @@
 		"message": "Traducir Texto Seleccionado (Beta)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "Traducir Texto Seleccionado (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "Traduce el texto que selecciones con el Traductor de Google.",
 		"description": "The app description"

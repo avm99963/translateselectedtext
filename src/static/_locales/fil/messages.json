@@ -7,6 +7,10 @@
 		"message": "Isalin ang Napiling Teksto (Beta)",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "Isalin ang piniling teksto (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "Isalin ang piniling teksto gamit ang Google Translate",
 		"description": "The app description"

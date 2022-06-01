@@ -7,6 +7,10 @@
 		"message": "翻譯所選文本（Beta）",
 		"description": "The beta app name"
 	},
+	"appCanaryName": {
+		"message": "翻譯選取文字 (Canary)",
+		"description": "The beta app name"
+	},
 	"appDescription": {
 		"message": "翻譯選擇的文本與谷歌翻譯",
 		"description": "The app description"
