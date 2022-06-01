@@ -8,7 +8,7 @@ interface ContextMenuLangs {
 }
 
 function getTranslationUrl(lang: string, text: string): string {
-  let params = new URLSearchParams({
+  const params = new URLSearchParams({
     sl: 'auto',
     tl: lang,
     text: text,
@@ -17,17 +17,17 @@ function getTranslationUrl(lang: string, text: string): string {
   return 'https://translate.google.com/?' + params.toString();
 }
 
-function translationClick(
-    info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab): void {
-  let optionsPromise = Options.getOptions();
-  let ssPromise = ExtSessionStorage.get(['contextMenuLangs', 'translatorTab']);
+function translationClick(info: chrome.contextMenus.OnClickData): void {
+  const optionsPromise = Options.getOptions();
+  const ssPromise =
+      ExtSessionStorage.get(['contextMenuLangs', 'translatorTab']);
   Promise.all([optionsPromise, ssPromise])
       .then(returnValues => {
         const [options, sessionStorageItems] = returnValues;
-        let url = getTranslationUrl(
+        const url = getTranslationUrl(
             sessionStorageItems.contextMenuLangs?.[info.menuItemId],
             info.selectionText);
-        let settings_tab = {url};
+        const settings_tab = {url};
         if (sessionStorageItems.translatorTab && options.uniqueTab == 'yep') {
           chrome.tabs.update(
               sessionStorageItems.translatorTab, settings_tab, tab => {
@@ -63,9 +63,9 @@ function translationClick(
 function createMenus(options: Options): Promise<void> {
   chrome.contextMenus.removeAll();
 
-  let contextMenuLangs: ContextMenuLangs = {};
-  let langs = options.targetLangs;
-  let isSingleEntry = Object.values(langs).length == 1;
+  const contextMenuLangs: ContextMenuLangs = {};
+  const langs = options.targetLangs;
+  const isSingleEntry = Object.values(langs).length == 1;
 
   let parentEl;
   if (!isSingleEntry) {
@@ -76,8 +76,8 @@ function createMenus(options: Options): Promise<void> {
     });
   }
 
-  for (let [index, language] of Object.entries(langs)) {
-    let languageDetails = isoLangs[language];
+  for (const language of Object.values(langs)) {
+    const languageDetails = isoLangs[language];
     if (languageDetails === undefined) {
       console.error(language + ' doesn\'t exist!');
       continue;
@@ -89,7 +89,7 @@ function createMenus(options: Options): Promise<void> {
     } else {
       title = languageDetails.name + ' (' + languageDetails.nativeName + ')';
     }
-    let id = chrome.contextMenus.create({
+    const id = chrome.contextMenus.create({
       'id': 'tr_language_' + language,
       'title': title,
       'parentId': parentEl,
@@ -158,15 +158,15 @@ chrome.notifications.onClicked.addListener(notification_id => {
   chrome.notifications.clear(notification_id);
 });
 
-chrome.contextMenus.onClicked.addListener((info, tab) => {
+chrome.contextMenus.onClicked.addListener(info => {
   if (info.menuItemId == 'tr_options') {
     chrome.runtime.openOptionsPage();
   } else {
-    translationClick(info, tab);
+    translationClick(info);
   }
 });
 
-chrome.tabs.onRemoved.addListener((tabId, removeInfo) => {
+chrome.tabs.onRemoved.addListener(tabId => {
   ExtSessionStorage.get('translatorTab')
       .then(items => {
         if (tabId == items.translatorTab) {
@@ -180,14 +180,15 @@ actionApi.onClicked.addListener(() => {
   chrome.runtime.openOptionsPage();
 });
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener(request => {
   switch (request.action) {
     case 'clearTranslatorTab':
       ExtSessionStorage.set({translatorTab: null});
       break;
 
     default:
-      console.error(`Unknown action "${request.action}" received as a message.`);
+      console.error(
+          `Unknown action "${request.action}" received as a message.`);
   }
 
   return undefined;
