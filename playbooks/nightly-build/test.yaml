@@ -2,5 +2,5 @@
   roles:
     - role: cws-publish
       vars:
-        extensionId: "locilfpallcbcbklndiigllcnbmbakgf"
+        canaryTstExtensionId: "locilfpallcbcbklndiigllcnbmbakgf"
         dryRun: true

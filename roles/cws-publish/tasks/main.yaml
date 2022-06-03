@@ -24,8 +24,9 @@
   include_role:
     name: cws-upload
   vars:
-    extensionId: "{{ extensionId }}"
+    extensionId: "{{ canaryTstExtensionId }}"
     clientId: "{{ credentials.clientId }}"
+    clientSecret: "{{ credentials.clientSecret }}"
     refreshToken: "{{ credentials.refreshToken }}"
     workingDirectory: "{{ zuul.project.src_dir }}/out"
     zipFile: "{{ zip_file.stdout|quote }}"
