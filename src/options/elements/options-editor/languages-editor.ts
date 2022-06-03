@@ -1,6 +1,8 @@
 import '@polymer/paper-button/paper-button.js';
 import './add-language-dialog';
+import '../framework/ha-svg-icon';
 
+import {mdiArrowDown, mdiArrowUp, mdiClose} from '@mdi/js';
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {map} from 'lit/directives/map.js';
@@ -60,13 +62,16 @@ export default class LanguagesEditor extends LitElement {
         }
 
         #languages li :is(.delete, .movebtn) {
-          font-family: inherit!important;
           min-width: 28px;
           width: 28px;
           min-height: 28px;
           height: 28px;
           padding: 4px;
           margin: 0;
+        }
+
+        #languages li ha-svg-icon {
+          --mdc-icon-size: 16px;
         }
 
         #languages li paper-button:is(:hover, :focus) {
@@ -98,13 +103,13 @@ export default class LanguagesEditor extends LitElement {
           <paper-button
               class="movebtn"
               @click=${() => this.swapLanguages(i, i - 1)}>
-            ↑
+            <ha-svg-icon .path=${mdiArrowUp}></ha-svg-icon>
           </paper-button>
         `);
       } else {
         moveBtns.push(html`
           <paper-button class="movebtn" disabled>
-            ↑
+            <ha-svg-icon .path=${mdiArrowUp}></ha-svg-icon>
           </paper-button>
         `);
       }
@@ -113,13 +118,13 @@ export default class LanguagesEditor extends LitElement {
           <paper-button
               class="movebtn"
               @click=${() => this.swapLanguages(i, i + 1)}>
-            ↓
+            <ha-svg-icon .path=${mdiArrowDown}></ha-svg-icon>
           </paper-button>
         `);
       } else {
         moveBtns.push(html`
           <paper-button class="movebtn" disabled>
-            ↓
+            <ha-svg-icon .path=${mdiArrowDown}></ha-svg-icon>
           </paper-button>
         `);
       }
@@ -133,7 +138,7 @@ export default class LanguagesEditor extends LitElement {
           <paper-button
               class="delete"
               @click=${() => this.deleteLanguage(lang)}>
-            ×
+            <ha-svg-icon .path=${mdiClose}></ha-svg-icon>
           </paper-button>
         </li>
       `;

@@ -17,6 +17,12 @@
     "license": "MIT License"
   },
   {
+    "name": "@mdi/js",
+    "url": "https://materialdesignicons.com/",
+    "author": "Pictogrammers icon Group, Google LLC",
+    "license": "MIT and Apache-2.0 License"
+  },
+  {
     "name": "@polymer/paper-button",
     "url": "https://github.com/PolymerElements/paper-button",
     "author": "The Polymer Project Authors",
@@ -100,4 +106,9 @@
     "author": "Pavel Kuzmin",
     "license": "MIT License"
   },
+  {
+    "name": "Home Assistant Frontend",
+    "url": "https://github.com/home-assistant/frontend",
+    "license": "Apache-2.0 License"
+  }
 ]
