@@ -55,7 +55,9 @@ const MENU_ITEM_TYPES: MenuItemTypes = [
   // #!endif
 ];
 
-function translationClick(info: chrome.contextMenus.OnClickData): void {
+function translationClick(
+    info: chrome.contextMenus.OnClickData,
+    initiatorTab: chrome.tabs.Tab): void {
   const optionsPromise = Options.getOptions();
   const ssPromise =
       ExtSessionStorage.get(['contextMenuItems', 'translatorTab']);
@@ -69,12 +71,17 @@ function translationClick(info: chrome.contextMenus.OnClickData): void {
 
         const url = URLFactory.getTranslationURL(
             contextMenuItem?.language, info, contextMenuItem?.dataType);
+        const newTabOptions: Parameters<typeof chrome.tabs.create>[0] = {
+          url,
+          openerTabId: initiatorTab.id,
+        };
+        if (initiatorTab.index) newTabOptions.index = initiatorTab.index + 1;
 
         if (contextMenuItem?.dataType !== DataType.DataTypeText) {
           // Always create a simple new tab for data types other than text.
           // @TODO(https://iavm.xyz/b/translateselectedtext/7): Review this
           // behavior in the future.
-          chrome.tabs.create({url});
+          chrome.tabs.create(newTabOptions);
         } else if (translatorTab && options.uniqueTab == 'yep') {
           chrome.tabs.update(translatorTab, {url}, tab => {
             chrome.tabs.highlight(
@@ -85,7 +92,7 @@ function translationClick(info: chrome.contextMenus.OnClickData): void {
         } else if (options.uniqueTab == 'popup') {
           chrome.windows.create({type: 'popup', url, width: 1000, height: 382});
         } else {
-          chrome.tabs.create({url}, tab => {
+          chrome.tabs.create(newTabOptions, tab => {
             ExtSessionStorage.set({translatorTab: tab.id});
           });
         }
@@ -198,7 +205,7 @@ chrome.notifications.onClicked.addListener(notification_id => {
   chrome.notifications.clear(notification_id);
 });
 
-chrome.contextMenus.onClicked.addListener(info => {
+chrome.contextMenus.onClicked.addListener((info, tab) => {
   for (const type of MENU_ITEM_TYPES) {
     if (info.menuItemId == `${type.prefix}tr_options`) {
       chrome.runtime.openOptionsPage();
@@ -206,7 +213,7 @@ chrome.contextMenus.onClicked.addListener(info => {
     }
   }
 
-  translationClick(info);
+  translationClick(info, tab);
 });
 
 chrome.tabs.onRemoved.addListener(tabId => {
