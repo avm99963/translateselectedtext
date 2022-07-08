@@ -16,6 +16,7 @@ browsers you've synced in the browser settings.
 You can contact us here:
 
 * **Name:** Adrià Vilanova Martínez
-* **E-mail address:** me+privacypolicy _[at]_ avm99963.com
+* **E-mail address:**
+[privacy-requests@avm99963.com](mailto:privacy-requests@avm99963.com?subject=Translate+selected+text+privacy+request)
 
 [1]: https://policies.google.com/
