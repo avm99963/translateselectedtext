@@ -93,7 +93,7 @@ function translationClick(
           chrome.windows.create({type: 'popup', url, width: 1000, height: 382});
         } else {
           chrome.tabs.create(newTabOptions, tab => {
-            ExtSessionStorage.set({translatorTab: tab.id});
+            ExtSessionStorage.set({translatorTab: tab?.id});
           });
         }
       })
