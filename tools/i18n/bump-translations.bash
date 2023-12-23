@@ -34,4 +34,4 @@ for lang in *; do
 done
 
 # Commit new translations
-git commit -m "Updating i18n files from Crowdin"
+git commit -m "i18n: update translations from Crowdin"
