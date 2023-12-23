@@ -10,6 +10,7 @@ JeremyMaloney
 greenairbus01
 rebecca05030817
 dr.gigalsss
+ianwoodmore
 
 # These users joined the project but didn't make any translation, so they
 # shouldn't be credited neither.
@@ -30,6 +31,8 @@ deepIQ
 Trytek
 onebadai1
 ahmedsayd
+lailalahha
+YveC
 
 # This is the extension creator, so he shouldn't be credited as a translator
 # neither.
