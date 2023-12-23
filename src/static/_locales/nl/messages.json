@@ -57,6 +57,10 @@
 		"message": "Open Google Translate in een enkel tabblad en vervang de nieuwste vertaling in plaats van het openen van meerdere tabbladen.",
 		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
 	},
+	"options_tabsoption_3": {
+		"message": "Open Google Translate in een pop-up.",
+		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
+	},
 	"options_savebutton": {
 		"message": "Opslaan",
 		"description": "Save button in the settings page"

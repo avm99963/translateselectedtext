@@ -1,26 +1,26 @@
 {
 	"appName": {
-		"message": "Traduci il testo selezionato",
+		"message": "Översätt markerad text",
 		"description": "The app name"
 	},
 	"appBetaName": {
-		"message": "Traduci il testo selezionato (Beta)",
+		"message": "Översätt markerad text (beta)",
 		"description": "The beta app name"
 	},
 	"appCanaryName": {
-		"message": "Traduci il testo selezionato (Canary)",
+		"message": "Översätt markerad text (Canary)",
 		"description": "The beta app name"
 	},
 	"appDescription": {
-		"message": "Traduci il testo selezionato con Google Traduttore",
+		"message": "Översätt markerad text med Google Translate",
 		"description": "The app description"
 	},
 	"contextmenu_title": {
-		"message": "Traduci selezione in...",
+		"message": "Översätt texten till...",
 		"description": "Title of the context menu that appears when a right click is done. Inside this parent item there are the target languages."
 	},
 	"contextmenu_title2": {
-		"message": "Traduci la selezione in '$language$'",
+		"message": "Översätter texten till $language$",
 		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
 		"placeholders": {
 			"language": {
@@ -30,75 +30,75 @@
 		}
 	},
 	"contextmenu_edit": {
-		"message": "Modifica le lingue...",
+		"message": "Redigera språk...",
 		"description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
 	},
 	"options_welcome": {
-		"message": "Benvenuto!",
+		"message": "Välkommen!",
 		"description": "Title of the options page which welcomes users"
 	},
 	"options_introduction": {
-		"message": "Si prega di selezionare le lingue che vuoi mostrare nel menu \"traduci\".",
+		"message": "Välj språken du vill ska visas i \"översätt\" menyn.",
 		"description": "Introduction paragraph in the options page preceding the language list."
 	},
 	"options_languageselectheader": {
-		"message": "Lingue:",
+		"message": "Språk:",
 		"description": "Header of the selected languages list."
 	},
 	"options_otheroptionsheader": {
-		"message": "Altre opzioni:",
+		"message": "Andra alternativ:",
 		"description": "Subheader in the options page before the options to choose where should the translation be shown.."
 	},
 	"options_tabsoption_1": {
-		"message": "Aprire Google Translate in una nuova scheda per ogni traduzione.",
+		"message": "Öppna Google Translate i en ny flik för varje översättning.",
 		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
 	},
 	"options_tabsoption_2": {
-		"message": "Aprire Google Translate in una scheda unica e ignorare l'ultima traduzione invece di aprire diverse schede.",
+		"message": "Öppna Google Translate i en unik flik och skriv över den förra översättningen istället för att öppna flera flikar.",
 		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
 	},
 	"options_tabsoption_3": {
-		"message": "Apri Google Translate in un popup.",
+		"message": "Öppna Google Translate i en popup-ruta.",
 		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
 	},
 	"options_savebutton": {
-		"message": "Salva",
+		"message": "Spara",
 		"description": "Save button in the settings page"
 	},
 	"options_addlanguage": {
-		"message": "Aggiungi lingua",
+		"message": "Lägg till språk",
 		"description": "Title for the 'Add language' dialog"
 	},
 	"options_addlanguage_addbutton": {
-		"message": "Aggiungi",
+		"message": "Lägg till",
 		"description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
 	},
 	"options_language_label": {
-		"message": "Lingua:",
+		"message": "Språk:",
 		"description": "Label for the language selector in the 'Add language' dialog"
 	},
 	"options_credits": {
-		"message": "Crediti",
+		"message": "Medverkande",
 		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
 	},
 	"options_credits_createdby": {
-		"message": "Estensione creata da: <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adria‑Vilanova Martínez)",
+		"message": "Tilläg skapad av: <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adrià Vilanova Martínez)",
 		"description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
 	},
 	"options_credits_homepage": {
-		"message": "homepage",
+		"message": "hemsida",
 		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
 	},
 	"options_credits_by": {
-		"message": "di",
+		"message": "av",
 		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
 	},
 	"options_credits_translations": {
-		"message": "Traduzioni",
+		"message": "Översättningar",
 		"description": "Header for the section in the credits dialog which recognizes translators."
 	},
 	"options_credits_translations_paragraph": {
-		"message": "Vorrei ringraziare specialmente i seguenti contributori, che hanno tradotto altruisticamente l'interfaccia dell'estensione in molte lingue ",
+		"message": "Jag vill ge ett stort tack till följande bidragsgivare som har översatt tillägget till många språk:",
 		"description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
 	},
 	"options_ok": {
@@ -106,13 +106,13 @@
 		"description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
 	},
 	"options_cancel": {
-		"message": "Cancella",
+		"message": "Avbryt",
 		"description": "Cancel button in the dialogs, to reject an action."
 	},
 	"notification_install_title": {
-		"message": "Grazie per aver installato 'Translate Selected Text'"
+		"message": "Tack för att du installerar 'Translate Selected Text'"
 	},
 	"notification_install_message": {
-		"message": "Cliccate su questa notificazione per configurarlo."
+		"message": "Klicka på notisen för att sätta upp tillägget."
 	}
 }
