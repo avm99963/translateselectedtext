@@ -1,5 +1,7 @@
 - hosts: all
   roles:
+    - role: ensure-build-essential
+    - role: ensure-zip
     - role: ensure-genmanifest
     - role: ensure-cws-upload
       version: "2.1.0"

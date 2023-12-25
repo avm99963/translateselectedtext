@@ -1,3 +1,5 @@
 - hosts: all
   roles:
+    - role: ensure-build-essential
+    - role: ensure-zip
     - role: ensure-genmanifest
