@@ -38,7 +38,7 @@
     "ts-loader": "^9.3.0",
     "typescript": "^5.0.0",
     "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2",
+    "webpack-cli": "^5.0.0",
     "webpack-preprocessor-loader": "^1.2.0",
     "webpack-shell-plugin-next": "^2.2.2"
   },
