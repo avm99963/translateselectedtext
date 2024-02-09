@@ -30,7 +30,7 @@
     "chrome-types": "^0.1.113",
     "clean-terminal-webpack-plugin": "^3.0.0",
     "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^11.0.0",
+    "copy-webpack-plugin": "^12.0.0",
     "json5": "^2.2.1",
     "lit": "^2.2.5",
     "path": "^0.12.7",
