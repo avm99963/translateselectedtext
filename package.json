@@ -34,7 +34,7 @@
     "json5": "^2.2.1",
     "lit": "^2.2.5",
     "path": "^0.12.7",
-    "source-map-loader": "^4.0.0",
+    "source-map-loader": "^5.0.0",
     "ts-loader": "^9.3.0",
     "typescript": "^5.0.0",
     "webpack": "^5.72.1",
