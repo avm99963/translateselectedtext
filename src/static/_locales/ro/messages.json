@@ -85,6 +85,10 @@
 		"message": "de",
 		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
 	},
+	"options_credits_translations": {
+		"message": "Traduceri",
+		"description": "Header for the section in the credits dialog which recognizes translators."
+	},
 	"options_ok": {
 		"message": "OK",
 		"description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"

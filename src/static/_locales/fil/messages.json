@@ -20,7 +20,7 @@
 		"description": "Title of the context menu that appears when a right click is done. Inside this parent item there are the target languages."
 	},
 	"contextmenu_title2": {
-		"message": "Isalin ang pagpili sa '$wika$'",
+		"message": "Isalin ang pagpili sa '$language$'",
 		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
 		"placeholders": {
 			"language": {
