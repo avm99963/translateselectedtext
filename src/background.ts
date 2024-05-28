@@ -71,10 +71,9 @@ function translationClick(
 
         const url = URLFactory.getTranslationURL(
             contextMenuItem?.language, info, contextMenuItem?.dataType);
-        const newTabOptions: Parameters<typeof chrome.tabs.create>[0] = {
-          url,
-          openerTabId: initiatorTab.id,
-        };
+        const newTabOptions: Parameters<typeof chrome.tabs.create>[0] = {url};
+
+        if (initiatorTab.id > 0) newTabOptions.openerTabId = initiatorTab.id;
         if (initiatorTab.index) newTabOptions.index = initiatorTab.index + 1;
 
         if (contextMenuItem?.dataType !== DataType.DataTypeText) {
