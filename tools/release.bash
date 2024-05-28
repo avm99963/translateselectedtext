@@ -16,7 +16,6 @@ function usage() {
                    "stable" or "canary". Defaults to "stable".
     -b, --browser  indicates the target browser for the release. Can be
                    "chromium", "chromium_mv3, "edge" or "edge_mv3".
-                   Defaults to "chromium".
     -f, --fast     indicates that the release shouldn't generate the
                    i18n credits JSON file.
 
@@ -33,7 +32,7 @@ opts=$(getopt -l "help,channel:,browser:,fast" -o "hc:b:f" -n "$progname" -- "$@
 eval set -- "$opts"
 
 channel=stable
-browser=chromium
+browser=
 fast=0
 
 while true; do

@@ -8,9 +8,11 @@
 
 - job:
     name: translateselectedtext-lint
-    parent: web-ext-lint
+    parent: base
     pre-run: playbooks/lint/pre.yaml
     run: playbooks/lint/run.yaml
+    roles:
+      - zuul: zuul/jobs
     irrelevant-files:
       - ".github/.*"
       - "docs/.*"
