@@ -1,102 +1,102 @@
 {
-	"appName": {
-		"message": "翻譯選取文字",
-		"description": "The app name"
-	},
-	"appBetaName": {
-		"message": "翻譯所選文本（Beta）",
-		"description": "The beta app name"
-	},
-	"appCanaryName": {
-		"message": "翻譯選取文字 (Canary)",
-		"description": "The beta app name"
-	},
-	"appDescription": {
-		"message": "翻譯選擇的文本與谷歌翻譯",
-		"description": "The app description"
-	},
-	"contextmenu_title": {
-		"message": "將所選內容轉換為..。",
-		"description": "Title of the context menu that appears when a right click is done. Inside this parent item there are the target languages."
-	},
-	"contextmenu_title2": {
-		"message": "將選區轉換為 \"$language$\"",
-		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
-		"placeholders": {
-			"language": {
-				"content": "$1",
-				"example": "Language to translate into."
-			}
-		}
-	},
-	"contextmenu_edit": {
-		"message": "编辑语言...",
-		"description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
-	},
-	"options_welcome": {
-		"message": "歡迎！",
-		"description": "Title of the options page which welcomes users"
-	},
-	"options_introduction": {
-		"message": "请在“翻译”菜单中选择要显示的语言。",
-		"description": "Introduction paragraph in the options page preceding the language list."
-	},
-	"options_languageselectheader": {
-		"message": "語言：",
-		"description": "Header of the selected languages list."
-	},
-	"options_otheroptionsheader": {
-		"message": "其他選項",
-		"description": "Subheader in the options page before the options to choose where should the translation be shown.."
-	},
-	"options_tabsoption_1": {
-		"message": "在每个翻译的新标签页中打开Google翻译。",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
-	},
-	"options_tabsoption_2": {
-		"message": "在唯一標籤中打開Google翻譯，並覆蓋最後一次翻譯，而不是打開多個標籤。",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
-	},
-	"options_savebutton": {
-		"message": "儲存",
-		"description": "Save button in the settings page"
-	},
-	"options_addlanguage": {
-		"message": "添加語言",
-		"description": "Title for the 'Add language' dialog"
-	},
-	"options_addlanguage_addbutton": {
-		"message": "添加",
-		"description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
-	},
-	"options_language_label": {
-		"message": "语言:",
-		"description": "Label for the language selector in the 'Add language' dialog"
-	},
-	"options_credits": {
-		"message": "製作人員",
-		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
-	},
-	"options_credits_homepage": {
-		"message": "首頁",
-		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
-	},
-	"options_credits_by": {
-		"message": "由",
-		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
-	},
-	"options_ok": {
-		"message": "好的",
-		"description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
-	},
-	"options_cancel": {
-		"message": "取消",
-		"description": "Cancel button in the dialogs, to reject an action."
-	},
-	"notification_install_title": {
-		"message": "感謝您安裝 Translate Selected Text “翻譯所選文本”"
-	},
-	"notification_install_message": {
-		"message": "按一下此通知將其設置。"
-	}
+  "appName": {
+    "message": "翻譯選取文字",
+    "description": "The app name"
+  },
+  "appBetaName": {
+    "message": "翻譯所選文本（Beta）",
+    "description": "The beta app name"
+  },
+  "appCanaryName": {
+    "message": "翻譯選取文字 (Canary)",
+    "description": "The beta app name"
+  },
+  "appDescription": {
+    "message": "翻譯選擇的文本與谷歌翻譯",
+    "description": "The app description"
+  },
+  "contextmenu_title": {
+    "message": "將所選內容轉換為..。",
+    "description": "Title of the context menu that appears when selecting text in a website and then right clicking it. Inside this parent item there are the target languages."
+  },
+  "contextmenu_title2": {
+    "message": "將選區轉換為 \"$language$\"",
+    "description": "Title of the context menu that appears after selecting text in a website and right clicking it, when only one target language has been configured.",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "Language to translate into."
+      }
+    }
+  },
+  "contextmenu_edit": {
+    "message": "编辑语言...",
+    "description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
+  },
+  "options_welcome": {
+    "message": "歡迎！",
+    "description": "Title of the options page which welcomes users"
+  },
+  "options_introduction": {
+    "message": "请在“翻译”菜单中选择要显示的语言。",
+    "description": "Introduction paragraph in the options page preceding the language list."
+  },
+  "options_languageselectheader": {
+    "message": "語言：",
+    "description": "Header of the selected languages list."
+  },
+  "options_otheroptionsheader": {
+    "message": "其他選項",
+    "description": "Subheader in the options page before the options to choose where should the translation be shown.."
+  },
+  "options_tabsoption_1": {
+    "message": "在每个翻译的新标签页中打开Google翻译。",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
+  },
+  "options_tabsoption_2": {
+    "message": "在唯一標籤中打開Google翻譯，並覆蓋最後一次翻譯，而不是打開多個標籤。",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
+  },
+  "options_savebutton": {
+    "message": "儲存",
+    "description": "Save button in the settings page"
+  },
+  "options_addlanguage": {
+    "message": "添加語言",
+    "description": "Title for the 'Add language' dialog"
+  },
+  "options_addlanguage_addbutton": {
+    "message": "添加",
+    "description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
+  },
+  "options_language_label": {
+    "message": "语言:",
+    "description": "Label for the language selector in the 'Add language' dialog"
+  },
+  "options_credits": {
+    "message": "製作人員",
+    "description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
+  },
+  "options_credits_homepage": {
+    "message": "首頁",
+    "description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
+  },
+  "options_credits_by": {
+    "message": "由",
+    "description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
+  },
+  "options_ok": {
+    "message": "好的",
+    "description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
+  },
+  "options_cancel": {
+    "message": "取消",
+    "description": "Cancel button in the dialogs, to reject an action."
+  },
+  "notification_install_title": {
+    "message": "感謝您安裝 Translate Selected Text “翻譯所選文本”"
+  },
+  "notification_install_message": {
+    "message": "按一下此通知將其設置。"
+  }
 }

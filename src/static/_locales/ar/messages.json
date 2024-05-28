@@ -1,114 +1,114 @@
 {
-	"appName": {
-		"message": "ترجمة النّصّ المحدّد",
-		"description": "The app name"
-	},
-	"appBetaName": {
-		"message": "ترجمة النص المحدد (تجريبي)",
-		"description": "The beta app name"
-	},
-	"appCanaryName": {
-		"message": "ترجمة النص المحدد (Canary)",
-		"description": "The beta app name"
-	},
-	"appDescription": {
-		"message": "ترجمة النص المحدد مع ترجمة جوجل",
-		"description": "The app description"
-	},
-	"contextmenu_title": {
-		"message": "ترجمة المحدد إلى...",
-		"description": "Title of the context menu that appears when a right click is done. Inside this parent item there are the target languages."
-	},
-	"contextmenu_title2": {
-		"message": "ترجمة التحديد إلى '$language$'",
-		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
-		"placeholders": {
-			"language": {
-				"content": "$1",
-				"example": "Language to translate into."
-			}
-		}
-	},
-	"contextmenu_edit": {
-		"message": "تحرير لغات...",
-		"description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
-	},
-	"options_welcome": {
-		"message": "مرحبا!",
-		"description": "Title of the options page which welcomes users"
-	},
-	"options_introduction": {
-		"message": "من فضلك، حدد اللغات التي تريد أن تظهر في قائمة\"ترجمة\".",
-		"description": "Introduction paragraph in the options page preceding the language list."
-	},
-	"options_languageselectheader": {
-		"message": "اللغات:",
-		"description": "Header of the selected languages list."
-	},
-	"options_otheroptionsheader": {
-		"message": "خيارات أخرى:",
-		"description": "Subheader in the options page before the options to choose where should the translation be shown.."
-	},
-	"options_tabsoption_1": {
-		"message": "افتح ترجمة جوجل في علامة تبويب جديدة لكل ترجمة.",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
-	},
-	"options_tabsoption_2": {
-		"message": "افتح جوجل ترجمة في علامة تبويب فريدة وتجاوز الترجمة الآخرى بدلاً من فتح العديد من علامات التبويب.",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
-	},
-	"options_tabsoption_3": {
-		"message": "افتح ترجمة جوجل في نافذة منبثقة.",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
-	},
-	"options_savebutton": {
-		"message": "حفظ",
-		"description": "Save button in the settings page"
-	},
-	"options_addlanguage": {
-		"message": "إضافة لغة",
-		"description": "Title for the 'Add language' dialog"
-	},
-	"options_addlanguage_addbutton": {
-		"message": "إضافة",
-		"description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
-	},
-	"options_language_label": {
-		"message": "اللغة:",
-		"description": "Label for the language selector in the 'Add language' dialog"
-	},
-	"options_credits": {
-		"message": "إعتمادات",
-		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
-	},
-	"options_credits_homepage": {
-		"message": "الصفحة الرئيسية",
-		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
-	},
-	"options_credits_by": {
-		"message": "بواسطة",
-		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
-	},
-	"options_credits_translations": {
-		"message": "التّرجمات",
-		"description": "Header for the section in the credits dialog which recognizes translators."
-	},
-	"options_credits_translations_paragraph": {
-		"message": "أودّ أن أتقدّم بالشّكر الجزيل للمساهمين التاليِين، الذين قاموا بترجمة واجهة الإضافة إلى العديد من اللّغات بإخلاص:",
-		"description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
-	},
-	"options_ok": {
-		"message": "موافق",
-		"description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
-	},
-	"options_cancel": {
-		"message": "إلغاء",
-		"description": "Cancel button in the dialogs, to reject an action."
-	},
-	"notification_install_title": {
-		"message": "شكرا لتثبيت '\"ترجمة النص المحدد\"'"
-	},
-	"notification_install_message": {
-		"message": "انقر فوق هذا الإشعار لإعداده."
-	}
+  "appName": {
+    "message": "ترجمة النّصّ المحدّد",
+    "description": "The app name"
+  },
+  "appBetaName": {
+    "message": "ترجمة النص المحدد (تجريبي)",
+    "description": "The beta app name"
+  },
+  "appCanaryName": {
+    "message": "ترجمة النص المحدد (Canary)",
+    "description": "The beta app name"
+  },
+  "appDescription": {
+    "message": "ترجمة النص المحدد مع ترجمة جوجل",
+    "description": "The app description"
+  },
+  "contextmenu_title": {
+    "message": "ترجمة المحدد إلى...",
+    "description": "Title of the context menu that appears when selecting text in a website and then right clicking it. Inside this parent item there are the target languages."
+  },
+  "contextmenu_title2": {
+    "message": "ترجمة التحديد إلى '$language$'",
+    "description": "Title of the context menu that appears after selecting text in a website and right clicking it, when only one target language has been configured.",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "Language to translate into."
+      }
+    }
+  },
+  "contextmenu_edit": {
+    "message": "تحرير لغات...",
+    "description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
+  },
+  "options_welcome": {
+    "message": "مرحبا!",
+    "description": "Title of the options page which welcomes users"
+  },
+  "options_introduction": {
+    "message": "من فضلك، حدد اللغات التي تريد أن تظهر في قائمة\"ترجمة\".",
+    "description": "Introduction paragraph in the options page preceding the language list."
+  },
+  "options_languageselectheader": {
+    "message": "اللغات:",
+    "description": "Header of the selected languages list."
+  },
+  "options_otheroptionsheader": {
+    "message": "خيارات أخرى:",
+    "description": "Subheader in the options page before the options to choose where should the translation be shown.."
+  },
+  "options_tabsoption_1": {
+    "message": "افتح ترجمة جوجل في علامة تبويب جديدة لكل ترجمة.",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
+  },
+  "options_tabsoption_2": {
+    "message": "افتح جوجل ترجمة في علامة تبويب فريدة وتجاوز الترجمة الآخرى بدلاً من فتح العديد من علامات التبويب.",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
+  },
+  "options_tabsoption_3": {
+    "message": "افتح ترجمة جوجل في نافذة منبثقة.",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
+  },
+  "options_savebutton": {
+    "message": "حفظ",
+    "description": "Save button in the settings page"
+  },
+  "options_addlanguage": {
+    "message": "إضافة لغة",
+    "description": "Title for the 'Add language' dialog"
+  },
+  "options_addlanguage_addbutton": {
+    "message": "إضافة",
+    "description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
+  },
+  "options_language_label": {
+    "message": "اللغة:",
+    "description": "Label for the language selector in the 'Add language' dialog"
+  },
+  "options_credits": {
+    "message": "إعتمادات",
+    "description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
+  },
+  "options_credits_homepage": {
+    "message": "الصفحة الرئيسية",
+    "description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
+  },
+  "options_credits_by": {
+    "message": "بواسطة",
+    "description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
+  },
+  "options_credits_translations": {
+    "message": "التّرجمات",
+    "description": "Header for the section in the credits dialog which recognizes translators."
+  },
+  "options_credits_translations_paragraph": {
+    "message": "أودّ أن أتقدّم بالشّكر الجزيل للمساهمين التاليِين، الذين قاموا بترجمة واجهة الإضافة إلى العديد من اللّغات بإخلاص:",
+    "description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
+  },
+  "options_ok": {
+    "message": "موافق",
+    "description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
+  },
+  "options_cancel": {
+    "message": "إلغاء",
+    "description": "Cancel button in the dialogs, to reject an action."
+  },
+  "notification_install_title": {
+    "message": "شكرا لتثبيت '\"ترجمة النص المحدد\"'"
+  },
+  "notification_install_message": {
+    "message": "انقر فوق هذا الإشعار لإعداده."
+  }
 }

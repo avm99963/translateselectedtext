@@ -1,118 +1,144 @@
 {
-	"appName": {
-		"message": "Traduir Text Seleccionat",
-		"description": "The app name"
-	},
-	"appBetaName": {
-		"message": "Traduir Text Seleccionat (Beta)",
-		"description": "The beta app name"
-	},
-	"appCanaryName": {
-		"message": "Traduir Text Seleccionat (Canary)",
-		"description": "The beta app name"
-	},
-	"appDescription": {
-		"message": "Tradueix el text que seleccionis amb el traductor de Google",
-		"description": "The app description"
-	},
-	"contextmenu_title": {
-		"message": "Tradueix la selecció al...",
-		"description": "Title of the context menu that appears when a right click is done. Inside this parent item there are the target languages."
-	},
-	"contextmenu_title2": {
-		"message": "Tradueix la selecció a '$language$'",
-		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
-		"placeholders": {
-			"language": {
-				"content": "$1",
-				"example": "Language to translate into."
-			}
-		}
-	},
-	"contextmenu_edit": {
-		"message": "Modifica els idiomes...",
-		"description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
-	},
-	"options_welcome": {
-		"message": "Benvinguda!",
-		"description": "Title of the options page which welcomes users"
-	},
-	"options_introduction": {
-		"message": "Si us plau, selecciona els idiomes que vols que surtin al menú \"traduir\".",
-		"description": "Introduction paragraph in the options page preceding the language list."
-	},
-	"options_languageselectheader": {
-		"message": "Idiomes:",
-		"description": "Header of the selected languages list."
-	},
-	"options_otheroptionsheader": {
-		"message": "Altres opcions:",
-		"description": "Subheader in the options page before the options to choose where should the translation be shown.."
-	},
-	"options_tabsoption_1": {
-		"message": "Obre Google Traductor en una pestanya nova per a cada traducció.",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
-	},
-	"options_tabsoption_2": {
-		"message": "Obre Google Traductor en una única pestanya i reemplaça l'última traducció en comptes d'obrir diverses pestanyes.",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
-	},
-	"options_tabsoption_3": {
-		"message": "Obre Google Traductor en una finestra emergent.",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
-	},
-	"options_savebutton": {
-		"message": "Desa",
-		"description": "Save button in the settings page"
-	},
-	"options_addlanguage": {
-		"message": "Afegeix un idioma",
-		"description": "Title for the 'Add language' dialog"
-	},
-	"options_addlanguage_addbutton": {
-		"message": "Afegeix",
-		"description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
-	},
-	"options_language_label": {
-		"message": "Idioma:",
-		"description": "Label for the language selector in the 'Add language' dialog"
-	},
-	"options_credits": {
-		"message": "Crèdits",
-		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
-	},
-	"options_credits_createdby": {
-		"message": "Extensió creada per: <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adrià Vilanova Martínez)",
-		"description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
-	},
-	"options_credits_homepage": {
-		"message": "pàgina web",
-		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
-	},
-	"options_credits_by": {
-		"message": "per",
-		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
-	},
-	"options_credits_translations": {
-		"message": "Traduccions",
-		"description": "Header for the section in the credits dialog which recognizes translators."
-	},
-	"options_credits_translations_paragraph": {
-		"message": "M'agradaria donar moltes gràcies especialment als següents col·laboradors, que han traduit la interfaç de l'extensió a molts idiomes desinteressadament:",
-		"description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
-	},
-	"options_ok": {
-		"message": "D'acord",
-		"description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
-	},
-	"options_cancel": {
-		"message": "Cancel·lar",
-		"description": "Cancel button in the dialogs, to reject an action."
-	},
-	"notification_install_title": {
-		"message": "Gràcies per instal·lar 'Traduir Text Seleccionat'"
-	},
-	"notification_install_message": {
-		"message": "Fes clic en aquesta notificació per a configurar l'extensió."
-	}
+  "appName": {
+    "message": "Traduir Text Seleccionat",
+    "description": "The app name"
+  },
+  "appBetaName": {
+    "message": "Traduir Text Seleccionat (Beta)",
+    "description": "The beta app name"
+  },
+  "appCanaryName": {
+    "message": "Traduir Text Seleccionat (Canary)",
+    "description": "The beta app name"
+  },
+  "appDescription": {
+    "message": "Tradueix el text que seleccionis amb el traductor de Google",
+    "description": "The app description"
+  },
+  "contextmenu_title": {
+    "message": "Tradueix la selecció al...",
+    "description": "Title of the context menu that appears when selecting text in a website and then right clicking it. Inside this parent item there are the target languages."
+  },
+  "contextmenu_title2": {
+    "message": "Tradueix la selecció a '$language$'",
+    "description": "Title of the context menu that appears after selecting text in a website and right clicking it, when only one target language has been configured.",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "Language to translate into."
+      }
+    }
+  },
+  "contextmenulink_title": {
+    "message": "Tradueix l'enllaç al...",
+    "description": "Title of the context menu that appears when right clicking a link. Inside this parent item there are the target languages."
+  },
+  "contextmenulink_title2": {
+    "message": "Tradueix l'enllaç al '$language$'",
+    "description": "Title of the context menu that appears after right clicking a link, when only one target language has been configured.",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "Language to translate into."
+      }
+    }
+  },
+  "contextmenu_edit": {
+    "message": "Modifica els idiomes...",
+    "description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
+  },
+  "options_welcome": {
+    "message": "Benvinguda!",
+    "description": "Title of the options page which welcomes users"
+  },
+  "options_introduction": {
+    "message": "Si us plau, selecciona els idiomes que vols que surtin al menú \"traduir\".",
+    "description": "Introduction paragraph in the options page preceding the language list."
+  },
+  "options_languageselectheader": {
+    "message": "Idiomes:",
+    "description": "Header of the selected languages list."
+  },
+  "options_language_moveup": {
+    "message": "Mou cap amunt",
+    "description": "Label for the button which lets a user move a language up the list."
+  },
+  "options_language_movedown": {
+    "message": "Mou cap avall",
+    "description": "Label for the button which lets a user move a language down the list."
+  },
+  "options_language_remove": {
+    "message": "Elimina",
+    "description": "Label for the button which lets a user remove a language from the list."
+  },
+  "options_otheroptionsheader": {
+    "message": "Altres opcions:",
+    "description": "Subheader in the options page before the options to choose where should the translation be shown.."
+  },
+  "options_tabsoption_1": {
+    "message": "Obre Google Traductor en una pestanya nova per a cada traducció.",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
+  },
+  "options_tabsoption_2": {
+    "message": "Obre Google Traductor en una única pestanya i reemplaça l'última traducció en comptes d'obrir diverses pestanyes.",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
+  },
+  "options_tabsoption_3": {
+    "message": "Obre Google Traductor en una finestra emergent.",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
+  },
+  "options_savebutton": {
+    "message": "Desa",
+    "description": "Save button in the settings page"
+  },
+  "options_addlanguage": {
+    "message": "Afegeix un idioma",
+    "description": "Title for the 'Add language' dialog"
+  },
+  "options_addlanguage_addbutton": {
+    "message": "Afegeix",
+    "description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
+  },
+  "options_language_label": {
+    "message": "Idioma:",
+    "description": "Label for the language selector in the 'Add language' dialog"
+  },
+  "options_credits": {
+    "message": "Crèdits",
+    "description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
+  },
+  "options_credits_createdby": {
+    "message": "Extensió creada per: <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adrià Vilanova Martínez)",
+    "description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
+  },
+  "options_credits_homepage": {
+    "message": "pàgina web",
+    "description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
+  },
+  "options_credits_by": {
+    "message": "per",
+    "description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
+  },
+  "options_credits_translations": {
+    "message": "Traduccions",
+    "description": "Header for the section in the credits dialog which recognizes translators."
+  },
+  "options_credits_translations_paragraph": {
+    "message": "M'agradaria donar moltes gràcies especialment als següents col·laboradors, que han traduit la interfaç de l'extensió a molts idiomes desinteressadament:",
+    "description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
+  },
+  "options_ok": {
+    "message": "D'acord",
+    "description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
+  },
+  "options_cancel": {
+    "message": "Cancel·lar",
+    "description": "Cancel button in the dialogs, to reject an action."
+  },
+  "notification_install_title": {
+    "message": "Gràcies per instal·lar 'Traduir Text Seleccionat'"
+  },
+  "notification_install_message": {
+    "message": "Fes clic en aquesta notificació per a configurar l'extensió."
+  }
 }

@@ -1,60 +1,60 @@
 {
-	"appName": {
-		"message": "የተመረጠ ጽሁፍ ተርጉም",
-		"description": "The app name"
-	},
-	"appBetaName": {
-		"message": "የተመረጠ ጽሁፍ ተርጉም (ቤታ)",
-		"description": "The beta app name"
-	},
-	"appCanaryName": {
-		"message": "የተመረጠ ጽሁፍ ተርጉም (Canary)",
-		"description": "The beta app name"
-	},
-	"appDescription": {
-		"message": "የተመረጠውን ጽሑፍ በ ጉግል ትራንስሌት ይተርጉሙ",
-		"description": "The app description"
-	},
-	"contextmenu_title": {
-		"message": "የተመረጠውን ወደ ... ተርጉም",
-		"description": "Title of the context menu that appears when a right click is done. Inside this parent item there are the target languages."
-	},
-	"contextmenu_title2": {
-		"message": "የተመረጠውን ወደ  '$language$' ተርጉም",
-		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
-		"placeholders": {
-			"language": {
-				"content": "$1",
-				"example": "Language to translate into."
-			}
-		}
-	},
-	"contextmenu_edit": {
-		"message": "ቋንቋዎችን አርትዕ...",
-		"description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
-	},
-	"options_welcome": {
-		"message": "እንኳን ደህና መጡ!",
-		"description": "Title of the options page which welcomes users"
-	},
-	"options_introduction": {
-		"message": "እባክዎ \"ትርጉም\" ዝርዝር ውስጥ ለማየት የሚፈልጉትን ቋንቋዎች ይምረጡ ።",
-		"description": "Introduction paragraph in the options page preceding the language list."
-	},
-	"options_languageselectheader": {
-		"message": "ቋንቋዎች ፦",
-		"description": "Header of the selected languages list."
-	},
-	"options_otheroptionsheader": {
-		"message": "ሌሎች አማራጮች ፥",
-		"description": "Subheader in the options page before the options to choose where should the translation be shown.."
-	},
-	"options_tabsoption_1": {
-		"message": "ለእያንዳንዱ ትርጉም የ ጉግል ትራንስሌትን በአዲስ ትር ይክፈቱ ።",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
-	},
-	"options_tabsoption_2": {
-		"message": "ጉግል ትራንስሌትን በልዩ ትርታ ይክፈቱ እና በርካታ ትሮችን ከመክፈት ይልቅ የመጨረሻውን ትርጉም ይለውጡ።",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
-	}
+  "appName": {
+    "message": "የተመረጠ ጽሁፍ ተርጉም",
+    "description": "The app name"
+  },
+  "appBetaName": {
+    "message": "የተመረጠ ጽሁፍ ተርጉም (ቤታ)",
+    "description": "The beta app name"
+  },
+  "appCanaryName": {
+    "message": "የተመረጠ ጽሁፍ ተርጉም (Canary)",
+    "description": "The beta app name"
+  },
+  "appDescription": {
+    "message": "የተመረጠውን ጽሑፍ በ ጉግል ትራንስሌት ይተርጉሙ",
+    "description": "The app description"
+  },
+  "contextmenu_title": {
+    "message": "የተመረጠውን ወደ ... ተርጉም",
+    "description": "Title of the context menu that appears when selecting text in a website and then right clicking it. Inside this parent item there are the target languages."
+  },
+  "contextmenu_title2": {
+    "message": "የተመረጠውን ወደ  '$language$' ተርጉም",
+    "description": "Title of the context menu that appears after selecting text in a website and right clicking it, when only one target language has been configured.",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "Language to translate into."
+      }
+    }
+  },
+  "contextmenu_edit": {
+    "message": "ቋንቋዎችን አርትዕ...",
+    "description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
+  },
+  "options_welcome": {
+    "message": "እንኳን ደህና መጡ!",
+    "description": "Title of the options page which welcomes users"
+  },
+  "options_introduction": {
+    "message": "እባክዎ \"ትርጉም\" ዝርዝር ውስጥ ለማየት የሚፈልጉትን ቋንቋዎች ይምረጡ ።",
+    "description": "Introduction paragraph in the options page preceding the language list."
+  },
+  "options_languageselectheader": {
+    "message": "ቋንቋዎች ፦",
+    "description": "Header of the selected languages list."
+  },
+  "options_otheroptionsheader": {
+    "message": "ሌሎች አማራጮች ፥",
+    "description": "Subheader in the options page before the options to choose where should the translation be shown.."
+  },
+  "options_tabsoption_1": {
+    "message": "ለእያንዳንዱ ትርጉም የ ጉግል ትራንስሌትን በአዲስ ትር ይክፈቱ ።",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
+  },
+  "options_tabsoption_2": {
+    "message": "ጉግል ትራንስሌትን በልዩ ትርታ ይክፈቱ እና በርካታ ትሮችን ከመክፈት ይልቅ የመጨረሻውን ትርጉም ይለውጡ።",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
+  }
 }

@@ -1,118 +1,118 @@
 {
-	"appName": {
-		"message": "应用程序名称",
-		"description": "The app name"
-	},
-	"appBetaName": {
-		"message": "应用程序名称 (Beta)",
-		"description": "The beta app name"
-	},
-	"appCanaryName": {
-		"message": "应用程序名称 (Canary)",
-		"description": "The beta app name"
-	},
-	"appDescription": {
-		"message": "用 Google 翻译翻译选中的文本",
-		"description": "The app description"
-	},
-	"contextmenu_title": {
-		"message": "将所选内容转换为...",
-		"description": "Title of the context menu that appears when a right click is done. Inside this parent item there are the target languages."
-	},
-	"contextmenu_title2": {
-		"message": "将所选内容转换为 \"$language$\"",
-		"description": "Title of the context menu that appears when a right click is done and there's only one language available.",
-		"placeholders": {
-			"language": {
-				"content": "$1",
-				"example": "Language to translate into."
-			}
-		}
-	},
-	"contextmenu_edit": {
-		"message": "编辑语言...",
-		"description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
-	},
-	"options_welcome": {
-		"message": "欢迎！",
-		"description": "Title of the options page which welcomes users"
-	},
-	"options_introduction": {
-		"message": "请在 \"翻译\" 菜单中选择要显示的语言。",
-		"description": "Introduction paragraph in the options page preceding the language list."
-	},
-	"options_languageselectheader": {
-		"message": "语言：",
-		"description": "Header of the selected languages list."
-	},
-	"options_otheroptionsheader": {
-		"message": "其他选项：",
-		"description": "Subheader in the options page before the options to choose where should the translation be shown.."
-	},
-	"options_tabsoption_1": {
-		"message": "为每一个翻译在一个新的标签打开谷歌翻译。",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
-	},
-	"options_tabsoption_2": {
-		"message": "在唯一标签中打开Google翻译，并覆盖最后一次翻译，而不是打开多个标签。",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
-	},
-	"options_tabsoption_3": {
-		"message": "在弹出窗口中打开 Google 翻译。",
-		"description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
-	},
-	"options_savebutton": {
-		"message": "保存",
-		"description": "Save button in the settings page"
-	},
-	"options_addlanguage": {
-		"message": "添加语言",
-		"description": "Title for the 'Add language' dialog"
-	},
-	"options_addlanguage_addbutton": {
-		"message": "添加",
-		"description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
-	},
-	"options_language_label": {
-		"message": "语言：",
-		"description": "Label for the language selector in the 'Add language' dialog"
-	},
-	"options_credits": {
-		"message": "贡献人员",
-		"description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
-	},
-	"options_credits_createdby": {
-		"message": "扩展作者： <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adriaassum-Vilanova Martinez)",
-		"description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
-	},
-	"options_credits_homepage": {
-		"message": "主页",
-		"description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
-	},
-	"options_credits_by": {
-		"message": "由",
-		"description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
-	},
-	"options_credits_translations": {
-		"message": "翻译",
-		"description": "Header for the section in the credits dialog which recognizes translators."
-	},
-	"options_credits_translations_paragraph": {
-		"message": "我要特别感谢以下贡献者，他们无私地将扩展界面翻译成了多种语言:",
-		"description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
-	},
-	"options_ok": {
-		"message": "好的",
-		"description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
-	},
-	"options_cancel": {
-		"message": "取消",
-		"description": "Cancel button in the dialogs, to reject an action."
-	},
-	"notification_install_title": {
-		"message": "感谢您安装“翻译所选文本”"
-	},
-	"notification_install_message": {
-		"message": "单击此通知将其设置。"
-	}
+  "appName": {
+    "message": "应用程序名称",
+    "description": "The app name"
+  },
+  "appBetaName": {
+    "message": "应用程序名称 (Beta)",
+    "description": "The beta app name"
+  },
+  "appCanaryName": {
+    "message": "应用程序名称 (Canary)",
+    "description": "The beta app name"
+  },
+  "appDescription": {
+    "message": "用 Google 翻译翻译选中的文本",
+    "description": "The app description"
+  },
+  "contextmenu_title": {
+    "message": "将所选内容转换为...",
+    "description": "Title of the context menu that appears when selecting text in a website and then right clicking it. Inside this parent item there are the target languages."
+  },
+  "contextmenu_title2": {
+    "message": "将所选内容转换为 \"$language$\"",
+    "description": "Title of the context menu that appears after selecting text in a website and right clicking it, when only one target language has been configured.",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "Language to translate into."
+      }
+    }
+  },
+  "contextmenu_edit": {
+    "message": "编辑语言...",
+    "description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
+  },
+  "options_welcome": {
+    "message": "欢迎！",
+    "description": "Title of the options page which welcomes users"
+  },
+  "options_introduction": {
+    "message": "请在 \"翻译\" 菜单中选择要显示的语言。",
+    "description": "Introduction paragraph in the options page preceding the language list."
+  },
+  "options_languageselectheader": {
+    "message": "语言：",
+    "description": "Header of the selected languages list."
+  },
+  "options_otheroptionsheader": {
+    "message": "其他选项：",
+    "description": "Subheader in the options page before the options to choose where should the translation be shown.."
+  },
+  "options_tabsoption_1": {
+    "message": "为每一个翻译在一个新的标签打开谷歌翻译。",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new tab)."
+  },
+  "options_tabsoption_2": {
+    "message": "在唯一标签中打开Google翻译，并覆盖最后一次翻译，而不是打开多个标签。",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
+  },
+  "options_tabsoption_3": {
+    "message": "在弹出窗口中打开 Google 翻译。",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
+  },
+  "options_savebutton": {
+    "message": "保存",
+    "description": "Save button in the settings page"
+  },
+  "options_addlanguage": {
+    "message": "添加语言",
+    "description": "Title for the 'Add language' dialog"
+  },
+  "options_addlanguage_addbutton": {
+    "message": "添加",
+    "description": "'Add' button in the footer of the languages list which is used to show a dialog with a list of potential languages to add. In the dialog, this message is also shown inside a button which is used to confirm the action."
+  },
+  "options_language_label": {
+    "message": "语言：",
+    "description": "Label for the language selector in the 'Add language' dialog"
+  },
+  "options_credits": {
+    "message": "贡献人员",
+    "description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
+  },
+  "options_credits_createdby": {
+    "message": "扩展作者： <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adriaassum-Vilanova Martinez)",
+    "description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
+  },
+  "options_credits_homepage": {
+    "message": "主页",
+    "description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
+  },
+  "options_credits_by": {
+    "message": "由",
+    "description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
+  },
+  "options_credits_translations": {
+    "message": "翻译",
+    "description": "Header for the section in the credits dialog which recognizes translators."
+  },
+  "options_credits_translations_paragraph": {
+    "message": "我要特别感谢以下贡献者，他们无私地将扩展界面翻译成了多种语言:",
+    "description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
+  },
+  "options_ok": {
+    "message": "好的",
+    "description": "OK button in informative dialogs, which is used to close them (no action is done when pressing these buttons)"
+  },
+  "options_cancel": {
+    "message": "取消",
+    "description": "Cancel button in the dialogs, to reject an action."
+  },
+  "notification_install_title": {
+    "message": "感谢您安装“翻译所选文本”"
+  },
+  "notification_install_message": {
+    "message": "单击此通知将其设置。"
+  }
 }
