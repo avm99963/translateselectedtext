@@ -103,13 +103,19 @@ export default class LanguagesEditor extends LitElement {
           <paper-button
               class="movebtn"
               @click=${() => this.swapLanguages(i, i - 1)}>
-            <ha-svg-icon .path=${mdiArrowUp}></ha-svg-icon>
+            <ha-svg-icon
+                .path=${mdiArrowUp}
+                aria-label="${msg('options_language_moveup')}">
+            </ha-svg-icon>
           </paper-button>
         `);
       } else {
         moveBtns.push(html`
           <paper-button class="movebtn" disabled>
-            <ha-svg-icon .path=${mdiArrowUp}></ha-svg-icon>
+            <ha-svg-icon
+                .path=${mdiArrowUp}
+                aria-label="${msg('options_language_moveup')}">
+            </ha-svg-icon>
           </paper-button>
         `);
       }
@@ -118,13 +124,19 @@ export default class LanguagesEditor extends LitElement {
           <paper-button
               class="movebtn"
               @click=${() => this.swapLanguages(i, i + 1)}>
-            <ha-svg-icon .path=${mdiArrowDown}></ha-svg-icon>
+            <ha-svg-icon
+                .path=${mdiArrowDown}
+                aria-label="${msg('options_language_movedown')}">
+            </ha-svg-icon>
           </paper-button>
         `);
       } else {
         moveBtns.push(html`
           <paper-button class="movebtn" disabled>
-            <ha-svg-icon .path=${mdiArrowDown}></ha-svg-icon>
+            <ha-svg-icon
+                .path=${mdiArrowDown}
+                aria-label="${msg('options_language_movedown')}">
+            </ha-svg-icon>
           </paper-button>
         `);
       }
@@ -138,7 +150,10 @@ export default class LanguagesEditor extends LitElement {
           <paper-button
               class="delete"
               @click=${() => this.deleteLanguage(lang)}>
-            <ha-svg-icon .path=${mdiClose}></ha-svg-icon>
+            <ha-svg-icon
+                .path=${mdiClose}
+                aria-label="${msg('options_language_remove')}">
+            </ha-svg-icon>
           </paper-button>
         </li>
       `;
