@@ -3,5 +3,8 @@
     - role: ensure-build-essential
     - role: ensure-zip
     - role: ensure-genmanifest
+    - role: ensure-nodejs-fork
+      vars:
+        node_version: 20
     - role: ensure-cws-upload
       version: "2.1.0"
