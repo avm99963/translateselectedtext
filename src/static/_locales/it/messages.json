@@ -29,6 +29,20 @@
       }
     }
   },
+  "contextmenulink_title": {
+    "message": "Traduci questo link a...",
+    "description": "Title of the context menu that appears when right clicking a link. Inside this parent item there are the target languages."
+  },
+  "contextmenulink_title2": {
+    "message": "Traduci questo link a '$language$'",
+    "description": "Title of the context menu that appears after right clicking a link, when only one target language has been configured.",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "Language to translate into."
+      }
+    }
+  },
   "contextmenu_edit": {
     "message": "Modifica le lingue...",
     "description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."

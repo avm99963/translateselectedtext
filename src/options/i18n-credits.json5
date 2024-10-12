@@ -48,6 +48,15 @@
     ]
   },
   {
+    "name": "Dremski",
+    "languages": [
+      {
+        "id": "bg",
+        "name": "Bulgarian"
+      }
+    ]
+  },
+  {
     "name": "Serhiy Dmytryshyn (dies)",
     "languages": [
       {
@@ -61,11 +70,11 @@
     ]
   },
   {
-    "name": "Dremski",
+    "name": "Csegöldi Csaba (csacseg)",
     "languages": [
       {
-        "id": "bg",
-        "name": "Bulgarian"
+        "id": "hu",
+        "name": "Hungarian"
       }
     ]
   },
@@ -205,15 +214,6 @@
     ]
   },
   {
-    "name": "Csegöldi Csaba (csacseg)",
-    "languages": [
-      {
-        "id": "hu",
-        "name": "Hungarian"
-      }
-    ]
-  },
-  {
     "name": "Zacarias Ponte (wolfteambrconta)",
     "languages": [
       {
@@ -259,6 +259,15 @@
       {
         "id": "am",
         "name": "Amharic"
+      }
+    ]
+  },
+  {
+    "name": "Gabriel Farias Nunes (gabrielfariasdp)",
+    "languages": [
+      {
+        "id": "pt-BR",
+        "name": "Portuguese, Brazilian"
       }
     ]
   },
@@ -349,6 +358,15 @@
       {
         "id": "ar",
         "name": "Arabic"
+      }
+    ]
+  },
+  {
+    "name": "Graziella Massaccesi (massaccesi.g)",
+    "languages": [
+      {
+        "id": "it",
+        "name": "Italian"
       }
     ]
   },

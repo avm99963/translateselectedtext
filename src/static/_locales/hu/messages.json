@@ -29,6 +29,20 @@
       }
     }
   },
+  "contextmenulink_title": {
+    "message": "Fordítsa le ezt a hivatkozást erre...",
+    "description": "Title of the context menu that appears when right clicking a link. Inside this parent item there are the target languages."
+  },
+  "contextmenulink_title2": {
+    "message": "Fordítsa le ezt a hivatkozást '$language$' ",
+    "description": "Title of the context menu that appears after right clicking a link, when only one target language has been configured.",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "Language to translate into."
+      }
+    }
+  },
   "contextmenu_edit": {
     "message": "Nyelv módosítása...",
     "description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
@@ -45,6 +59,18 @@
     "message": "Nyelvek:",
     "description": "Header of the selected languages list."
   },
+  "options_language_moveup": {
+    "message": "Mozgatás fel",
+    "description": "Label for the button which lets a user move a language up the list."
+  },
+  "options_language_movedown": {
+    "message": "Mozgás lefelé",
+    "description": "Label for the button which lets a user move a language down the list."
+  },
+  "options_language_remove": {
+    "message": "Törlés",
+    "description": "Label for the button which lets a user remove a language from the list."
+  },
   "options_otheroptionsheader": {
     "message": "Egyéb lehetőségek:",
     "description": "Subheader in the options page before the options to choose where should the translation be shown.."
@@ -56,6 +82,10 @@
   "options_tabsoption_2": {
     "message": "Nyissa meg a Google Fordítót egy egyedi lapon, és felülírja az utolsó fordítást több lap megnyitása helyett.",
     "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in the same tab used for the previous translation, or will open a new tab if there aren't any translation tabs open)."
+  },
+  "options_tabsoption_3": {
+    "message": "Nyissa meg a Google Fordítót egy előugró ablakban.",
+    "description": "Option which defines where should the translations be shown (in this case, each translation will be opened in a new popup)."
   },
   "options_savebutton": {
     "message": "Mentés",
@@ -77,6 +107,10 @@
     "message": "Credits",
     "description": "Message for the link to the credits dialog, and also the title for the credits dialog, which shows a list of open source projects used inside the extension and a list of translators/contributors."
   },
+  "options_credits_createdby": {
+    "message": "A bővítményt készítette: <a href=\"https://www.avm99963.com/\" target=\"_blank\">@avm99963</a> (Adrià Vilanova Martínez)",
+    "description": "Text shown in the credits dialog, which shows that the extension was created by Adrià Vilanova Martínez (and their username is avm99963)."
+  },
   "options_credits_homepage": {
     "message": "honlap",
     "description": "Text shown for links to go to each homepage of open source projects in the credits. NOTE: put in in lowercase letters"
@@ -84,6 +118,14 @@
   "options_credits_by": {
     "message": "által",
     "description": "Fragment of the author statement in an item of the credits. NOTE: put in in lowercase letters. EXAMPLE: '{{options_credits_by}} Adrià Vilanova Martínez'"
+  },
+  "options_credits_translations": {
+    "message": "Fordítások",
+    "description": "Header for the section in the credits dialog which recognizes translators."
+  },
+  "options_credits_translations_paragraph": {
+    "message": "Külön köszönetet szeretnék mondani a következő közreműködőknek, akik önzetlenül sok nyelvre fordították le a bővítőfelületet:",
+    "description": "Paragraph in the 'Translations' section of the credits dialog, which recognizes translators. Following this paragraph there's a list with all the translators' names (if you've translated a string in Crowdin, you'll automatically be added to the list in the following extension update)."
   },
   "options_ok": {
     "message": "OK",

@@ -29,6 +29,20 @@
       }
     }
   },
+  "contextmenulink_title": {
+    "message": "Превеждане на тази връзка на...",
+    "description": "Title of the context menu that appears when right clicking a link. Inside this parent item there are the target languages."
+  },
+  "contextmenulink_title2": {
+    "message": "Превеждане на тази връзка на '$language$'",
+    "description": "Title of the context menu that appears after right clicking a link, when only one target language has been configured.",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "Language to translate into."
+      }
+    }
+  },
   "contextmenu_edit": {
     "message": "Редактиране на езиците...",
     "description": "Title of the item inside the 'Translate section into...' context menu which is used to go to the options page."
@@ -44,6 +58,18 @@
   "options_languageselectheader": {
     "message": "Езици:",
     "description": "Header of the selected languages list."
+  },
+  "options_language_moveup": {
+    "message": "Преместване нагоре",
+    "description": "Label for the button which lets a user move a language up the list."
+  },
+  "options_language_movedown": {
+    "message": "Преместване надолу",
+    "description": "Label for the button which lets a user move a language down the list."
+  },
+  "options_language_remove": {
+    "message": "Премахване",
+    "description": "Label for the button which lets a user remove a language from the list."
   },
   "options_otheroptionsheader": {
     "message": "Други опции:",

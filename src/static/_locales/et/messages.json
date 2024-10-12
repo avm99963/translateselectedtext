@@ -45,6 +45,18 @@
     "message": "Keeled:",
     "description": "Header of the selected languages list."
   },
+  "options_language_moveup": {
+    "message": "Liiguta üles",
+    "description": "Label for the button which lets a user move a language up the list."
+  },
+  "options_language_movedown": {
+    "message": "Liiguta alla",
+    "description": "Label for the button which lets a user move a language down the list."
+  },
+  "options_language_remove": {
+    "message": "Eemalda",
+    "description": "Label for the button which lets a user remove a language from the list."
+  },
   "options_otheroptionsheader": {
     "message": "Teised valikud:",
     "description": "Subheader in the options page before the options to choose where should the translation be shown.."
